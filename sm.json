@@ -1,8 +1,7 @@
 {
   "apiEndpoint": "https://open-visualization.prismic.io/api/v2",
-  "libraries": [
-    "@/slices"
-  ],
+  "libraries": ["@/slices"],
   "_latest": "0.3.0",
-  "framework": "previousNext"
+  "framework": "previousNext",
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }
