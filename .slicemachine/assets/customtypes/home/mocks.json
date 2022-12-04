@@ -1,0 +1,19 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "home",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "title": "shaking",
+    "descriptio": "soon",
+    "hero_title": "saved",
+    "hero_description": "blind"
+  }
+}

@@ -3,6 +3,9 @@ import type { FC } from 'react';
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import type { GetStaticProps } from 'next';
+import { createClient } from '@/lib/prismic';
+import type { HomeDocument } from '@/types.generated';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -11,7 +14,11 @@ const navigation = [
   { name: 'Company', href: '#' },
 ];
 
-const Home: FC = () => {
+type HomeProps = {
+  data: HomeDocument['data'];
+};
+
+const Home: FC<HomeProps> = ({ data }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -160,12 +167,10 @@ const Home: FC = () => {
               </div>
               <div>
                 <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
-                  Data to enrich your online business
+                  {data.hero_title}
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                  qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
-                  occaecat fugiat aliqua.
+                  {data.hero_description}
                 </p>
                 <div className="mt-8 flex gap-x-4 sm:justify-center">
                   <a
@@ -221,6 +226,16 @@ const Home: FC = () => {
       </main>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await createClient().getSingle('home');
+
+  return {
+    props: {
+      data,
+    },
+  };
 };
 
 export default Home;

@@ -1,0 +1,47 @@
+{
+  "id": "home",
+  "label": "Home",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "descriptio": {
+        "type": "Text",
+        "config": {
+          "label": "Descriptio",
+          "placeholder": ""
+        }
+      }
+    },
+    "Hero": {
+      "hero_title": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Title",
+          "placeholder": ""
+        }
+      },
+      "hero_description": {
+        "type": "Text",
+        "config": {
+          "label": "Hero Description",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
