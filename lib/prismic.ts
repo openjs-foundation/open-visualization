@@ -1,6 +1,6 @@
 import * as prismic from '@prismicio/client';
 import * as prismicNext from '@prismicio/next';
-import sm from './sm.json';
+import sm from '@/sm.json';
 
 /**
  * The project's Prismic repository name.
