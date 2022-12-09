@@ -4,6 +4,7 @@ import type { GetStaticProps } from 'next';
 import { createClient } from '@/lib/prismic';
 import type { HomeDocument } from '@/types.generated';
 import Hero from '@/components/hero';
+import Logos from '@/components/logos';
 import Navigation from '@/components/navigation';
 
 type HomeProps = {
@@ -18,6 +19,7 @@ const Home: FC<HomeProps> = ({ data }) => (
       description={data.hero_description}
       actions={data.hero_actions}
     />
+    <Logos logos={data.collaborators} />
   </>
 );
 
