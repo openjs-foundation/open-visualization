@@ -14,7 +14,7 @@ type HomeProps = {
 
 const Home: FC<HomeProps> = ({ data }) => (
   <>
-    <Navigation />
+    <Navigation items={data.about_outlinks} />
     <Hero
       title={data.hero_title}
       description={data.hero_description}

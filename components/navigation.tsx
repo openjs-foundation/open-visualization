@@ -4,12 +4,14 @@ import { Popover, Transition } from '@headlessui/react';
 import clsx from 'clsx';
 import { ChevronDown, Moon, Sun, X } from 'lucide-react';
 
-import type { CSSProperties, FC, HTMLProps } from 'react';
+import type { CSSProperties, FC } from 'react';
 import { Fragment, useEffect, useRef } from 'react';
 import type { LinkProps } from '@prismicio/react';
 import useTheme from '@haydenbleasel/use-theme';
+import type { FilledLinkToWebField } from '@prismicio/types';
 import clamp from '@/lib/clamp';
 import links from '@/lib/navigation';
+import type { HomeDocument } from '@/types.generated';
 
 const MobileNavItem: FC<LinkProps> = ({ href, children }) => (
   <li>
@@ -187,12 +189,29 @@ const ModeToggle = () => {
   );
 };
 
-const Header: FC = () => {
+type HeaderProps = {
+  items?: HomeDocument['data']['about_outlinks'];
+};
+
+const Header: FC<HeaderProps> = ({ items }) => {
   const isHomePage = useRouter().pathname === '/';
 
   const headerRef = useRef<HTMLDivElement>(null);
   const avatarRef = useRef<HTMLDivElement>(null);
   const isInitial = useRef<boolean>(true);
+
+  const aboutItems =
+    items?.map((item) => ({
+      description: item.about_outlink_description ?? '',
+      label: item.about_outlink_label ?? '',
+      href: (item.about_outlink_link as FilledLinkToWebField).url,
+    })) ?? [];
+
+  const about = links.find((link) => link.label === 'About');
+
+  if (about?.items?.length === 1) {
+    about.items.push(...aboutItems);
+  }
 
   useEffect(() => {
     const downDelay = avatarRef.current?.offsetTop ?? 0;
