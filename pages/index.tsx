@@ -9,6 +9,7 @@ import About from '@/components/about';
 import Outlinks from '@/components/outlinks';
 import Projects from '@/components/projects';
 import Community from '@/components/community';
+import Footer from '@/components/footer';
 import Navigation from '@/components/navigation';
 
 type HomeProps = {
@@ -44,6 +45,11 @@ const Home: FC<HomeProps> = ({ data }) => (
       title={data.community_title}
       description={data.community_description}
       items={data.community_outlinks}
+    />
+    <Footer
+      description={data.hero_description}
+      projects={data.projects}
+      community={data.community_outlinks}
     />
   </>
 );
