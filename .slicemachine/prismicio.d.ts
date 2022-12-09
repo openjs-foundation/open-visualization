@@ -391,16 +391,6 @@ export interface HomeDocumentDataProjectsItem {
  */
 export interface HomeDocumentDataCommunityOutlinksItem {
     /**
-     * Community Outlink Icon field in *Home → Community Outlinks*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home.community_outlinks[].community_outlink_icon
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    community_outlink_icon: prismicT.KeyTextField;
-    /**
      * Community Outlink Title field in *Home → Community Outlinks*
      *
      * - **Field Type**: Text

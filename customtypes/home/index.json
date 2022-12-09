@@ -266,13 +266,6 @@
         "config": {
           "label": "Community Outlinks",
           "fields": {
-            "community_outlink_icon": {
-              "type": "Text",
-              "config": {
-                "label": "Community Outlink Icon",
-                "placeholder": ""
-              }
-            },
             "community_outlink_title": {
               "type": "Text",
               "config": {

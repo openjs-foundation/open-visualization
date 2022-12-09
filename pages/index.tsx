@@ -8,6 +8,7 @@ import Logos from '@/components/logos';
 import About from '@/components/about';
 import Outlinks from '@/components/outlinks';
 import Projects from '@/components/projects';
+import Community from '@/components/community';
 import Navigation from '@/components/navigation';
 
 type HomeProps = {
@@ -27,8 +28,10 @@ const Home: FC<HomeProps> = ({ data }) => (
       title={data.about_title}
       description={data.about_description}
       content={data.about_content}
-      ctaLabel={data.about_cta_label}
-      ctaLink={data.about_cta_link}
+      /*
+       * ctaLabel={data.about_cta_label}
+       * ctaLink={data.about_cta_link}
+       */
       image={data.about_image}
     />
     <Outlinks items={data.about_outlinks} />
@@ -36,6 +39,11 @@ const Home: FC<HomeProps> = ({ data }) => (
       title={data.projects_title}
       description={data.projects_description}
       items={data.projects}
+    />
+    <Community
+      title={data.community_title}
+      description={data.community_description}
+      items={data.community_outlinks}
     />
   </>
 );
