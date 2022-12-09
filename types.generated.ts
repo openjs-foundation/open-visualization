@@ -374,6 +374,16 @@ export interface HomeDocumentDataProjectsItem {
      *
      */
     project_link: prismicT.LinkField;
+    /**
+     * Project Image field in *Home → Projects*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home.projects[].project_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    project_image: prismicT.ImageField<never>;
 }
 /**
  * Item in Home → Community Outlinks

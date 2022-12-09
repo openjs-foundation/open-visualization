@@ -7,6 +7,7 @@ import Hero from '@/components/hero';
 import Logos from '@/components/logos';
 import About from '@/components/about';
 import Outlinks from '@/components/outlinks';
+import Projects from '@/components/projects';
 import Navigation from '@/components/navigation';
 
 type HomeProps = {
@@ -31,6 +32,11 @@ const Home: FC<HomeProps> = ({ data }) => (
       image={data.about_image}
     />
     <Outlinks items={data.about_outlinks} />
+    <Projects
+      title={data.projects_title}
+      description={data.projects_description}
+      items={data.projects}
+    />
   </>
 );
 

@@ -225,6 +225,14 @@
                 "placeholder": "",
                 "select": null
               }
+            },
+            "project_image": {
+              "type": "Image",
+              "config": {
+                "label": "Project Image",
+                "constraint": {},
+                "thumbnails": []
+              }
             }
           }
         }
