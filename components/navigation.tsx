@@ -107,7 +107,7 @@ const NavItem: FC<typeof links[number]> = ({ href, label, items }) => {
                   )}
                   aria-hidden="true"
                 />
-                <Glow />
+                {open && <Glow />}
               </Popover.Button>
 
               <Transition
@@ -237,7 +237,7 @@ const Header: FC = () => {
       }
 
       if (top === 0 && scrollY > 0 && scrollY >= downDelay) {
-        setProperty('--header-inner-position', 'fixed');
+        setProperty('--header-inner-position', 'sticky');
         removeProperty('--header-top');
         removeProperty('--avatar-top');
       } else {

@@ -4,7 +4,7 @@ import type { FC } from 'react';
 const CustomDocument: FC = () => (
   <Html lang="en">
     <Head />
-    <body>
+    <body className="bg-white dark:bg-gray-900">
       <Main />
       <NextScript />
     </body>

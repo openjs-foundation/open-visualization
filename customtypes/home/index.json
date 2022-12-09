@@ -19,10 +19,10 @@
           "placeholder": ""
         }
       },
-      "descriptio": {
+      "description": {
         "type": "Text",
         "config": {
-          "label": "Descriptio",
+          "label": "Description",
           "placeholder": ""
         }
       }
@@ -40,6 +40,261 @@
         "config": {
           "label": "Hero Description",
           "placeholder": ""
+        }
+      },
+      "hero_actions": {
+        "type": "Group",
+        "config": {
+          "label": "Hero Actions",
+          "fields": {
+            "action_label": {
+              "type": "Text",
+              "config": {
+                "label": "Action Label",
+                "placeholder": ""
+              }
+            },
+            "action_link": {
+              "type": "Link",
+              "config": {
+                "label": "Action Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Collaborators": {
+      "collaborators": {
+        "type": "Group",
+        "config": {
+          "label": "Collaborators",
+          "fields": {
+            "logo": {
+              "type": "Image",
+              "config": {
+                "label": "Logo",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "About": {
+      "about_title": {
+        "type": "Text",
+        "config": {
+          "label": "About Title",
+          "placeholder": ""
+        }
+      },
+      "about_description": {
+        "type": "Text",
+        "config": {
+          "label": "About Description",
+          "placeholder": ""
+        }
+      },
+      "about_content": {
+        "type": "StructuredText",
+        "config": {
+          "label": "About Content",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "about_cta_label": {
+        "type": "Text",
+        "config": {
+          "label": "About CTA Label",
+          "placeholder": ""
+        }
+      },
+      "about_cta_link": {
+        "type": "Link",
+        "config": {
+          "label": "About CTA Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "about_image": {
+        "type": "Image",
+        "config": {
+          "label": "About Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "about_outlinks": {
+        "type": "Group",
+        "config": {
+          "label": "About Outlinks",
+          "fields": {
+            "about_outlink_title": {
+              "type": "Text",
+              "config": {
+                "label": "About Outlink Title",
+                "placeholder": ""
+              }
+            },
+            "about_outlink_description": {
+              "type": "Text",
+              "config": {
+                "label": "About Outlink Description",
+                "placeholder": ""
+              }
+            },
+            "about_outlink_label": {
+              "type": "Text",
+              "config": {
+                "label": "About Outlink Label",
+                "placeholder": ""
+              }
+            },
+            "about_outlink_link": {
+              "type": "Link",
+              "config": {
+                "label": "About Outlink Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Projects": {
+      "projects_title": {
+        "type": "Text",
+        "config": {
+          "label": "Projects Title",
+          "placeholder": ""
+        }
+      },
+      "projects_description": {
+        "type": "Text",
+        "config": {
+          "label": "Projects Description",
+          "placeholder": ""
+        }
+      },
+      "projects_cta_label": {
+        "type": "Text",
+        "config": {
+          "label": "Projects CTA Label",
+          "placeholder": ""
+        }
+      },
+      "projects_cta_link": {
+        "type": "Link",
+        "config": {
+          "label": "Projects CTA Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "projects": {
+        "type": "Group",
+        "config": {
+          "label": "Projects",
+          "fields": {
+            "project_title": {
+              "type": "Text",
+              "config": {
+                "label": "Project Title",
+                "placeholder": ""
+              }
+            },
+            "project_description": {
+              "type": "Text",
+              "config": {
+                "label": "Project Description",
+                "placeholder": ""
+              }
+            },
+            "project_link": {
+              "type": "Link",
+              "config": {
+                "label": "Project Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Community": {
+      "community_title": {
+        "type": "Text",
+        "config": {
+          "label": "Community Title",
+          "placeholder": ""
+        }
+      },
+      "community_description": {
+        "type": "Text",
+        "config": {
+          "label": "Community Description",
+          "placeholder": ""
+        }
+      },
+      "community_github_link": {
+        "type": "Link",
+        "config": {
+          "label": "Community GitHub Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "community_outlinks": {
+        "type": "Group",
+        "config": {
+          "label": "Community Outlinks",
+          "fields": {
+            "community_outlink_icon": {
+              "type": "Text",
+              "config": {
+                "label": "Community Outlink Icon",
+                "placeholder": ""
+              }
+            },
+            "community_outlink_title": {
+              "type": "Text",
+              "config": {
+                "label": "Community Outlink Title",
+                "placeholder": ""
+              }
+            },
+            "community_outlink_description": {
+              "type": "Text",
+              "config": {
+                "label": "Community Outlink Description",
+                "placeholder": ""
+              }
+            },
+            "community_outlink_cta_label": {
+              "type": "Text",
+              "config": {
+                "label": "Community Outlink CTA Label",
+                "placeholder": ""
+              }
+            },
+            "community_outlink_cta_link": {
+              "type": "Link",
+              "config": {
+                "label": "Community Outlink CTA Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
         }
       }
     }

@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ['images.unsplash.com', 'open-visualization.cdn.prismic.io'],
+  },
 };
 
 module.exports = nextConfig;

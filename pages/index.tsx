@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import type { GetStaticProps } from 'next';
 import { createClient } from '@/lib/prismic';
 import type { HomeDocument } from '@/types.generated';
+import Hero from '@/components/hero';
 import Navigation from '@/components/navigation';
 
 type HomeProps = {
@@ -10,10 +11,14 @@ type HomeProps = {
 };
 
 const Home: FC<HomeProps> = ({ data }) => (
-  <div>
+  <>
     <Navigation />
-    <Hero title={data.hero_title} description={data.hero_description} />
-  </div>
+    <Hero
+      title={data.hero_title}
+      description={data.hero_description}
+      actions={data.hero_actions}
+    />
+  </>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
