@@ -5,6 +5,7 @@ import { createClient } from '@/lib/prismic';
 import type { HomeDocument } from '@/types.generated';
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
+import About from '@/components/about';
 import Navigation from '@/components/navigation';
 
 type HomeProps = {
@@ -20,6 +21,14 @@ const Home: FC<HomeProps> = ({ data }) => (
       actions={data.hero_actions}
     />
     <Logos logos={data.collaborators} />
+    <About
+      title={data.about_title}
+      description={data.about_description}
+      content={data.about_content}
+      ctaLabel={data.about_cta_label}
+      ctaLink={data.about_cta_link}
+      image={data.about_image}
+    />
   </>
 );
 
