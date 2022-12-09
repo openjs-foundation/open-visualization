@@ -6,6 +6,7 @@ import type { HomeDocument } from '@/types.generated';
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
 import About from '@/components/about';
+import Outlinks from '@/components/outlinks';
 import Navigation from '@/components/navigation';
 
 type HomeProps = {
@@ -29,6 +30,7 @@ const Home: FC<HomeProps> = ({ data }) => (
       ctaLink={data.about_cta_link}
       image={data.about_image}
     />
+    <Outlinks items={data.about_outlinks} />
   </>
 );
 
