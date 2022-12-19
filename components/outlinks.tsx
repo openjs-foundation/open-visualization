@@ -30,7 +30,7 @@ const Outlinks: FC<OutlinksProps> = ({ items }) => (
             return (
               <div key={about_outlink_label}>
                 <dt>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-blue text-white">
                     <Icon size={24} className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900 dark:text-white">

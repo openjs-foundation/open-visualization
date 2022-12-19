@@ -82,10 +82,8 @@ const Glow: FC = () => (
 const NavItem: FC<typeof links[number]> = ({ href, label, items }) => {
   const isActive = useRouter().pathname === href;
   const linkClass = clsx(
-    'relative block px-3 py-2 transition',
-    isActive
-      ? 'text-teal-500 dark:text-teal-400'
-      : 'hover:text-teal-500 dark:hover:text-teal-400'
+    'relative block px-3 py-2 transition hover:opacity-75',
+    isActive && 'text-primary-blue'
   );
 
   if (items?.length) {

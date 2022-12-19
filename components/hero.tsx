@@ -2,7 +2,12 @@ import type { FC } from 'react';
 import Link from 'next/link';
 import type { FilledLinkToWebField } from '@prismicio/types';
 import clsx from 'clsx';
+
+import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindConfig from '@/tailwind.config.js';
 import type { HomeDocument } from '@/types.generated';
+
+const fullConfig = resolveConfig(tailwindConfig);
 
 type HeroProps = {
   title: HomeDocument['data']['hero_title'];
@@ -33,8 +38,11 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => (
             y2="474.645"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#9089FC" />
-            <stop offset={1} stopColor="#FF80B5" />
+            <stop stopColor={fullConfig.theme.colors.primary.blue} />
+            <stop
+              offset={1}
+              stopColor={fullConfig.theme.colors.primary.green}
+            />
           </linearGradient>
         </defs>
       </svg>
@@ -61,7 +69,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => (
                     className={clsx(
                       'inline-flex transition-colors gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1',
                       index
-                        ? 'bg-indigo-600 text-white shadow-sm ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700'
+                        ? 'bg-primary-blue text-white shadow-sm ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700'
                         : 'text-gray-900 dark:text-white dark:ring-white/10 ring-gray-900/10 hover:ring-gray-900/20'
                     )}
                   >
@@ -97,8 +105,11 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => (
                     y2="474.645"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stopColor="#9089FC" />
-                    <stop offset={1} stopColor="#FF80B5" />
+                    <stop stopColor={fullConfig.theme.colors.primary.yellow} />
+                    <stop
+                      offset={1}
+                      stopColor={fullConfig.theme.colors.primary.yellow}
+                    />
                   </linearGradient>
                 </defs>
               </svg>
