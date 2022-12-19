@@ -24,7 +24,6 @@ const Home: FC<HomeProps> = ({ data }) => (
       description={data.hero_description}
       actions={data.hero_actions}
     />
-    <Logos logos={data.collaborators} />
     <About
       title={data.about_title}
       description={data.about_description}
@@ -46,6 +45,7 @@ const Home: FC<HomeProps> = ({ data }) => (
       description={data.community_description}
       items={data.community_outlinks}
     />
+    <Logos logos={data.collaborators} />
     <Footer
       description={data.hero_description}
       projects={data.projects}
