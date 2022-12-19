@@ -27,7 +27,7 @@ const About: FC<AboutProps> = ({
 }) => (
   <div className="overflow-hidden bg-white dark:bg-gray-900" id="about">
     <div className="relative mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
-      <div className="absolute top-0 bottom-0 left-3/4 hidden w-screen lg:block bg-gray-50 dark:bg-gray-800" />
+      <div className="absolute top-0 bottom-0 left-3/4 hidden w-screen lg:block bg-gray-900/5 dark:bg-white/5" />
       <div className="mt-8 lg:grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative lg:col-start-2 lg:row-start-1">
           <svg
@@ -52,7 +52,7 @@ const About: FC<AboutProps> = ({
                   y={0}
                   width={4}
                   height={4}
-                  className="text-gray-200 dark:text-gray-600"
+                  className="text-zinc-900/20 dark:text-white/20"
                   fill="currentColor"
                 />
               </pattern>
