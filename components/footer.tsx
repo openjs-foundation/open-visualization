@@ -68,6 +68,7 @@ const navigation = {
 
 const Footer: FC<FooterProps> = ({ projects, community, description }) => (
   <footer
+    id="footer"
     className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
     aria-labelledby="footer-heading"
   >

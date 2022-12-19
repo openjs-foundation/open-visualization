@@ -14,7 +14,7 @@ type ProjectsProps = {
 };
 
 const Projects: FC<ProjectsProps> = ({ title, description, items }) => (
-  <div className="overflow-hidden bg-gray-100 dark:bg-gray-800">
+  <div className="overflow-hidden bg-gray-100 dark:bg-gray-800" id="projects">
     <div className="relative mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
         <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl dark:text-white">

@@ -12,7 +12,10 @@ type OutlinksProps = {
 const icons = [Book, Paperclip, Users, Heart];
 
 const Outlinks: FC<OutlinksProps> = ({ items }) => (
-  <div className="bg-white dark:bg-gray-900 py-20 sm:py-24 lg:py-32">
+  <div
+    className="bg-white dark:bg-gray-900 py-20 sm:py-24 lg:py-32"
+    id="outlinks"
+  >
     <div className="mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8">
       <dl className="grid grid-cols-1 gap-16 md:grid md:grid-cols-2 lg:grid-cols-4">
         {items.map(

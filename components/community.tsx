@@ -14,7 +14,10 @@ type CommunityProps = {
 const icons = [Book, Paperclip, Users, Heart];
 
 const Community: FC<CommunityProps> = ({ title, description, items }) => (
-  <div className="bg-white dark:bg-gray-900 py-20 sm:py-24 lg:py-32">
+  <div
+    className="bg-white dark:bg-gray-900 py-20 sm:py-24 lg:py-32"
+    id="community"
+  >
     <div className="mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
         <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl dark:text-white">

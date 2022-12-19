@@ -25,7 +25,7 @@ const About: FC<AboutProps> = ({
   description,
   image,
 }) => (
-  <div className="overflow-hidden bg-white dark:bg-gray-900">
+  <div className="overflow-hidden bg-white dark:bg-gray-900" id="about">
     <div className="relative mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
       <div className="absolute top-0 bottom-0 left-3/4 hidden w-screen lg:block bg-gray-50 dark:bg-gray-800" />
       <div className="mt-8 lg:grid lg:grid-cols-2 gap-16 items-center">
