@@ -13,9 +13,10 @@ type HeroProps = {
   title: HomeDocument['data']['hero_title'];
   description: HomeDocument['data']['hero_description'];
   actions: HomeDocument['data']['hero_actions'];
+  focusAreas: HomeDocument['data']['focus_areas'];
 };
 
-const Hero: FC<HeroProps> = ({ title, description, actions }) => (
+const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
   <div className="isolate bg-white dark:bg-gray-900">
     <div className="absolute inset-x-0 pointer-events-none top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
       <svg
@@ -121,6 +122,20 @@ const Hero: FC<HeroProps> = ({ title, description, actions }) => (
               className="w-full h-full rounded overflow-hidden"
               title="kepler.gl demo"
             />
+          </div>
+          <div className="flex max-w-3xl mx-auto flex-wrap items-center justify-center gap-2 mt-8">
+            {focusAreas.map(({ focus_area }) => (
+              <span
+                key={focus_area}
+                className={clsx(
+                  'inline-flex items-center rounded-full px-3 py-0.5 text-sm font-medium',
+                  'bg-gray-100 text-gray-800',
+                  'dark:bg-transparent dark:text-white dark:ring-1 dark:ring-white/10'
+                )}
+              >
+                {focus_area}
+              </span>
+            ))}
           </div>
         </div>
       </div>

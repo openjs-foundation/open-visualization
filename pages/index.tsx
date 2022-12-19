@@ -23,6 +23,7 @@ const Home: FC<HomeProps> = ({ data }) => (
       title={data.hero_title}
       description={data.hero_description}
       actions={data.hero_actions}
+      focusAreas={data.focus_areas}
     />
     <About
       title={data.about_title}

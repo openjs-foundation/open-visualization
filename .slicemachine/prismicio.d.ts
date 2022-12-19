@@ -64,6 +64,17 @@ interface HomeDocumentData {
      */
     hero_actions: prismicT.GroupField<Simplify<HomeDocumentDataHeroActionsItem>>;
     /**
+     * Focus Areas field in *Home*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home.focus_areas[]
+     * - **Tab**: Hero
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    focus_areas: prismicT.GroupField<Simplify<HomeDocumentDataFocusAreasItem>>;
+    /**
      * Collaborators field in *Home*
      *
      * - **Field Type**: Group
@@ -278,6 +289,22 @@ export interface HomeDocumentDataHeroActionsItem {
     action_link: prismicT.LinkField;
 }
 /**
+ * Item in Home → Focus Areas
+ *
+ */
+export interface HomeDocumentDataFocusAreasItem {
+    /**
+     * Focus Area field in *Home → Focus Areas*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home.focus_areas[].focus_area
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    focus_area: prismicT.KeyTextField;
+}
+/**
  * Item in Home → Collaborators
  *
  */
@@ -447,6 +474,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocumentDataHeroActionsItem, HomeDocumentDataCollaboratorsItem, HomeDocumentDataAboutOutlinksItem, HomeDocumentDataProjectsItem, HomeDocumentDataCommunityOutlinksItem, HomeDocument, AllDocumentTypes };
+        export type { HomeDocumentData, HomeDocumentDataHeroActionsItem, HomeDocumentDataFocusAreasItem, HomeDocumentDataCollaboratorsItem, HomeDocumentDataAboutOutlinksItem, HomeDocumentDataProjectsItem, HomeDocumentDataCommunityOutlinksItem, HomeDocument, AllDocumentTypes };
     }
 }

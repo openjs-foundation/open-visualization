@@ -64,6 +64,21 @@
             }
           }
         }
+      },
+      "focus_areas": {
+        "type": "Group",
+        "config": {
+          "label": "Focus Areas",
+          "fields": {
+            "focus_area": {
+              "type": "Text",
+              "config": {
+                "label": "Focus Area",
+                "placeholder": ""
+              }
+            }
+          }
+        }
       }
     },
     "Collaborators": {

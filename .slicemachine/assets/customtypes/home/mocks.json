@@ -11,17 +11,22 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": "face",
-    "description": "rock",
-    "hero_title": "species",
-    "hero_description": "printed",
+    "title": "center",
+    "description": "figure",
+    "hero_title": "particular",
+    "hero_description": "led",
     "hero_actions": [
       {
-        "action_label": "dry",
+        "action_label": "little",
         "action_link": {
           "link_type": "Web",
-          "url": "https://prismic.io"
+          "url": "http://google.com"
         }
+      }
+    ],
+    "focus_areas": [
+      {
+        "focus_area": "policeman"
       }
     ],
     "collaborators": [
@@ -33,20 +38,20 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
+          "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
         }
       }
     ],
-    "about_title": "bowl",
-    "about_description": "screen",
+    "about_title": "numeral",
+    "about_description": "tool",
     "about_content": [
       {
         "type": "paragraph",
-        "text": "Cupidatat excepteur non cillum excepteur laborum proident laboris. Deserunt enim laboris sint magna do. Sit amet irure aute dolore aliqua occaecat eu proident in magna.",
+        "text": "Occaecat pariatur pariatur minim sint velit eu laboris dolor ex pariatur dolore laborum.",
         "spans": []
       }
     ],
-    "about_cta_label": "proper",
+    "about_cta_label": "origin",
     "about_cta_link": {
       "link_type": "Web",
       "url": "http://twitter.com"
@@ -62,29 +67,29 @@
     },
     "about_outlinks": [
       {
-        "about_outlink_title": "sunlight",
-        "about_outlink_description": "upward",
-        "about_outlink_label": "lungs",
+        "about_outlink_title": "shadow",
+        "about_outlink_description": "want",
+        "about_outlink_label": "work",
         "about_outlink_link": {
           "link_type": "Web",
-          "url": "https://slicemachine.dev"
+          "url": "https://prismic.io"
         }
       }
     ],
-    "projects_title": "beginning",
-    "projects_description": "straight",
-    "projects_cta_label": "average",
+    "projects_title": "then",
+    "projects_description": "mad",
+    "projects_cta_label": "serve",
     "projects_cta_link": {
       "link_type": "Web",
-      "url": "http://twitter.com"
+      "url": "http://google.com"
     },
     "projects": [
       {
-        "project_title": "recent",
-        "project_description": "jungle",
+        "project_title": "difficult",
+        "project_description": "break",
         "project_link": {
           "link_type": "Web",
-          "url": "http://twitter.com"
+          "url": "https://prismic.io"
         },
         "project_image": {
           "dimensions": {
@@ -93,24 +98,24 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa"
+          "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
         }
       }
     ],
-    "community_title": "drop",
-    "community_description": "bag",
+    "community_title": "earlier",
+    "community_description": "adjective",
     "community_github_link": {
       "link_type": "Web",
       "url": "http://twitter.com"
     },
     "community_outlinks": [
       {
-        "community_outlink_title": "anyone",
-        "community_outlink_description": "sets",
-        "community_outlink_cta_label": "race",
+        "community_outlink_title": "took",
+        "community_outlink_description": "ants",
+        "community_outlink_cta_label": "tower",
         "community_outlink_cta_link": {
           "link_type": "Web",
-          "url": "https://slicemachine.dev"
+          "url": "http://twitter.com"
         }
       }
     ]
