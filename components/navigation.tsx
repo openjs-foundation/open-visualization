@@ -9,6 +9,7 @@ import { Fragment, useEffect, useRef } from 'react';
 import type { LinkProps } from '@prismicio/react';
 import useTheme from '@haydenbleasel/use-theme';
 import type { FilledLinkToWebField } from '@prismicio/types';
+import Image from 'next/image';
 import clamp from '@/lib/clamp';
 import links from '@/lib/navigation';
 import type { HomeDocument } from '@/types.generated';
@@ -337,9 +338,13 @@ const Header: FC<HeaderProps> = ({ items }) => {
             <div className="relative grid grid-cols-4 gap-4 items-center">
               <div className="col-span-1">
                 <h1 className="text-sm font-semibold text-gray-900 dark:text-white">
-                  Open
-                  <br />
-                  Visualization
+                  <Image
+                    src="/logo.svg"
+                    width={1000}
+                    height={160.76031}
+                    alt=""
+                    className="dark:brightness-0 dark:invert"
+                  />
                 </h1>
               </div>
               <div className="col-span-2 mx-auto justify-end md:justify-center">
