@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import Link from 'next/link';
 import type { FilledLinkToWebField } from '@prismicio/types';
 import clsx from 'clsx';
-import { Book, Heart, Paperclip, Users } from 'lucide-react';
+import { ArrowUpRight, Book, Heart, Paperclip, Users } from 'lucide-react';
 import type { HomeDocument } from '@/types.generated';
 
 type OutlinksProps = {
@@ -45,11 +45,12 @@ const Outlinks: FC<OutlinksProps> = ({ items }) => (
                     key={about_outlink_label}
                     href={(about_outlink_link as FilledLinkToWebField).url}
                     className={clsx(
-                      'inline-flex transition-colors gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1',
+                      'inline-flex items-center transition-colors gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1',
                       'text-gray-900 dark:text-white dark:ring-white/10 ring-gray-900/10 hover:ring-gray-900/20'
                     )}
                   >
                     {about_outlink_label}
+                    <ArrowUpRight className="w-4 h-4" />
                   </Link>
                 </dd>
               </div>

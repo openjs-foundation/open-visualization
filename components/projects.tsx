@@ -4,6 +4,7 @@ import Image from 'next/image';
 import type { FilledLinkToWebField } from '@prismicio/types';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { ArrowUpRight } from 'lucide-react';
 import type { HomeDocument } from '@/types.generated';
 
 type ProjectsProps = {
@@ -54,11 +55,12 @@ const Projects: FC<ProjectsProps> = ({ title, description, items }) => (
                     <Link
                       href={(project_link as FilledLinkToWebField).url}
                       className={clsx(
-                        'inline-flex transition-colors gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1',
+                        'inline-flex items-center transition-colors gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1',
                         'text-gray-900 dark:text-white dark:ring-white/10 ring-gray-900/10 hover:ring-gray-900/20'
                       )}
                     >
-                      Download {project_title} &rarr;
+                      Download {project_title}
+                      <ArrowUpRight className="w-4 h-4" />
                     </Link>
                   </p>
                 </div>
