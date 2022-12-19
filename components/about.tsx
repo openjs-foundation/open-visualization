@@ -67,7 +67,7 @@ const About: FC<AboutProps> = ({
             <figure>
               <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
                 <Image
-                  className="rounded-lg object-cover object-center shadow-lg"
+                  className="rounded-lg object-cover object-center shadow-lg aspect-[3/4]"
                   src={image.url ?? ''}
                   alt={image.alt ?? ''}
                   width={image.dimensions?.width}
@@ -85,9 +85,11 @@ const About: FC<AboutProps> = ({
           </div>
         </div>
         <div className="mt-8 lg:mt-0">
-          <h3 className="mt-2 mb-6 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-            {title}
-          </h3>
+          <div className="max-w-prose mx-auto lg:max-w-none">
+            <h3 className="mt-2 mb-6 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+              {title}
+            </h3>
+          </div>
           <div className="mx-auto max-w-prose text-base lg:max-w-none">
             <p className="text-lg text-gray-500 dark:text-gray-400">
               {description}
