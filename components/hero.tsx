@@ -4,6 +4,7 @@ import type { FilledLinkToWebField } from '@prismicio/types';
 import clsx from 'clsx';
 
 import resolveConfig from 'tailwindcss/resolveConfig';
+import Image from 'next/image';
 import tailwindConfig from '@/tailwind.config.js';
 import type { HomeDocument } from '@/types.generated';
 
@@ -53,6 +54,13 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
         <div className="mx-auto max-w-4xl pt-20 sm:py-32">
           <div>
             <div>
+              <Image
+                src="/logo.svg"
+                width={400}
+                height={64}
+                alt=""
+                className="dark:brightness-0 dark:invert mx-auto mb-8"
+              />
               <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl text-gray-900 dark:text-white">
                 {title}
               </h1>
