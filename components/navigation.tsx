@@ -86,7 +86,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
                                 )}
                               >
                                 <span>{subItem.label}</span>
-                                <span className="text-xs">
+                                <span className="text-xs text-gray-500 dark:text-gray-400">
                                   {subItem.description}
                                 </span>
                               </Link>
@@ -108,7 +108,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
                                 )}
                               >
                                 <span>{subItem.about_outlink_label}</span>
-                                <span className="text-xs">
+                                <span className="text-xs text-gray-500 dark:text-gray-400">
                                   {subItem.about_outlink_description}
                                 </span>
                               </Link>
