@@ -76,15 +76,15 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
                       ''
                     )}
                     className={clsx(
-                      'inline-flex transition-colors gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1',
+                      'inline-flex transition-colors gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7',
                       index
-                        ? 'bg-primary-blue text-white shadow-sm ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700'
-                        : 'text-gray-900 dark:text-white dark:ring-white/10 ring-gray-900/10 hover:ring-gray-900/20'
+                        ? 'bg-primary-blue text-white shadow-sm'
+                        : 'text-gray-900 dark:text-white'
                     )}
                   >
                     {action_label}
                     <span
-                      className={index ? 'text-indigo-200' : 'text-gray-400'}
+                      className={index ? 'text-white' : 'text-gray-400'}
                       aria-hidden="true"
                     >
                       &rarr;
