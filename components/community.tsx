@@ -16,7 +16,7 @@ const icons = [Book, Paperclip, Users, Heart];
 const Community: FC<CommunityProps> = ({ title, description, items }) => (
   <div
     className="bg-white dark:bg-gray-900 py-20 sm:py-24 lg:py-32"
-    id="community"
+    id="get-involved"
   >
     <div className="mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
