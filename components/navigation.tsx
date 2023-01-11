@@ -42,13 +42,15 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
           <div className="flex h-16 justify-between">
             <div className="flex">
               <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/logo.svg"
-                  width={200}
-                  height={32}
-                  alt=""
-                  className="dark:brightness-0 dark:invert"
-                />
+                <Link href="/">
+                  <Image
+                    src="/logo.svg"
+                    width={200}
+                    height={32}
+                    alt=""
+                    className="dark:brightness-0 dark:invert"
+                  />
+                </Link>
               </div>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
