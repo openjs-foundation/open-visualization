@@ -44,7 +44,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
               <div className="flex flex-shrink-0 items-center">
                 <Link href="/">
                   <Image
-                    src="/logo.svg"
+                    src="/logo-color.svg"
                     width={200}
                     height={32}
                     alt=""
