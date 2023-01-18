@@ -65,15 +65,16 @@ const About: FC<AboutProps> = ({
           </svg>
           <div className="relative mx-auto max-w-prose text-base lg:max-w-none">
             <figure>
-              <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
-                <Image
-                  className="aspect-[3/4] rounded-lg object-cover object-center shadow-lg"
-                  src={image.url ?? ''}
-                  alt={image.alt ?? ''}
-                  width={image.dimensions?.width}
-                  height={image.dimensions?.height}
-                />
-              </div>
+              <Image
+                className="aspect-[4/3] rounded-lg object-cover object-center shadow-lg lg:aspect-[3/4]"
+                src={image.url ?? ''}
+                alt={image.alt ?? ''}
+                width={image.dimensions?.width}
+                height={image.dimensions?.height}
+                style={{
+                  objectPosition: 'center 20%',
+                }}
+              />
               <figcaption className="mt-3 flex text-sm text-gray-500 dark:text-gray-400">
                 <CameraIcon
                   className="h-5 w-5 flex-none text-gray-400 dark:text-gray-500"

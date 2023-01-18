@@ -13,7 +13,7 @@ const icons = [Book, Paperclip, Users, Heart];
 
 const Outlinks: FC<OutlinksProps> = ({ items }) => (
   <div
-    className="bg-white py-20 dark:bg-gray-900 sm:py-24 lg:py-32"
+    className="bg-white py-16 dark:bg-gray-900 sm:py-24 lg:py-32"
     id="outlinks"
   >
     <div className="mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8">

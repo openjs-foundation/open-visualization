@@ -15,7 +15,7 @@ const icons = [Book, Paperclip, Users, Heart];
 
 const Community: FC<CommunityProps> = ({ title, description, items }) => (
   <div
-    className="bg-white py-20 dark:bg-gray-900 sm:py-24 lg:py-32"
+    className="bg-white py-16 dark:bg-gray-900 sm:py-24 lg:py-32"
     id="get-involved"
   >
     <div className="mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8">
@@ -27,7 +27,7 @@ const Community: FC<CommunityProps> = ({ title, description, items }) => (
           {description}
         </p>
       </div>
-      <dl className="mt-24 grid grid-cols-1 gap-16 md:grid lg:grid-cols-3">
+      <dl className="mt-12 grid grid-cols-1 gap-16 sm:mt-24 lg:grid-cols-3">
         {items.map(
           (
             {

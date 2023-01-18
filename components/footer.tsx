@@ -46,8 +46,8 @@ const Footer: FC<FooterProps> = ({ projects, community, description }) => (
       Footer
     </h2>
     <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-      <div className="flex flex-col justify-between xl:flex-row">
-        <div className="max-w-sm space-y-8 xl:col-span-1">
+      <div className="grid gap-16 md:grid-cols-2 md:gap-8">
+        <div className="space-y-8 md:max-w-sm">
           <p className="text-base text-gray-500 dark:text-gray-400">
             {description}
           </p>
@@ -64,7 +64,7 @@ const Footer: FC<FooterProps> = ({ projects, community, description }) => (
             ))}
           </div>
         </div>
-        <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+        <div className="grid grid-cols-2 gap-8">
           <div className="md:grid md:grid-cols-2 md:gap-8">
             <div>
               <h3 className="text-base font-medium text-gray-900 dark:text-white">

@@ -124,7 +124,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
               </svg>
             </div>
           </div>
-          <div className="mt-32 aspect-[16/9] w-full overflow-hidden rounded-md">
+          <div className="mt-16 aspect-[16/9] w-full overflow-hidden rounded-md sm:mt-32">
             <iframe
               src="https://kepler.gl/demo/nyctrips"
               className="h-full w-full overflow-hidden rounded"
