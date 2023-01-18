@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FilledLinkToWebField } from '@prismicio/types';
-import useTheme from '@haydenbleasel/use-theme';
+import useTheme from '@beskar-labs/use-theme';
 import { Moon, Sun } from 'lucide-react';
 import type { HomeDocument } from '@/types.generated';
 import links from '@/lib/navigation';

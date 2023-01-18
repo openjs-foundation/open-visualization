@@ -13,5 +13,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "cSpell.enabled": false
+  "cSpell.enabled": false,
+  "eslint.experimental": {
+    "useFlatConfig": true
+  },
+  "eslint.options": {
+    "overrideConfigFile": "eslint.config.mjs"
+  }
 }
