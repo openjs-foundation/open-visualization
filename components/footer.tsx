@@ -5,6 +5,7 @@ import TwitterIcon from './icons/twitter';
 import GitHubIcon from './icons/github';
 import GoogleCalendarIcon from './icons/googleCalendar';
 import YoutubeIcon from './icons/youtube';
+import LinkedInIcon from './icons/linkedin';
 import type { HomeDocument } from '@/types.generated';
 import links from '@/lib/navigation';
 
@@ -19,49 +20,21 @@ const navigation = {
     name: link.label,
     href: link.href,
   })),
-  projects: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
-  ],
-  company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
-  ],
-  legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
-  ],
   social: [
     {
-      name: 'Facebook',
-      href: '#',
-      icon: FacebookIcon,
-    },
-    {
       name: 'Twitter',
-      href: '#',
+      href: 'https://twitter.com/openjsf',
       icon: TwitterIcon,
     },
     {
-      name: 'GitHub',
-      href: '#',
-      icon: GitHubIcon,
+      name: 'LinkedIn',
+      href: 'https://www.linkedin.com/company/openjs-foundation/',
+      icon: LinkedInIcon,
     },
     {
       name: 'OpenJS Public Calendar for OpenVis meetings',
-      href: '#',
+      href: 'https://calendar.google.com/calendar/embed?src=linuxfoundation.org_fuop4ufv766f9avc517ujs4i0g%40group.calendar.google.com',
       icon: GoogleCalendarIcon,
-    },
-    {
-      name: 'YouTube',
-      href: '#',
-      icon: YoutubeIcon,
     },
   ],
 };
