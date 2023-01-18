@@ -60,6 +60,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
+      title: data.title,
+      description: data.description,
       data,
     },
   };
