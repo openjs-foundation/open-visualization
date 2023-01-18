@@ -59,7 +59,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
                 width={400}
                 height={64}
                 alt=""
-                className="mx-auto mb-8 dark:brightness-0 dark:invert"
+                className="mb-8 max-w-[15rem] dark:brightness-0 dark:invert sm:mx-auto sm:max-w-none"
               />
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-center sm:text-6xl">
                 {title}
