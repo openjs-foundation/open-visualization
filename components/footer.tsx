@@ -127,7 +127,7 @@ const Footer: FC<FooterProps> = ({ projects, community, description }) => (
         </div>
       </div>
       <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700">
-        <div className="prose max-w-none prose-p:text-sm dark:prose-invert">
+        <div className="prose max-w-none prose-p:text-sm prose-a:text-primary-blue dark:prose-invert">
           <p>
             Copyright <a href="https://openjsf.org">OpenJS Foundation</a> and
             Open Visualization contributors. All rights reserved. The{' '}

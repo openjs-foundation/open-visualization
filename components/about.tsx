@@ -95,7 +95,7 @@ const About: FC<AboutProps> = ({
               {description}
             </p>
           </div>
-          <div className="prose prose-green mx-auto mt-5 text-gray-500 dark:text-gray-400 lg:col-start-1 lg:row-start-1 lg:max-w-none">
+          <div className="prose mx-auto mt-5 text-gray-500 prose-a:text-primary-blue dark:text-gray-400 lg:col-start-1 lg:row-start-1 lg:max-w-none">
             <PrismicRichText field={content} />
           </div>
         </div>
