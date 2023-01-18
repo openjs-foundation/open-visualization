@@ -27,8 +27,8 @@ const About: FC<AboutProps> = ({
 }) => (
   <div className="overflow-hidden bg-white dark:bg-gray-900" id="about">
     <div className="relative mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
-      <div className="absolute top-0 bottom-0 left-3/4 hidden w-screen lg:block bg-gray-900/5 dark:bg-white/5" />
-      <div className="mt-8 lg:grid lg:grid-cols-2 gap-16 items-center">
+      <div className="absolute top-0 bottom-0 left-3/4 hidden w-screen bg-gray-900/5 dark:bg-white/5 lg:block" />
+      <div className="mt-8 items-center gap-16 lg:grid lg:grid-cols-2">
         <div className="relative lg:col-start-2 lg:row-start-1">
           <svg
             className="absolute top-0 right-0 -mt-20 -mr-20 hidden lg:block"
@@ -67,7 +67,7 @@ const About: FC<AboutProps> = ({
             <figure>
               <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
                 <Image
-                  className="rounded-lg object-cover object-center shadow-lg aspect-[3/4]"
+                  className="aspect-[3/4] rounded-lg object-cover object-center shadow-lg"
                   src={image.url ?? ''}
                   alt={image.alt ?? ''}
                   width={image.dimensions?.width}
@@ -85,8 +85,8 @@ const About: FC<AboutProps> = ({
           </div>
         </div>
         <div className="mt-8 lg:mt-0">
-          <div className="max-w-prose mx-auto lg:max-w-none">
-            <h3 className="mt-2 mb-6 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+          <div className="mx-auto max-w-prose lg:max-w-none">
+            <h3 className="mt-2 mb-6 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
               {title}
             </h3>
           </div>

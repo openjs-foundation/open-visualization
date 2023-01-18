@@ -15,12 +15,12 @@ const icons = [Book, Paperclip, Users, Heart];
 
 const Community: FC<CommunityProps> = ({ title, description, items }) => (
   <div
-    className="bg-white dark:bg-gray-900 py-20 sm:py-24 lg:py-32"
+    className="bg-white py-20 dark:bg-gray-900 sm:py-24 lg:py-32"
     id="get-involved"
   >
     <div className="mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
-        <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+        <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
           {title}
         </h3>
         <p className="text-lg text-gray-500 dark:text-gray-400">
@@ -60,12 +60,12 @@ const Community: FC<CommunityProps> = ({ title, description, items }) => (
                       (community_outlink_cta_link as FilledLinkToWebField).url
                     }
                     className={clsx(
-                      'inline-flex items-center transition-colors gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1',
-                      'text-gray-900 dark:text-white dark:ring-white/10 ring-gray-900/10 hover:ring-gray-900/20'
+                      'inline-flex items-center gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1 transition-colors',
+                      'text-gray-900 ring-gray-900/10 hover:ring-gray-900/20 dark:text-white dark:ring-white/10'
                     )}
                   >
                     {community_outlink_cta_label}
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 </dd>
               </div>

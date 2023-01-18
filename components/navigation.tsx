@@ -34,7 +34,7 @@ const ModeToggle = () => {
 const Navbar: FC<NavbarProps> = ({ items }) => (
   <Disclosure
     as="nav"
-    className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow fixed z-50 left-0 right-0 top-0"
+    className="fixed left-0 right-0 top-0 z-50 bg-white/90 shadow backdrop-blur-sm dark:bg-gray-900/90"
   >
     {({ open }) => (
       <>
@@ -53,7 +53,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
                 </Link>
               </div>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
+            <div className="hidden items-center sm:ml-6 sm:flex sm:space-x-8">
               {links.map((item) =>
                 item.items ? (
                   <Menu as="div" className="relative h-full" key={item.label}>
@@ -74,7 +74,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="absolute right-0 z-10 mt-2 w-64 origin-top-right rounded-md bg-white dark:bg-gray-800 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-64 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-800">
                         {item.items.map((subItem) => (
                           <Menu.Item key={subItem.label}>
                             {({ active }) => (
@@ -82,7 +82,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
                                 href={subItem.href}
                                 className={clsx(
                                   active ? 'bg-gray-100 dark:bg-gray-700' : '',
-                                  'px-4 py-2 text-sm text-gray-700 dark:text-gray-200 flex flex-col gap-1'
+                                  'flex flex-col gap-1 px-4 py-2 text-sm text-gray-700 dark:text-gray-200'
                                 )}
                               >
                                 <span>{subItem.label}</span>
@@ -104,7 +104,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
                                 }
                                 className={clsx(
                                   active ? 'bg-gray-100 dark:bg-gray-700' : '',
-                                  'px-4 py-2 text-sm text-gray-700 dark:text-gray-200 flex flex-col gap-1'
+                                  'flex flex-col gap-1 px-4 py-2 text-sm text-gray-700 dark:text-gray-200'
                                 )}
                               >
                                 <span>{subItem.about_outlink_label}</span>
@@ -123,7 +123,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
                     key={item.label}
                     href={item.href}
                     className={clsx(
-                      'inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white h-full',
+                      'inline-flex h-full items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white',
                       'border-transparent text-gray-500 hover:border-primary-blue hover:text-gray-700'
                     )}
                   >

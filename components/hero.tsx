@@ -19,7 +19,7 @@ type HeroProps = {
 
 const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
   <div className="isolate bg-white dark:bg-gray-900">
-    <div className="absolute inset-x-0 pointer-events-none top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
+    <div className="pointer-events-none absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
       <svg
         className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
         viewBox="0 0 1155 678"
@@ -59,12 +59,12 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
                 width={400}
                 height={64}
                 alt=""
-                className="dark:brightness-0 dark:invert mx-auto mb-8"
+                className="mx-auto mb-8 dark:brightness-0 dark:invert"
               />
-              <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl text-gray-900 dark:text-white">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-center sm:text-6xl">
                 {title}
               </h1>
-              <p className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center">
+              <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center">
                 {description}
               </p>
               <div className="mt-8 flex gap-x-4 sm:justify-center">
@@ -76,7 +76,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
                       ''
                     )}
                     className={clsx(
-                      'inline-flex transition-colors gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7',
+                      'inline-flex gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 transition-colors',
                       index
                         ? 'bg-primary-blue text-white shadow-sm'
                         : 'text-gray-900 dark:text-white'
@@ -93,7 +93,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
                 ))}
               </div>
             </div>
-            <div className="absolute inset-x-0 pointer-events-none top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+            <div className="pointer-events-none absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
               <svg
                 className="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
                 viewBox="0 0 1155 678"
@@ -124,14 +124,14 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
               </svg>
             </div>
           </div>
-          <div className="mt-32 w-full aspect-[16/9] rounded-md overflow-hidden">
+          <div className="mt-32 aspect-[16/9] w-full overflow-hidden rounded-md">
             <iframe
               src="https://kepler.gl/demo/nyctrips"
-              className="w-full h-full rounded overflow-hidden"
+              className="h-full w-full overflow-hidden rounded"
               title="kepler.gl demo"
             />
           </div>
-          <div className="flex max-w-3xl mx-auto flex-wrap items-center justify-center gap-2 mt-8">
+          <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-2">
             {focusAreas.map(({ focus_area }) => (
               <span
                 key={focus_area}

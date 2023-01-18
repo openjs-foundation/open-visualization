@@ -13,7 +13,7 @@ const Logos: FC<LogosProps> = ({ logos }) => (
         {logos.map(({ logo }) => (
           <div
             key={logo.url}
-            className="col-span-1 flex justify-center bg-gray-50 dark:bg-gray-800 py-8 px-8"
+            className="col-span-1 flex justify-center bg-gray-50 py-8 px-8 dark:bg-gray-800"
           >
             <Image
               className="max-h-12 dark:brightness-0 dark:invert"

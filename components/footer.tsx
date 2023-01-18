@@ -1,10 +1,7 @@
 import type { FC } from 'react';
 import type { FilledLinkToWebField } from '@prismicio/types';
-import FacebookIcon from './icons/facebook';
 import TwitterIcon from './icons/twitter';
-import GitHubIcon from './icons/github';
 import GoogleCalendarIcon from './icons/googleCalendar';
-import YoutubeIcon from './icons/youtube';
 import LinkedInIcon from './icons/linkedin';
 import type { HomeDocument } from '@/types.generated';
 import links from '@/lib/navigation';
@@ -42,15 +39,15 @@ const navigation = {
 const Footer: FC<FooterProps> = ({ projects, community, description }) => (
   <footer
     id="footer"
-    className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+    className="border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
     aria-labelledby="footer-heading"
   >
     <h2 id="footer-heading" className="sr-only">
       Footer
     </h2>
     <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-      <div className="flex flex-col xl:flex-row justify-between">
-        <div className="space-y-8 xl:col-span-1 max-w-sm">
+      <div className="flex flex-col justify-between xl:flex-row">
+        <div className="max-w-sm space-y-8 xl:col-span-1">
           <p className="text-base text-gray-500 dark:text-gray-400">
             {description}
           </p>
@@ -78,7 +75,7 @@ const Footer: FC<FooterProps> = ({ projects, community, description }) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
-                      className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900"
+                      className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-400"
                     >
                       {item.name}
                     </a>
@@ -95,7 +92,7 @@ const Footer: FC<FooterProps> = ({ projects, community, description }) => (
                   <li key={project.project_title}>
                     <a
                       href={(project.project_link as FilledLinkToWebField).url}
-                      className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900"
+                      className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-400"
                     >
                       {project.project_title}
                     </a>
@@ -118,7 +115,7 @@ const Footer: FC<FooterProps> = ({ projects, community, description }) => (
                           item.community_outlink_cta_link as FilledLinkToWebField
                         ).url
                       }
-                      className="text-base text-gray-500 dark:text-gray-400 hover:text-gray-900"
+                      className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-400"
                     >
                       {item.community_outlink_cta_label}
                     </a>
@@ -129,8 +126,8 @@ const Footer: FC<FooterProps> = ({ projects, community, description }) => (
           </div>
         </div>
       </div>
-      <div className="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
-        <div className="prose dark:prose-invert max-w-none prose-p:text-sm">
+      <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700">
+        <div className="prose max-w-none prose-p:text-sm dark:prose-invert">
           <p>
             Copyright <a href="https://openjsf.org">OpenJS Foundation</a> and
             Open Visualization contributors. All rights reserved. The{' '}

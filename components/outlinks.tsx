@@ -13,7 +13,7 @@ const icons = [Book, Paperclip, Users, Heart];
 
 const Outlinks: FC<OutlinksProps> = ({ items }) => (
   <div
-    className="bg-white dark:bg-gray-900 py-20 sm:py-24 lg:py-32"
+    className="bg-white py-20 dark:bg-gray-900 sm:py-24 lg:py-32"
     id="outlinks"
   >
     <div className="mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8">
@@ -48,12 +48,12 @@ const Outlinks: FC<OutlinksProps> = ({ items }) => (
                     key={about_outlink_label}
                     href={(about_outlink_link as FilledLinkToWebField).url}
                     className={clsx(
-                      'inline-flex items-center transition-colors gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1',
-                      'text-gray-900 dark:text-white dark:ring-white/10 ring-gray-900/10 hover:ring-gray-900/20'
+                      'inline-flex items-center gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1 transition-colors',
+                      'text-gray-900 ring-gray-900/10 hover:ring-gray-900/20 dark:text-white dark:ring-white/10'
                     )}
                   >
                     {about_outlink_label}
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 </dd>
               </div>

@@ -1,6 +1,7 @@
 import * as prismic from '@prismicio/client';
 import * as prismicNext from '@prismicio/next';
 import sm from '@/sm.json';
+import type { AllDocumentTypes } from '@/types.generated';
 
 /**
  * The project's Prismic repository name.
@@ -22,7 +23,7 @@ const routes = [
  *
  * @param config {prismicNext.CreateClientConfig} - Configuration for the Prismic client.
  */
-export const createClient = (config = {}) => {
+export const createClient = (config = {}): prismic.Client<AllDocumentTypes> => {
   const client = prismic.createClient(sm.apiEndpoint, {
     routes,
     ...config,

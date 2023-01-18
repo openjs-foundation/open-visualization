@@ -1,4 +1,3 @@
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import type { FC } from 'react';
 import Image from 'next/image';
 import type { FilledLinkToWebField } from '@prismicio/types';
@@ -17,7 +16,7 @@ const Projects: FC<ProjectsProps> = ({ title, description, items }) => (
   <div className="overflow-hidden bg-gray-100 dark:bg-gray-800" id="projects">
     <div className="relative mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
-        <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+        <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
           {title}
         </h3>
         <p className="text-lg text-gray-500 dark:text-gray-400">
@@ -32,7 +31,7 @@ const Projects: FC<ProjectsProps> = ({ title, description, items }) => (
           ) => (
             <li
               key={index}
-              className="col-span-1 divide-y dark:divide-gray-700 divide-gray-200 rounded-lg bg-white dark:bg-gray-900 shadow overflow-hidden"
+              className="col-span-1 divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow dark:divide-gray-700 dark:bg-gray-900"
             >
               <Image
                 src={project_image.url ?? ''}
@@ -44,7 +43,7 @@ const Projects: FC<ProjectsProps> = ({ title, description, items }) => (
               <div className="flex w-full items-center justify-between space-x-6 p-6">
                 <div className="flex-1">
                   <div className="flex flex-col">
-                    <h3 className="text-2xl font-semibold truncate text-gray-900 dark:text-white">
+                    <h3 className="truncate text-2xl font-semibold text-gray-900 dark:text-white">
                       {project_title}
                     </h3>
                     <p className="mt-2 text-base text-gray-500 dark:text-gray-400">
@@ -55,12 +54,12 @@ const Projects: FC<ProjectsProps> = ({ title, description, items }) => (
                     <Link
                       href={(project_link as FilledLinkToWebField).url}
                       className={clsx(
-                        'inline-flex items-center transition-colors gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1',
-                        'text-gray-900 dark:text-white dark:ring-white/10 ring-gray-900/10 hover:ring-gray-900/20'
+                        'inline-flex items-center gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1 transition-colors',
+                        'text-gray-900 ring-gray-900/10 hover:ring-gray-900/20 dark:text-white dark:ring-white/10'
                       )}
                     >
                       Download {project_title}
-                      <ArrowUpRight className="w-4 h-4" />
+                      <ArrowUpRight className="h-4 w-4" />
                     </Link>
                   </p>
                 </div>
