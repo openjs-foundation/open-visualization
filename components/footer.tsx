@@ -118,7 +118,7 @@ const Footer: FC<FooterProps> = ({
                       }
                       className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-400"
                     >
-                      {item.community_outlink_cta_label}
+                      {item.community_outlink_title}
                     </a>
                   </li>
                 ))}
