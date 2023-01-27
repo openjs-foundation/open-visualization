@@ -27,7 +27,7 @@ const Community: FC<CommunityProps> = ({ title, description, items }) => (
           {description}
         </p>
       </div>
-      <dl className="mt-12 grid grid-cols-1 gap-16 sm:mt-24 lg:grid-cols-3">
+      <dl className="mt-12 grid grid-cols-1 gap-16 sm:mt-24 lg:grid-cols-4">
         {items.map(
           (
             {
@@ -46,11 +46,11 @@ const Community: FC<CommunityProps> = ({ title, description, items }) => (
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-blue text-white">
                     <Icon size={24} className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <p className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900 dark:text-white">
+                  <p className="mt-6 text-base font-semibold leading-tight tracking-tight text-gray-900 dark:text-white">
                     {community_outlink_title}
                   </p>
                 </dt>
-                <dd className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-300">
+                <dd className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                   {community_outlink_description}
                 </dd>
                 <dd className="mt-4">
