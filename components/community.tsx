@@ -67,6 +67,8 @@ const Community: FC<CommunityProps> = ({ title, description, items }) => (
                     href={
                       (community_outlink_cta_link as FilledLinkToWebField).url
                     }
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={clsx(
                       'inline-flex items-center gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1 transition-colors',
                       'text-gray-900 ring-gray-900/10 hover:ring-gray-900/20 dark:text-white dark:ring-white/10'
