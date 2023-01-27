@@ -2,7 +2,15 @@ import type { FC } from 'react';
 import Link from 'next/link';
 import type { FilledLinkToWebField } from '@prismicio/types';
 import clsx from 'clsx';
-import { ArrowUpRight, Book, Heart, Paperclip, Users } from 'lucide-react';
+import {
+  ArrowUpRight,
+  Calendar,
+  Clock,
+  Heart,
+  Pencil,
+  Plus,
+  Slack,
+} from 'lucide-react';
 import type { HomeDocument } from '@/types.generated';
 
 type CommunityProps = {
@@ -11,7 +19,7 @@ type CommunityProps = {
   items: HomeDocument['data']['community_outlinks'];
 };
 
-const icons = [Book, Paperclip, Users, Heart];
+const icons = [Heart, Plus, Heart, Slack, Calendar, Pencil, Clock];
 
 const Community: FC<CommunityProps> = ({ title, description, items }) => (
   <div
@@ -38,7 +46,7 @@ const Community: FC<CommunityProps> = ({ title, description, items }) => (
             },
             index
           ) => {
-            const Icon = icons[index];
+            const Icon = icons.length > index ? icons[index] : ArrowUpRight;
 
             return (
               <div key={community_outlink_cta_label}>
