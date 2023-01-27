@@ -152,17 +152,6 @@ interface HomeDocumentData {
      */
     about_image: prismicT.ImageField<never>;
     /**
-     * About Outlinks field in *Home*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home.about_outlinks[]
-     * - **Tab**: About
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    about_outlinks: prismicT.GroupField<Simplify<HomeDocumentDataAboutOutlinksItem>>;
-    /**
      * Projects Title field in *Home*
      *
      * - **Field Type**: Text
@@ -321,52 +310,6 @@ export interface HomeDocumentDataCollaboratorsItem {
     logo: prismicT.ImageField<never>;
 }
 /**
- * Item in Home → About Outlinks
- *
- */
-export interface HomeDocumentDataAboutOutlinksItem {
-    /**
-     * About Outlink Title field in *Home → About Outlinks*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home.about_outlinks[].about_outlink_title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    about_outlink_title: prismicT.KeyTextField;
-    /**
-     * About Outlink Description field in *Home → About Outlinks*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home.about_outlinks[].about_outlink_description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    about_outlink_description: prismicT.KeyTextField;
-    /**
-     * About Outlink Label field in *Home → About Outlinks*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home.about_outlinks[].about_outlink_label
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    about_outlink_label: prismicT.KeyTextField;
-    /**
-     * About Outlink Link field in *Home → About Outlinks*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home.about_outlinks[].about_outlink_link
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    about_outlink_link: prismicT.LinkField;
-}
-/**
  * Item in Home → Projects
  *
  */
@@ -468,12 +411,62 @@ export interface HomeDocumentDataCommunityOutlinksItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
-export type AllDocumentTypes = HomeDocument;
+/** Content for Settings documents */
+interface SettingsDocumentData {
+    /**
+     * Navigation field in *Settings*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.navigation[]
+     * - **Tab**: Navigation
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    navigation: prismicT.GroupField<Simplify<SettingsDocumentDataNavigationItem>>;
+}
+/**
+ * Item in Settings → Navigation
+ *
+ */
+export interface SettingsDocumentDataNavigationItem {
+    /**
+     * Navigation Label field in *Settings → Navigation*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.navigation[].navigation_label
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    navigation_label: prismicT.KeyTextField;
+    /**
+     * Navigation Link field in *Settings → Navigation*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.navigation[].navigation_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    navigation_link: prismicT.LinkField;
+}
+/**
+ * Settings document from Prismic
+ *
+ * - **API ID**: `settings`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
+export type AllDocumentTypes = HomeDocument | SettingsDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocumentDataHeroActionsItem, HomeDocumentDataFocusAreasItem, HomeDocumentDataCollaboratorsItem, HomeDocumentDataAboutOutlinksItem, HomeDocumentDataProjectsItem, HomeDocumentDataCommunityOutlinksItem, HomeDocument, AllDocumentTypes };
+        export type { HomeDocumentData, HomeDocumentDataHeroActionsItem, HomeDocumentDataFocusAreasItem, HomeDocumentDataCollaboratorsItem, HomeDocumentDataProjectsItem, HomeDocumentDataCommunityOutlinksItem, HomeDocument, SettingsDocumentData, SettingsDocumentDataNavigationItem, SettingsDocument, AllDocumentTypes };
     }
 }

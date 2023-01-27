@@ -2,7 +2,7 @@
 import type { FC } from 'react';
 import type { GetStaticProps } from 'next';
 import { createClient } from '@/lib/prismic';
-import type { HomeDocument } from '@/types.generated';
+import type { HomeDocument, SettingsDocument } from '@/types.generated';
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
 import About from '@/components/about';
@@ -14,11 +14,12 @@ import Navigation from '@/components/navigation';
 
 type HomeProps = {
   data: HomeDocument['data'];
+  settings: SettingsDocument['data'];
 };
 
-const Home: FC<HomeProps> = ({ data }) => (
+const Home: FC<HomeProps> = ({ data, settings }) => (
   <>
-    <Navigation items={data.about_outlinks} />
+    <Navigation items={settings.navigation} />
     <Hero
       title={data.hero_title}
       description={data.hero_description}
@@ -35,7 +36,6 @@ const Home: FC<HomeProps> = ({ data }) => (
        */
       image={data.about_image}
     />
-    <Outlinks items={data.about_outlinks} />
     <Projects
       title={data.projects_title}
       description={data.projects_description}
@@ -48,6 +48,7 @@ const Home: FC<HomeProps> = ({ data }) => (
     />
     <Logos logos={data.collaborators} />
     <Footer
+      navigation={settings.navigation}
       description={data.hero_description}
       projects={data.projects}
       community={data.community_outlinks}
@@ -57,12 +58,14 @@ const Home: FC<HomeProps> = ({ data }) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await createClient().getSingle('home');
+  const { data: settings } = await createClient().getSingle('settings');
 
   return {
     props: {
       title: data.title,
       description: data.description,
       data,
+      settings,
     },
   };
 };

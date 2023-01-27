@@ -72,8 +72,8 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
                   <Link
                     key={action_label}
                     href={(action_link as FilledLinkToWebField).url.replace(
-                      'https://',
-                      ''
+                      'https://#',
+                      '#'
                     )}
                     className={clsx(
                       'inline-flex gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 transition-colors',

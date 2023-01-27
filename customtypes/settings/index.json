@@ -1,0 +1,33 @@
+{
+  "id": "settings",
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Navigation": {
+      "navigation": {
+        "type": "Group",
+        "config": {
+          "label": "Navigation",
+          "fields": {
+            "navigation_label": {
+              "type": "Text",
+              "config": {
+                "label": "Navigation Label",
+                "placeholder": ""
+              }
+            },
+            "navigation_link": {
+              "type": "Link",
+              "config": {
+                "label": "Navigation Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

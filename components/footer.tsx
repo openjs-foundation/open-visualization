@@ -3,40 +3,39 @@ import type { FilledLinkToWebField } from '@prismicio/types';
 import TwitterIcon from './icons/twitter';
 import GoogleCalendarIcon from './icons/googleCalendar';
 import LinkedInIcon from './icons/linkedin';
-import type { HomeDocument } from '@/types.generated';
-import links from '@/lib/navigation';
+import type { HomeDocument, SettingsDocument } from '@/types.generated';
 
 type FooterProps = {
+  navigation: SettingsDocument['data']['navigation'];
   description: HomeDocument['data']['hero_description'];
   projects: HomeDocument['data']['projects'];
   community: HomeDocument['data']['community_outlinks'];
 };
 
-const navigation = {
-  sections: links.map((link) => ({
-    name: link.label,
-    href: link.href,
-  })),
-  social: [
-    {
-      name: 'Twitter',
-      href: 'https://twitter.com/openjsf',
-      icon: TwitterIcon,
-    },
-    {
-      name: 'LinkedIn',
-      href: 'https://www.linkedin.com/company/openjs-foundation/',
-      icon: LinkedInIcon,
-    },
-    {
-      name: 'OpenJS Public Calendar for OpenVis meetings',
-      href: 'https://calendar.google.com/calendar/embed?src=linuxfoundation.org_fuop4ufv766f9avc517ujs4i0g%40group.calendar.google.com',
-      icon: GoogleCalendarIcon,
-    },
-  ],
-};
+const social = [
+  {
+    name: 'Twitter',
+    href: 'https://twitter.com/openjsf',
+    icon: TwitterIcon,
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/openjs-foundation/',
+    icon: LinkedInIcon,
+  },
+  {
+    name: 'OpenJS Public Calendar for OpenVis meetings',
+    href: 'https://calendar.google.com/calendar/embed?src=linuxfoundation.org_fuop4ufv766f9avc517ujs4i0g%40group.calendar.google.com',
+    icon: GoogleCalendarIcon,
+  },
+];
 
-const Footer: FC<FooterProps> = ({ projects, community, description }) => (
+const Footer: FC<FooterProps> = ({
+  navigation,
+  projects,
+  community,
+  description,
+}) => (
   <footer
     id="footer"
     className="border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
@@ -52,7 +51,7 @@ const Footer: FC<FooterProps> = ({ projects, community, description }) => (
             {description}
           </p>
           <div className="flex space-x-6">
-            {navigation.social.map((item) => (
+            {social.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
@@ -71,13 +70,15 @@ const Footer: FC<FooterProps> = ({ projects, community, description }) => (
                 Sections
               </h3>
               <ul className="mt-4 space-y-4">
-                {navigation.sections.map((item) => (
-                  <li key={item.name}>
+                {navigation.map((item) => (
+                  <li key={item.navigation_label}>
                     <a
-                      href={item.href}
+                      href={(
+                        item.navigation_link as FilledLinkToWebField
+                      ).url.replace('https://#', '#')}
                       className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-400"
                     >
-                      {item.name}
+                      {item.navigation_label}
                     </a>
                   </li>
                 ))}

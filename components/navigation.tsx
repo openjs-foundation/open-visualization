@@ -1,6 +1,5 @@
 import type { FC } from 'react';
-import { Fragment } from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Image from 'next/image';
@@ -8,11 +7,10 @@ import Link from 'next/link';
 import type { FilledLinkToWebField } from '@prismicio/types';
 import useTheme from '@beskar-labs/use-theme';
 import { Moon, Sun } from 'lucide-react';
-import type { HomeDocument } from '@/types.generated';
-import links from '@/lib/navigation';
+import type { SettingsDocument } from '@/types.generated';
 
 type NavbarProps = {
-  items?: HomeDocument['data']['about_outlinks'];
+  items?: SettingsDocument['data']['navigation'];
 };
 
 const ModeToggle = () => {
@@ -54,83 +52,20 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
               </div>
             </div>
             <div className="hidden items-center sm:ml-6 sm:flex sm:space-x-8">
-              {links.map((item) =>
-                item.items ? (
-                  <Menu as="div" className="relative h-full" key={item.label}>
-                    <Menu.Button
-                      className={clsx(
-                        'inline-flex h-full items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white',
-                        'border-transparent text-gray-500 hover:border-primary-blue hover:text-gray-700'
-                      )}
-                    >
-                      {item.label}
-                    </Menu.Button>
-                    <Transition
-                      as={Fragment}
-                      enter="transition ease-out duration-200"
-                      enterFrom="transform opacity-0 scale-95"
-                      enterTo="transform opacity-100 scale-100"
-                      leave="transition ease-in duration-75"
-                      leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95"
-                    >
-                      <Menu.Items className="absolute right-0 z-10 mt-2 w-64 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-800">
-                        {item.items.map((subItem) => (
-                          <Menu.Item key={subItem.label}>
-                            {({ active }) => (
-                              <Link
-                                href={subItem.href}
-                                className={clsx(
-                                  active ? 'bg-gray-100 dark:bg-gray-700' : '',
-                                  'flex flex-col gap-1 px-4 py-2 text-sm text-gray-700 dark:text-gray-200'
-                                )}
-                              >
-                                <span>{subItem.label}</span>
-                                <span className="text-xs text-gray-500 dark:text-gray-400">
-                                  {subItem.description}
-                                </span>
-                              </Link>
-                            )}
-                          </Menu.Item>
-                        ))}
-                        {items?.map((subItem) => (
-                          <Menu.Item key={subItem.about_outlink_label}>
-                            {({ active }) => (
-                              <Link
-                                href={
-                                  (
-                                    subItem.about_outlink_link as FilledLinkToWebField
-                                  ).url
-                                }
-                                className={clsx(
-                                  active ? 'bg-gray-100 dark:bg-gray-700' : '',
-                                  'flex flex-col gap-1 px-4 py-2 text-sm text-gray-700 dark:text-gray-200'
-                                )}
-                              >
-                                <span>{subItem.about_outlink_label}</span>
-                                <span className="text-xs text-gray-500 dark:text-gray-400">
-                                  {subItem.about_outlink_description}
-                                </span>
-                              </Link>
-                            )}
-                          </Menu.Item>
-                        ))}
-                      </Menu.Items>
-                    </Transition>
-                  </Menu>
-                ) : (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className={clsx(
-                      'inline-flex h-full items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white',
-                      'border-transparent text-gray-500 hover:border-primary-blue hover:text-gray-700'
-                    )}
-                  >
-                    {item.label}
-                  </Link>
-                )
-              )}
+              {items?.map((item) => (
+                <Link
+                  key={item.navigation_label}
+                  href={(
+                    item.navigation_link as FilledLinkToWebField
+                  ).url.replace('https://#', '#')}
+                  className={clsx(
+                    'inline-flex h-full items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white',
+                    'border-transparent text-gray-500 hover:border-primary-blue hover:text-gray-700'
+                  )}
+                >
+                  {item.navigation_label}
+                </Link>
+              ))}
               <ModeToggle />
             </div>
             <div className="-mr-2 flex items-center sm:hidden">
@@ -149,14 +84,16 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
 
         <Disclosure.Panel className="sm:hidden">
           <div className="space-y-1 pt-2 pb-3">
-            {links.map((item) => (
+            {items?.map((item) => (
               <Disclosure.Button
                 as="a"
-                href={item.href}
+                href={(
+                  item.navigation_link as FilledLinkToWebField
+                ).url.replace('https://#', '#')}
                 className="block py-2 pl-3 pr-4 text-base font-medium text-gray-700"
-                key={item.label}
+                key={item.navigation_label}
               >
-                {item.label}
+                {item.navigation_label}
               </Disclosure.Button>
             ))}
           </div>

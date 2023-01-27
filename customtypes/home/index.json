@@ -145,43 +145,6 @@
           "constraint": {},
           "thumbnails": []
         }
-      },
-      "about_outlinks": {
-        "type": "Group",
-        "config": {
-          "label": "About Outlinks",
-          "fields": {
-            "about_outlink_title": {
-              "type": "Text",
-              "config": {
-                "label": "About Outlink Title",
-                "placeholder": ""
-              }
-            },
-            "about_outlink_description": {
-              "type": "Text",
-              "config": {
-                "label": "About Outlink Description",
-                "placeholder": ""
-              }
-            },
-            "about_outlink_label": {
-              "type": "Text",
-              "config": {
-                "label": "About Outlink Label",
-                "placeholder": ""
-              }
-            },
-            "about_outlink_link": {
-              "type": "Link",
-              "config": {
-                "label": "About Outlink Link",
-                "placeholder": "",
-                "select": null
-              }
-            }
-          }
-        }
       }
     },
     "Projects": {
