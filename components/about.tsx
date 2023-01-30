@@ -69,8 +69,13 @@ const About: FC<AboutProps> = ({
                 className="aspect-[4/3] rounded-lg object-cover object-center shadow-lg lg:aspect-[3/4]"
                 src={image.url ?? ''}
                 alt={image.alt ?? ''}
-                width={image.dimensions?.width}
-                height={image.dimensions?.height}
+                width={1152}
+                height={
+                  1152 *
+                  (image.dimensions
+                    ? image.dimensions?.height / image.dimensions?.width
+                    : 1536)
+                }
                 style={{
                   objectPosition: 'center 20%',
                 }}
