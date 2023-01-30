@@ -1,12 +1,11 @@
 import type { FC } from 'react';
 import { Disclosure } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FilledLinkToWebField } from '@prismicio/types';
 import useTheme from '@beskar-labs/use-theme';
-import { Moon, Sun } from 'lucide-react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import type { SettingsDocument } from '@/types.generated';
 
 type NavbarProps = {
@@ -73,9 +72,9 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
               <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-blue">
                 <span className="sr-only">Open main menu</span>
                 {open ? (
-                  <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  <X className="block h-6 w-6" aria-hidden="true" />
                 ) : (
-                  <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  <Menu className="block h-6 w-6" aria-hidden="true" />
                 )}
               </Disclosure.Button>
             </div>

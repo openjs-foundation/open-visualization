@@ -1,8 +1,8 @@
-import { CameraIcon } from '@heroicons/react/20/solid';
 import type { FC } from 'react';
 import Image from 'next/image';
 import { PrismicRichText } from '@prismicio/react';
 import type { HomeDocument } from '@/types.generated';
+import { Camera } from 'lucide-react';
 
 type AboutProps = {
   title: HomeDocument['data']['about_title'];
@@ -76,7 +76,7 @@ const About: FC<AboutProps> = ({
                 }}
               />
               <figcaption className="mt-3 flex text-sm text-gray-500 dark:text-gray-400">
-                <CameraIcon
+                <Camera
                   className="h-5 w-5 flex-none text-gray-400 dark:text-gray-500"
                   aria-hidden="true"
                 />
