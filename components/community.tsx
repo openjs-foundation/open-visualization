@@ -28,9 +28,9 @@ const Community: FC<CommunityProps> = ({ title, description, items }) => (
   >
     <div className="mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
-        <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+        <h2 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
           {title}
-        </h3>
+        </h2>
         <p className="text-lg text-gray-500 dark:text-gray-400">
           {description}
         </p>
@@ -49,7 +49,7 @@ const Community: FC<CommunityProps> = ({ title, description, items }) => (
             const Icon = icons.length > index ? icons[index] : ArrowUpRight;
 
             return (
-              <div key={community_outlink_cta_label}>
+              <div key={community_outlink_title}>
                 <dt>
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-blue text-white">
                     <Icon size={24} className="h-6 w-6" aria-hidden="true" />
@@ -63,7 +63,6 @@ const Community: FC<CommunityProps> = ({ title, description, items }) => (
                 </dd>
                 <dd className="mt-4">
                   <Link
-                    key={community_outlink_cta_label}
                     href={
                       (community_outlink_cta_link as FilledLinkToWebField).url
                     }

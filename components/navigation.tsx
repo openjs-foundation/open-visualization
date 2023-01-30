@@ -40,7 +40,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
           <div className="flex h-16 justify-between">
             <div className="flex">
               <div className="flex flex-shrink-0 items-center">
-                <Link href="/">
+                <Link href="/" aria-label="Home">
                   <Image
                     src="/openjs-foundation.svg"
                     width={101}

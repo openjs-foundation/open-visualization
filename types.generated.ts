@@ -152,17 +152,6 @@ interface HomeDocumentData {
      */
     about_image: prismicT.ImageField<never>;
     /**
-     * About Outlinks field in *Home*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home.about_outlinks[]
-     * - **Tab**: About
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    about_outlinks: prismicT.GroupField<Simplify<HomeDocumentDataAboutOutlinksItem>>;
-    /**
      * Projects Title field in *Home*
      *
      * - **Field Type**: Text
@@ -319,52 +308,6 @@ export interface HomeDocumentDataCollaboratorsItem {
      *
      */
     logo: prismicT.ImageField<never>;
-}
-/**
- * Item in Home → About Outlinks
- *
- */
-export interface HomeDocumentDataAboutOutlinksItem {
-    /**
-     * About Outlink Title field in *Home → About Outlinks*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home.about_outlinks[].about_outlink_title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    about_outlink_title: prismicT.KeyTextField;
-    /**
-     * About Outlink Description field in *Home → About Outlinks*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home.about_outlinks[].about_outlink_description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    about_outlink_description: prismicT.KeyTextField;
-    /**
-     * About Outlink Label field in *Home → About Outlinks*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home.about_outlinks[].about_outlink_label
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    about_outlink_label: prismicT.KeyTextField;
-    /**
-     * About Outlink Link field in *Home → About Outlinks*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home.about_outlinks[].about_outlink_link
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    about_outlink_link: prismicT.LinkField;
 }
 /**
  * Item in Home → Projects
@@ -524,6 +467,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocumentDataHeroActionsItem, HomeDocumentDataFocusAreasItem, HomeDocumentDataCollaboratorsItem, HomeDocumentDataAboutOutlinksItem, HomeDocumentDataProjectsItem, HomeDocumentDataCommunityOutlinksItem, HomeDocument, SettingsDocumentData, SettingsDocumentDataNavigationItem, SettingsDocument, AllDocumentTypes };
+        export type { HomeDocumentData, HomeDocumentDataHeroActionsItem, HomeDocumentDataFocusAreasItem, HomeDocumentDataCollaboratorsItem, HomeDocumentDataProjectsItem, HomeDocumentDataCommunityOutlinksItem, HomeDocument, SettingsDocumentData, SettingsDocumentDataNavigationItem, SettingsDocument, AllDocumentTypes };
     }
 }

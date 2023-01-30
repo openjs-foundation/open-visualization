@@ -66,9 +66,9 @@ const Footer: FC<FooterProps> = ({
         <div className="grid grid-cols-2 gap-8">
           <div className="md:grid md:grid-cols-2 md:gap-8">
             <div>
-              <h3 className="text-base font-medium text-gray-900 dark:text-white">
+              <p className="text-base font-medium text-gray-900 dark:text-white">
                 Sections
-              </h3>
+              </p>
               <ul className="mt-4 space-y-4">
                 {navigation.map((item) => (
                   <li key={item.navigation_label}>
@@ -85,9 +85,9 @@ const Footer: FC<FooterProps> = ({
               </ul>
             </div>
             <div className="mt-12 md:mt-0">
-              <h3 className="text-base font-medium text-gray-900 dark:text-white">
+              <p className="text-base font-medium text-gray-900 dark:text-white">
                 Projects
-              </h3>
+              </p>
               <ul className="mt-4 space-y-4">
                 {projects.map((project) => (
                   <li key={project.project_title}>
@@ -104,12 +104,12 @@ const Footer: FC<FooterProps> = ({
           </div>
           <div className="md:grid md:grid-cols-2 md:gap-8">
             <div>
-              <h3 className="text-base font-medium text-gray-900 dark:text-white">
+              <p className="text-base font-medium text-gray-900 dark:text-white">
                 Community
-              </h3>
+              </p>
               <ul className="mt-4 space-y-4">
                 {community.map((item) => (
-                  <li key={item.community_outlink_cta_label}>
+                  <li key={item.community_outlink_title}>
                     <a
                       href={
                         (

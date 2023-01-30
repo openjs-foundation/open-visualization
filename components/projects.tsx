@@ -16,10 +16,10 @@ const Projects: FC<ProjectsProps> = ({ title, description, items }) => (
   <div className="overflow-hidden bg-gray-100 dark:bg-gray-800" id="projects">
     <div className="relative mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
-        <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+        <h2 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
           {title}
-        </h3>
-        <p className="text-lg text-gray-500 dark:text-gray-400">
+        </h2>
+        <p className="text-lg text-gray-600 dark:text-gray-300">
           {description}
         </p>
       </div>

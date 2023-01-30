@@ -87,9 +87,9 @@ const About: FC<AboutProps> = ({
         </div>
         <div className="mt-8 lg:mt-0">
           <div className="mx-auto max-w-prose lg:max-w-none">
-            <h3 className="mt-2 mb-6 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+            <h2 className="mt-2 mb-6 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
               {title}
-            </h3>
+            </h2>
           </div>
           <div className="mx-auto max-w-prose text-base lg:max-w-none">
             <p className="text-lg text-gray-500 dark:text-gray-400">
