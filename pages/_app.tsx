@@ -22,6 +22,24 @@ const App: FC<
       description={pageProps.description}
       titleTemplate="%s | Open Visualization"
       canonical={new URL(process.env.NEXT_PUBLIC_SITE_URL ?? '').href}
+      openGraph={{
+        type: 'website',
+        locale: 'en_IE',
+        title: pageProps.title,
+        description: pageProps.description,
+        images: [
+          {
+            url: new URL('/cover.png', process.env.NEXT_PUBLIC_SITE_URL ?? '')
+              .href,
+            width: 1200,
+            height: 630,
+            alt: 'Open Visualization',
+          },
+        ],
+      }}
+      twitter={{
+        cardType: 'summary_large_image',
+      }}
     />
     <PrismicProvider internalLinkComponent={internalLinkComponent}>
       <PrismicPreview repositoryName={repositoryName}>
