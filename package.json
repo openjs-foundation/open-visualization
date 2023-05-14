@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "yarn run codegen && concurrently \"yarn:next\" \"yarn:slicemachine\"",
+    "dev": "npm run codegen && concurrently \"npm:next\" \"npm:slicemachine\"",
     "next": "next dev",
     "build": "next build",
     "start": "next start",

@@ -1,111 +1,302 @@
 {
-  "id": "mock-doc-id",
-  "url": null,
-  "type": "home",
-  "href": null,
-  "tags": [],
-  "first_publication_date": "1970-01-01T00:00:01+0000",
-  "last_publication_date": "1970-01-01T00:00:01+0000",
-  "slugs": [],
-  "linked_documents": [],
-  "lang": "en-us",
-  "alternate_languages": [],
-  "data": {
-    "title": "did",
-    "description": "said",
-    "hero_title": "tea",
-    "hero_description": "own",
-    "hero_actions": [
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "peace"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "test",
+    "type": "Text"
+  },
+  "description": {
+    "__TYPE__": "FieldContent",
+    "value": "making",
+    "type": "Text"
+  },
+  "hero_title": {
+    "__TYPE__": "FieldContent",
+    "value": "property",
+    "type": "Text"
+  },
+  "hero_description": {
+    "__TYPE__": "FieldContent",
+    "value": "changing",
+    "type": "Text"
+  },
+  "hero_actions": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "action_label": "per",
-        "action_link": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        }
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "action_label",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "pan",
+              "type": "Text"
+            }
+          ],
+          [
+            "action_link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "http://twitter.com"
+              }
+            }
+          ]
+        ]
       }
-    ],
-    "focus_areas": [
+    ]
+  },
+  "focus_areas": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "focus_area": "bread"
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "focus_area",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "wolf",
+              "type": "Text"
+            }
+          ]
+        ]
       }
-    ],
-    "collaborators": [
+    ]
+  },
+  "collaborators": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "logo": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": null,
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb"
-        }
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "logo",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+                "width": 3424,
+                "height": 3424
+              },
+              "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+              "width": 3424,
+              "height": 3424,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ]
+        ]
       }
-    ],
-    "about_title": "pick",
-    "about_description": "trail",
-    "about_content": [
+    ]
+  },
+  "about_title": {
+    "__TYPE__": "FieldContent",
+    "value": "massage",
+    "type": "Text"
+  },
+  "about_description": {
+    "__TYPE__": "FieldContent",
+    "value": "basket",
+    "type": "Text"
+  },
+  "about_content": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "paragraph",
-        "text": "Aliquip ad nostrud ullamco officia esse adipisicing do nostrud cupidatat veniam dolore culpa culpa. Proident magna ex ex consequat id ullamco commodo laborum nostrud qui tempor incididunt elit minim.",
-        "spans": []
+        "content": {
+          "text": "Nisi nisi pariatur irure cupidatat occaecat esse anim. Proident id voluptate ex ipsum quis commodo tempor duis velit id fugiat consequat laboris eiusmod."
+        }
       }
-    ],
-    "about_cta_label": "quiet",
-    "about_cta_link": {
-      "link_type": "Web",
-      "url": "http://google.com"
+    ]
+  },
+  "about_cta_label": {
+    "__TYPE__": "FieldContent",
+    "value": "test",
+    "type": "Text"
+  },
+  "about_cta_link": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "https://slicemachine.dev"
+    }
+  },
+  "about_image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
+      "width": 3168,
+      "height": 4752
     },
-    "about_image": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
+    "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
+    "width": 3168,
+    "height": 4752,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
       },
-      "alt": null,
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764"
+      "background": "transparent"
     },
-    "projects_title": "coal",
-    "projects_description": "suit",
-    "projects_cta_label": "bell",
-    "projects_cta_link": {
-      "link_type": "Web",
-      "url": "https://prismic.io"
-    },
-    "projects": [
+    "thumbnails": {}
+  },
+  "projects_title": {
+    "__TYPE__": "FieldContent",
+    "value": "limited",
+    "type": "Text"
+  },
+  "projects_description": {
+    "__TYPE__": "FieldContent",
+    "value": "tonight",
+    "type": "Text"
+  },
+  "projects_cta_label": {
+    "__TYPE__": "FieldContent",
+    "value": "food",
+    "type": "Text"
+  },
+  "projects_cta_link": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "http://google.com"
+    }
+  },
+  "projects": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "project_title": "fight",
-        "project_description": "hungry",
-        "project_link": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        },
-        "project_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": null,
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f"
-        }
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "project_title",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "pot",
+              "type": "Text"
+            }
+          ],
+          [
+            "project_description",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "stock",
+              "type": "Text"
+            }
+          ],
+          [
+            "project_link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://slicemachine.dev"
+              }
+            }
+          ],
+          [
+            "project_image",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+                "width": 3882,
+                "height": 2584
+              },
+              "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+              "width": 3882,
+              "height": 2584,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ]
+        ]
       }
-    ],
-    "community_title": "completely",
-    "community_description": "whistle",
-    "community_github_link": {
-      "link_type": "Web",
-      "url": "https://prismic.io"
-    },
-    "community_outlinks": [
+    ]
+  },
+  "community_title": {
+    "__TYPE__": "FieldContent",
+    "value": "western",
+    "type": "Text"
+  },
+  "community_description": {
+    "__TYPE__": "FieldContent",
+    "value": "unless",
+    "type": "Text"
+  },
+  "community_github_link": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "http://twitter.com"
+    }
+  },
+  "community_outlinks": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "community_outlink_title": "car",
-        "community_outlink_description": "idea",
-        "community_outlink_cta_label": "mathematics",
-        "community_outlink_cta_link": {
-          "link_type": "Web",
-          "url": "http://twitter.com"
-        }
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "community_outlink_title",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "late",
+              "type": "Text"
+            }
+          ],
+          [
+            "community_outlink_description",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "memory",
+              "type": "Text"
+            }
+          ],
+          [
+            "community_outlink_cta_label",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "stone",
+              "type": "Text"
+            }
+          ],
+          [
+            "community_outlink_cta_link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://prismic.io"
+              }
+            }
+          ]
+        ]
       }
     ]
   }
