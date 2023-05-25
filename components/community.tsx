@@ -1,6 +1,4 @@
-import type { FC } from 'react';
 import Link from 'next/link';
-import type { FilledLinkToWebField } from '@prismicio/types';
 import clsx from 'clsx';
 import {
   ArrowUpRight,
@@ -11,7 +9,9 @@ import {
   Plus,
   Slack,
 } from 'lucide-react';
-import { HomeDocumentData } from '@/prismicio-types';
+import type { HomeDocumentData } from '@/prismicio-types';
+import type { FilledLinkToWebField } from '@prismicio/types';
+import type { FC } from 'react';
 
 type CommunityProps = {
   title: HomeDocumentData['community_title'];

@@ -1,12 +1,12 @@
-import type { FC } from 'react';
 import Link from 'next/link';
-import type { FilledLinkToWebField } from '@prismicio/types';
 import clsx from 'clsx';
 
 import resolveConfig from 'tailwindcss/resolveConfig';
 import Image from 'next/image';
 import tailwindConfig from '@/tailwind.config.js';
-import { HomeDocumentData } from '@/prismicio-types';
+import type { HomeDocumentData } from '@/prismicio-types';
+import type { FilledLinkToWebField } from '@prismicio/types';
+import type { FC } from 'react';
 
 const fullConfig = resolveConfig(tailwindConfig);
 

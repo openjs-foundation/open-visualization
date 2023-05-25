@@ -1,6 +1,5 @@
 'use client';
-import type { FC } from 'react';
-import type { GetStaticProps } from 'next';
+
 import { createClient } from '@/lib/prismic';
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
@@ -9,7 +8,9 @@ import Projects from '@/components/projects';
 import Community from '@/components/community';
 import Footer from '@/components/footer';
 import Navigation from '@/components/navigation';
-import { HomeDocumentData, SettingsDocumentData } from '@/prismicio-types';
+import type { HomeDocumentData, SettingsDocumentData } from '@/prismicio-types';
+import type { GetStaticProps } from 'next';
+import type { FC } from 'react';
 
 type HomeProps = {
   data: HomeDocumentData;

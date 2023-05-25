@@ -1,12 +1,12 @@
-import type { LinkProps } from 'next/link';
 import Link from 'next/link';
 import { PrismicProvider } from '@prismicio/react';
-import type { FC } from 'react';
-import type { AppProps } from 'next/app';
 import { PrismicPreview } from '@prismicio/next';
+import { NextSeo } from 'next-seo';
 import { repositoryName } from '@/lib/prismic';
 import '../styles/globals.css';
-import { NextSeo } from 'next-seo';
+import type { LinkProps } from 'next/link';
+import type { FC } from 'react';
+import type { AppProps } from 'next/app';
 
 const internalLinkComponent = (props: LinkProps) => <Link {...props} />;
 

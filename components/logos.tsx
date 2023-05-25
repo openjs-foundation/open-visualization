@@ -1,6 +1,6 @@
-import type { FC } from 'react';
 import Image from 'next/image';
-import { HomeDocumentData } from '@/prismicio-types';
+import type { HomeDocumentData } from '@/prismicio-types';
+import type { FC } from 'react';
 
 type LogosProps = {
   logos: HomeDocumentData['collaborators'];

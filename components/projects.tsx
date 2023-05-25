@@ -1,10 +1,10 @@
-import type { FC } from 'react';
 import Image from 'next/image';
-import type { FilledLinkToWebField } from '@prismicio/types';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { ArrowUpRight } from 'lucide-react';
-import { HomeDocumentData } from '@/prismicio-types';
+import type { HomeDocumentData } from '@/prismicio-types';
+import type { FilledLinkToWebField } from '@prismicio/types';
+import type { FC } from 'react';
 
 type ProjectsProps = {
   title: HomeDocumentData['projects_title'];

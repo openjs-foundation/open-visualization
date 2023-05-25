@@ -1,12 +1,12 @@
 import * as prismic from '@prismicio/client';
 import * as prismicNext from '@prismicio/next';
 import sm from '@/slicemachine.config.json';
-import { AllDocumentTypes } from '@/prismicio-types';
+import type { AllDocumentTypes } from '@/prismicio-types';
 
 /**
  * The project's Prismic repository name.
  */
-export const repositoryName = sm.repositoryName;
+export const { repositoryName } = sm;
 
 // Update the routes array to match your project's route structure
 /** @type {prismic.ClientConfig['routes']} **/

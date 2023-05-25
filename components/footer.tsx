@@ -1,9 +1,9 @@
-import type { FC } from 'react';
-import type { FilledLinkToWebField } from '@prismicio/types';
 import TwitterIcon from './icons/twitter';
 import GoogleCalendarIcon from './icons/googleCalendar';
 import LinkedInIcon from './icons/linkedin';
-import { HomeDocumentData, SettingsDocumentData } from '@/prismicio-types';
+import type { FC } from 'react';
+import type { FilledLinkToWebField } from '@prismicio/types';
+import type { HomeDocumentData, SettingsDocumentData } from '@/prismicio-types';
 
 type FooterProps = {
   navigation: SettingsDocumentData['navigation'];

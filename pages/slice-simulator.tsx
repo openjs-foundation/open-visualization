@@ -1,14 +1,13 @@
 import { SliceSimulator } from '@slicemachine/adapter-next/simulator';
 import { SliceZone } from '@prismicio/react';
 
-import { components } from '../slices';
+import type { FC } from 'react';
+import { components } from '@/slices';
 
-const SliceSimulatorPage = () => {
-  return (
-    <SliceSimulator
-      sliceZone={(props) => <SliceZone {...props} components={components} />}
-    />
-  );
-};
+const SliceSimulatorPage: FC = () => (
+  <SliceSimulator
+    sliceZone={(props) => <SliceZone {...props} components={components} />}
+  />
+);
 
 export default SliceSimulatorPage;

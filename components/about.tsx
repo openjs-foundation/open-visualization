@@ -1,8 +1,8 @@
-import type { FC } from 'react';
 import Image from 'next/image';
 import { PrismicRichText } from '@prismicio/react';
 import { Camera } from 'lucide-react';
-import { HomeDocumentData } from '@/prismicio-types';
+import type { HomeDocumentData } from '@/prismicio-types';
+import type { FC } from 'react';
 
 type AboutProps = {
   title: HomeDocumentData['about_title'];
@@ -73,7 +73,7 @@ const About: FC<AboutProps> = ({
                 height={
                   1152 *
                   (image.dimensions
-                    ? image.dimensions?.height / image.dimensions?.width
+                    ? image.dimensions.height / image.dimensions.width
                     : 1536)
                 }
                 style={{
