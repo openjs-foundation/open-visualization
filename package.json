@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "yarn run codegen && concurrently \"yarn:next\" \"yarn:slicemachine\"",
+    "dev": "concurrently \"yarn:next\" \"yarn:slicemachine\"",
     "next": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "slicemachine": "start-slicemachine",
-    "codegen": "npx prismic-ts-codegen"
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@beskar-labs/use-theme": "^2.0.3",

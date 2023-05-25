@@ -6,10 +6,10 @@ import Link from 'next/link';
 import type { FilledLinkToWebField } from '@prismicio/types';
 import useTheme from '@beskar-labs/use-theme';
 import { Menu, Moon, Sun, X } from 'lucide-react';
-import type { SettingsDocument } from '@/types.generated';
+import { SettingsDocumentData } from '@/prismicio-types';
 
 type NavbarProps = {
-  items?: SettingsDocument['data']['navigation'];
+  items?: SettingsDocumentData['navigation'];
 };
 
 const ModeToggle = () => {
@@ -82,7 +82,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
         </div>
 
         <Disclosure.Panel className="sm:hidden">
-          <div className="space-y-1 pt-2 pb-3">
+          <div className="space-y-1 pb-3 pt-2">
             {items?.map((item) => (
               <Disclosure.Button
                 as="a"

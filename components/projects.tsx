@@ -4,17 +4,17 @@ import type { FilledLinkToWebField } from '@prismicio/types';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { ArrowUpRight } from 'lucide-react';
-import type { HomeDocument } from '@/types.generated';
+import { HomeDocumentData } from '@/prismicio-types';
 
 type ProjectsProps = {
-  title: HomeDocument['data']['projects_title'];
-  description: HomeDocument['data']['projects_description'];
-  items: HomeDocument['data']['projects'];
+  title: HomeDocumentData['projects_title'];
+  description: HomeDocumentData['projects_description'];
+  items: HomeDocumentData['projects'];
 };
 
 const Projects: FC<ProjectsProps> = ({ title, description, items }) => (
   <div className="overflow-hidden bg-gray-100 dark:bg-gray-800" id="projects">
-    <div className="relative mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
+    <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
         <h2 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
           {title}

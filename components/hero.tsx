@@ -6,15 +6,15 @@ import clsx from 'clsx';
 import resolveConfig from 'tailwindcss/resolveConfig';
 import Image from 'next/image';
 import tailwindConfig from '@/tailwind.config.js';
-import type { HomeDocument } from '@/types.generated';
+import { HomeDocumentData } from '@/prismicio-types';
 
 const fullConfig = resolveConfig(tailwindConfig);
 
 type HeroProps = {
-  title: HomeDocument['data']['hero_title'];
-  description: HomeDocument['data']['hero_description'];
-  actions: HomeDocument['data']['hero_actions'];
-  focusAreas: HomeDocument['data']['focus_areas'];
+  title: HomeDocumentData['hero_title'];
+  description: HomeDocumentData['hero_description'];
+  actions: HomeDocumentData['hero_actions'];
+  focusAreas: HomeDocumentData['focus_areas'];
 };
 
 const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (

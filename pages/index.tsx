@@ -2,19 +2,18 @@
 import type { FC } from 'react';
 import type { GetStaticProps } from 'next';
 import { createClient } from '@/lib/prismic';
-import type { HomeDocument, SettingsDocument } from '@/types.generated';
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
 import About from '@/components/about';
-import Outlinks from '@/components/outlinks';
 import Projects from '@/components/projects';
 import Community from '@/components/community';
 import Footer from '@/components/footer';
 import Navigation from '@/components/navigation';
+import { HomeDocumentData, SettingsDocumentData } from '@/prismicio-types';
 
 type HomeProps = {
-  data: HomeDocument['data'];
-  settings: SettingsDocument['data'];
+  data: HomeDocumentData;
+  settings: SettingsDocumentData;
 };
 
 const Home: FC<HomeProps> = ({ data, settings }) => (

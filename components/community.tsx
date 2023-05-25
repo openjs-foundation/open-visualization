@@ -11,12 +11,12 @@ import {
   Plus,
   Slack,
 } from 'lucide-react';
-import type { HomeDocument } from '@/types.generated';
+import { HomeDocumentData } from '@/prismicio-types';
 
 type CommunityProps = {
-  title: HomeDocument['data']['community_title'];
-  description: HomeDocument['data']['community_description'];
-  items: HomeDocument['data']['community_outlinks'];
+  title: HomeDocumentData['community_title'];
+  description: HomeDocumentData['community_description'];
+  items: HomeDocumentData['community_outlinks'];
 };
 
 const icons = [Heart, Plus, Heart, Slack, Calendar, Pencil, Clock];
