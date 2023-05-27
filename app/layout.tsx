@@ -1,4 +1,5 @@
 import { PrismicPreview } from '@prismicio/next';
+import { Analytics } from '@vercel/analytics/react';
 import { repositoryName } from '@/lib/prismic';
 import '../styles/globals.css';
 import Providers from '@/components/providers';
@@ -16,6 +17,7 @@ const Layout: FC<LayoutProps> = ({ children }) => (
           {children}
         </PrismicPreview>
       </Providers>
+      <Analytics />
     </body>
   </html>
 );
