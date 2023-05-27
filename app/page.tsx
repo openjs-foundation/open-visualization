@@ -18,8 +18,9 @@ export const generateMetadata = async (): Promise<Metadata> => {
 };
 
 const Home = async (): Promise<ReactElement> => {
-  const { data } = await createClient().getSingle('home');
-  const { data: settings } = await createClient().getSingle('settings');
+  const client = createClient();
+  const { data } = await client.getSingle('home');
+  const { data: settings } = await client.getSingle('settings');
 
   return (
     <>
