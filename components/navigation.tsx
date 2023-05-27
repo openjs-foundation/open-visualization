@@ -1,3 +1,5 @@
+'use client';
+
 import { Disclosure } from '@headlessui/react';
 import clsx from 'clsx';
 import Image from 'next/image';
