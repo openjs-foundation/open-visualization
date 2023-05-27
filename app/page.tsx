@@ -7,16 +7,14 @@ import Community from '@/components/community';
 import Footer from '@/components/footer';
 import Navigation from '@/components/navigation';
 import Callout from '@/components/callout';
+import { createMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import type { ReactElement } from 'react';
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { data } = await createClient().getSingle('home');
 
-  return {
-    title: data.title,
-    description: data.description,
-  };
+  return createMetadata(data.title ?? '', data.description ?? '');
 };
 
 const Home = async (): Promise<ReactElement> => {
