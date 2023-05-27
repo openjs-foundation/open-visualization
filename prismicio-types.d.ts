@@ -320,6 +320,18 @@ interface HomeDocumentData {
    *
    */
   callout_image: prismic.ImageField<never>;
+  /**
+   * Callout Active field in *Home*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: home.callout_active
+   * - **Tab**: Callout
+   * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+   *
+   */
+  callout_active: prismic.BooleanField;
 }
 /**
  * Item in Home → Hero Actions

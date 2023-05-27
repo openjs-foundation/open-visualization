@@ -8,6 +8,7 @@ import Projects from '@/components/projects';
 import Community from '@/components/community';
 import Footer from '@/components/footer';
 import Navigation from '@/components/navigation';
+import Callout from '@/components/callout';
 import type { HomeDocumentData, SettingsDocumentData } from '@/prismicio-types';
 import type { GetStaticProps } from 'next';
 import type { FC } from 'react';
@@ -26,6 +27,16 @@ const Home: FC<HomeProps> = ({ data, settings }) => (
       actions={data.hero_actions}
       focusAreas={data.focus_areas}
     />
+    {data.callout_active && (
+      <Callout
+        caption={data.callout_caption}
+        title={data.callout_title}
+        description={data.callout_description}
+        ctaLabel={data.callout_cta_label}
+        ctaLink={data.callout_cta_link}
+        image={data.callout_image}
+      />
+    )}
     <About
       title={data.about_title}
       description={data.about_description}
