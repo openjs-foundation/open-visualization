@@ -1,0 +1,32 @@
+[
+  {
+    "navigation": {
+      "__TYPE__": "GroupContentType",
+      "value": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "navigation_label",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "related",
+                "type": "Text"
+              }
+            ],
+            [
+              "navigation_link",
+              {
+                "__TYPE__": "LinkContent",
+                "value": {
+                  "__TYPE__": "ExternalLink",
+                  "url": "https://prismic.io"
+                }
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  }
+]

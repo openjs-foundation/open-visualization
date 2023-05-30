@@ -1,15 +1,17 @@
-import type { FC } from 'react';
+'use client';
+
 import { Disclosure } from '@headlessui/react';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import type { FilledLinkToWebField } from '@prismicio/types';
 import useTheme from '@beskar-labs/use-theme';
 import { Menu, Moon, Sun, X } from 'lucide-react';
-import type { SettingsDocument } from '@/types.generated';
+import type { SettingsDocumentData } from '@/prismicio-types';
+import type { FilledLinkToWebField } from '@prismicio/types';
+import type { FC } from 'react';
 
 type NavbarProps = {
-  items?: SettingsDocument['data']['navigation'];
+  items?: SettingsDocumentData['navigation'];
 };
 
 const ModeToggle = () => {
@@ -82,7 +84,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
         </div>
 
         <Disclosure.Panel className="sm:hidden">
-          <div className="space-y-1 pt-2 pb-3">
+          <div className="space-y-1 pb-3 pt-2">
             {items?.map((item) => (
               <Disclosure.Button
                 as="a"

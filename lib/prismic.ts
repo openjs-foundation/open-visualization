@@ -1,12 +1,12 @@
 import * as prismic from '@prismicio/client';
 import * as prismicNext from '@prismicio/next';
-import sm from '@/sm.json';
-import type { AllDocumentTypes } from '@/types.generated';
+import sm from '@/slicemachine.config.json';
+import type { AllDocumentTypes } from '@/prismicio-types';
 
 /**
  * The project's Prismic repository name.
  */
-export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
+export const { repositoryName } = sm;
 
 // Update the routes array to match your project's route structure
 /** @type {prismic.ClientConfig['routes']} **/
@@ -24,7 +24,7 @@ const routes = [
  * @param config {prismicNext.CreateClientConfig} - Configuration for the Prismic client.
  */
 export const createClient = (config = {}): prismic.Client<AllDocumentTypes> => {
-  const client = prismic.createClient(sm.apiEndpoint, {
+  const client = prismic.createClient(sm.repositoryName, {
     routes,
     ...config,
   });

@@ -1,0 +1,305 @@
+[
+  {
+    "uid": {
+      "__TYPE__": "UIDContent",
+      "value": "guide"
+    },
+    "title": {
+      "__TYPE__": "FieldContent",
+      "value": "seven",
+      "type": "Text"
+    },
+    "description": {
+      "__TYPE__": "FieldContent",
+      "value": "journey",
+      "type": "Text"
+    },
+    "hero_title": {
+      "__TYPE__": "FieldContent",
+      "value": "toward",
+      "type": "Text"
+    },
+    "hero_description": {
+      "__TYPE__": "FieldContent",
+      "value": "hair",
+      "type": "Text"
+    },
+    "hero_actions": {
+      "__TYPE__": "GroupContentType",
+      "value": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "action_label",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "love",
+                "type": "Text"
+              }
+            ],
+            [
+              "action_link",
+              {
+                "__TYPE__": "LinkContent",
+                "value": {
+                  "__TYPE__": "ExternalLink",
+                  "url": "https://slicemachine.dev"
+                }
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "focus_areas": {
+      "__TYPE__": "GroupContentType",
+      "value": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "focus_area",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "religious",
+                "type": "Text"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "collaborators": {
+      "__TYPE__": "GroupContentType",
+      "value": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "logo",
+              {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                  "id": "main",
+                  "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+                  "width": 4010,
+                  "height": 4010
+                },
+                "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+                "width": 4010,
+                "height": 4010,
+                "edit": {
+                  "zoom": 1,
+                  "crop": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "background": "transparent"
+                },
+                "thumbnails": {}
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "about_title": {
+      "__TYPE__": "FieldContent",
+      "value": "rice",
+      "type": "Text"
+    },
+    "about_description": {
+      "__TYPE__": "FieldContent",
+      "value": "castle",
+      "type": "Text"
+    },
+    "about_content": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Pariatur ut pariatur aute consequat non cupidatat consequat dolore eiusmod sint ad aliqua nisi aliqua. Culpa in dolore nostrud magna sunt aliqua dolore anim pariatur aliqua incididunt. Ullamco id amet fugiat cillum adipisicing."
+          }
+        }
+      ]
+    },
+    "about_cta_label": {
+      "__TYPE__": "FieldContent",
+      "value": "forgotten",
+      "type": "Text"
+    },
+    "about_cta_link": {
+      "__TYPE__": "LinkContent",
+      "value": {
+        "__TYPE__": "ExternalLink",
+        "url": "http://twitter.com"
+      }
+    },
+    "about_image": {
+      "__TYPE__": "ImageContent",
+      "origin": {
+        "id": "main",
+        "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+        "width": 3456,
+        "height": 3456
+      },
+      "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+      "width": 3456,
+      "height": 3456,
+      "edit": {
+        "zoom": 1,
+        "crop": {
+          "x": 0,
+          "y": 0
+        },
+        "background": "transparent"
+      },
+      "thumbnails": {}
+    },
+    "projects_title": {
+      "__TYPE__": "FieldContent",
+      "value": "sugar",
+      "type": "Text"
+    },
+    "projects_description": {
+      "__TYPE__": "FieldContent",
+      "value": "compound",
+      "type": "Text"
+    },
+    "projects_cta_label": {
+      "__TYPE__": "FieldContent",
+      "value": "vertical",
+      "type": "Text"
+    },
+    "projects_cta_link": {
+      "__TYPE__": "LinkContent",
+      "value": {
+        "__TYPE__": "ExternalLink",
+        "url": "http://google.com"
+      }
+    },
+    "projects": {
+      "__TYPE__": "GroupContentType",
+      "value": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "project_title",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "force",
+                "type": "Text"
+              }
+            ],
+            [
+              "project_description",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "question",
+                "type": "Text"
+              }
+            ],
+            [
+              "project_link",
+              {
+                "__TYPE__": "LinkContent",
+                "value": {
+                  "__TYPE__": "ExternalLink",
+                  "url": "https://slicemachine.dev"
+                }
+              }
+            ],
+            [
+              "project_image",
+              {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                  "id": "main",
+                  "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+                  "width": 4010,
+                  "height": 4010
+                },
+                "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+                "width": 4010,
+                "height": 4010,
+                "edit": {
+                  "zoom": 1,
+                  "crop": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "background": "transparent"
+                },
+                "thumbnails": {}
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "community_title": {
+      "__TYPE__": "FieldContent",
+      "value": "movie",
+      "type": "Text"
+    },
+    "community_description": {
+      "__TYPE__": "FieldContent",
+      "value": "earn",
+      "type": "Text"
+    },
+    "community_github_link": {
+      "__TYPE__": "LinkContent",
+      "value": {
+        "__TYPE__": "ExternalLink",
+        "url": "http://twitter.com"
+      }
+    },
+    "community_outlinks": {
+      "__TYPE__": "GroupContentType",
+      "value": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "community_outlink_title",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "ancient",
+                "type": "Text"
+              }
+            ],
+            [
+              "community_outlink_description",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "seems",
+                "type": "Text"
+              }
+            ],
+            [
+              "community_outlink_cta_label",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "apart",
+                "type": "Text"
+              }
+            ],
+            [
+              "community_outlink_cta_link",
+              {
+                "__TYPE__": "LinkContent",
+                "value": {
+                  "__TYPE__": "ExternalLink",
+                  "url": "https://prismic.io"
+                }
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  }
+]

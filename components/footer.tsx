@@ -1,15 +1,15 @@
-import type { FC } from 'react';
-import type { FilledLinkToWebField } from '@prismicio/types';
 import TwitterIcon from './icons/twitter';
 import GoogleCalendarIcon from './icons/googleCalendar';
 import LinkedInIcon from './icons/linkedin';
-import type { HomeDocument, SettingsDocument } from '@/types.generated';
+import type { FC } from 'react';
+import type { FilledLinkToWebField } from '@prismicio/types';
+import type { HomeDocumentData, SettingsDocumentData } from '@/prismicio-types';
 
 type FooterProps = {
-  navigation: SettingsDocument['data']['navigation'];
-  description: HomeDocument['data']['hero_description'];
-  projects: HomeDocument['data']['projects'];
-  community: HomeDocument['data']['community_outlinks'];
+  navigation: SettingsDocumentData['navigation'];
+  description: HomeDocumentData['hero_description'];
+  projects: HomeDocumentData['projects'];
+  community: HomeDocumentData['community_outlinks'];
 };
 
 const social = [
@@ -44,7 +44,7 @@ const Footer: FC<FooterProps> = ({
     <h2 id="footer-heading" className="sr-only">
       Footer
     </h2>
-    <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div className="grid gap-16 md:grid-cols-2 md:gap-8">
         <div className="space-y-8 md:max-w-sm">
           <p className="text-base text-gray-500 dark:text-gray-400">
@@ -128,7 +128,7 @@ const Footer: FC<FooterProps> = ({
         </div>
       </div>
       <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700">
-        <div className="prose max-w-none prose-p:text-sm prose-a:text-primary-blue dark:prose-invert">
+        <div className="prose max-w-none dark:prose-invert prose-p:text-sm prose-a:text-primary-blue">
           <p>
             Copyright <a href="https://openjsf.org">OpenJS Foundation</a> and
             Open Visualization contributors. All rights reserved. The{' '}

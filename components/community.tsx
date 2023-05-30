@@ -1,6 +1,4 @@
-import type { FC } from 'react';
 import Link from 'next/link';
-import type { FilledLinkToWebField } from '@prismicio/types';
 import clsx from 'clsx';
 import {
   ArrowUpRight,
@@ -11,12 +9,14 @@ import {
   Plus,
   Slack,
 } from 'lucide-react';
-import type { HomeDocument } from '@/types.generated';
+import type { HomeDocumentData } from '@/prismicio-types';
+import type { FilledLinkToWebField } from '@prismicio/types';
+import type { FC } from 'react';
 
 type CommunityProps = {
-  title: HomeDocument['data']['community_title'];
-  description: HomeDocument['data']['community_description'];
-  items: HomeDocument['data']['community_outlinks'];
+  title: HomeDocumentData['community_title'];
+  description: HomeDocumentData['community_description'];
+  items: HomeDocumentData['community_outlinks'];
 };
 
 const icons = [Heart, Plus, Heart, Slack, Calendar, Pencil, Clock];

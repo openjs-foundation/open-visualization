@@ -5,42 +5,24 @@
   "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "type": "UID",
-        "config": {
-          "label": "UID",
-          "placeholder": ""
-        }
-      },
+      "uid": { "type": "UID", "config": { "label": "UID", "placeholder": "" } },
       "title": {
         "type": "Text",
-        "config": {
-          "label": "Title",
-          "placeholder": ""
-        }
+        "config": { "label": "Title", "placeholder": "" }
       },
       "description": {
         "type": "Text",
-        "config": {
-          "label": "Description",
-          "placeholder": ""
-        }
+        "config": { "label": "Description", "placeholder": "" }
       }
     },
     "Hero": {
       "hero_title": {
         "type": "Text",
-        "config": {
-          "label": "Hero Title",
-          "placeholder": ""
-        }
+        "config": { "label": "Hero Title", "placeholder": "" }
       },
       "hero_description": {
         "type": "Text",
-        "config": {
-          "label": "Hero Description",
-          "placeholder": ""
-        }
+        "config": { "label": "Hero Description", "placeholder": "" }
       },
       "hero_actions": {
         "type": "Group",
@@ -49,10 +31,7 @@
           "fields": {
             "action_label": {
               "type": "Text",
-              "config": {
-                "label": "Action Label",
-                "placeholder": ""
-              }
+              "config": { "label": "Action Label", "placeholder": "" }
             },
             "action_link": {
               "type": "Link",
@@ -72,10 +51,7 @@
           "fields": {
             "focus_area": {
               "type": "Text",
-              "config": {
-                "label": "Focus Area",
-                "placeholder": ""
-              }
+              "config": { "label": "Focus Area", "placeholder": "" }
             }
           }
         }
@@ -89,11 +65,7 @@
           "fields": {
             "logo": {
               "type": "Image",
-              "config": {
-                "label": "Logo",
-                "constraint": {},
-                "thumbnails": []
-              }
+              "config": { "label": "Logo", "constraint": {}, "thumbnails": [] }
             }
           }
         }
@@ -102,17 +74,11 @@
     "About": {
       "about_title": {
         "type": "Text",
-        "config": {
-          "label": "About Title",
-          "placeholder": ""
-        }
+        "config": { "label": "About Title", "placeholder": "" }
       },
       "about_description": {
         "type": "Text",
-        "config": {
-          "label": "About Description",
-          "placeholder": ""
-        }
+        "config": { "label": "About Description", "placeholder": "" }
       },
       "about_content": {
         "type": "StructuredText",
@@ -125,10 +91,7 @@
       },
       "about_cta_label": {
         "type": "Text",
-        "config": {
-          "label": "About CTA Label",
-          "placeholder": ""
-        }
+        "config": { "label": "About CTA Label", "placeholder": "" }
       },
       "about_cta_link": {
         "type": "Link",
@@ -140,34 +103,21 @@
       },
       "about_image": {
         "type": "Image",
-        "config": {
-          "label": "About Image",
-          "constraint": {},
-          "thumbnails": []
-        }
+        "config": { "label": "About Image", "constraint": {}, "thumbnails": [] }
       }
     },
     "Projects": {
       "projects_title": {
         "type": "Text",
-        "config": {
-          "label": "Projects Title",
-          "placeholder": ""
-        }
+        "config": { "label": "Projects Title", "placeholder": "" }
       },
       "projects_description": {
         "type": "Text",
-        "config": {
-          "label": "Projects Description",
-          "placeholder": ""
-        }
+        "config": { "label": "Projects Description", "placeholder": "" }
       },
       "projects_cta_label": {
         "type": "Text",
-        "config": {
-          "label": "Projects CTA Label",
-          "placeholder": ""
-        }
+        "config": { "label": "Projects CTA Label", "placeholder": "" }
       },
       "projects_cta_link": {
         "type": "Link",
@@ -184,17 +134,11 @@
           "fields": {
             "project_title": {
               "type": "Text",
-              "config": {
-                "label": "Project Title",
-                "placeholder": ""
-              }
+              "config": { "label": "Project Title", "placeholder": "" }
             },
             "project_description": {
               "type": "Text",
-              "config": {
-                "label": "Project Description",
-                "placeholder": ""
-              }
+              "config": { "label": "Project Description", "placeholder": "" }
             },
             "project_link": {
               "type": "Link",
@@ -219,17 +163,11 @@
     "Community": {
       "community_title": {
         "type": "Text",
-        "config": {
-          "label": "Community Title",
-          "placeholder": ""
-        }
+        "config": { "label": "Community Title", "placeholder": "" }
       },
       "community_description": {
         "type": "Text",
-        "config": {
-          "label": "Community Description",
-          "placeholder": ""
-        }
+        "config": { "label": "Community Description", "placeholder": "" }
       },
       "community_github_link": {
         "type": "Link",
@@ -274,6 +212,54 @@
               }
             }
           }
+        }
+      }
+    },
+    "Callout": {
+      "callout_title": {
+        "type": "Text",
+        "config": { "label": "Callout Title", "placeholder": "" }
+      },
+      "callout_caption": {
+        "type": "Text",
+        "config": { "label": "Callout Caption", "placeholder": "" }
+      },
+      "callout_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Callout Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,strong,em,hyperlink,list-item,o-list-item,rtl"
+        }
+      },
+      "callout_cta_label": {
+        "type": "Text",
+        "config": { "label": "Callout CTA Label", "placeholder": "" }
+      },
+      "callout_cta_link": {
+        "type": "Link",
+        "config": {
+          "label": "Callout CTA Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "callout_image": {
+        "type": "Image",
+        "config": {
+          "label": "Callout Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "callout_active": {
+        "type": "Boolean",
+        "config": {
+          "label": "Callout Active",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
         }
       }
     }
