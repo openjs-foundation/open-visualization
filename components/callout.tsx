@@ -24,7 +24,7 @@ const Callout: FC<CalloutProps> = ({
   ctaLink,
   image,
 }) => (
-  <div className="relative mx-auto mb-16 max-w-7xl rounded-lg border border-neutral-200 px-4 py-16 dark:border-neutral-700 sm:px-6 lg:px-8">
+  <div className="relative mx-8 my-8 mb-16 max-w-7xl rounded-lg border border-neutral-200 px-4 py-4 dark:border-neutral-700 sm:px-6 sm:py-16 lg:px-8">
     <div className="grid gap-8 rounded sm:grid-cols-2">
       <div className="order-2 sm:order-none">
         <p className="text-sm text-gray-500 dark:text-gray-400">{caption}</p>
