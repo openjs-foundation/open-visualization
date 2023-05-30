@@ -34,7 +34,7 @@ const Callout: FC<CalloutProps> = ({
         <div className="prose prose-sm mx-auto mt-5 text-gray-500 prose-a:text-primary-blue dark:text-gray-400 lg:col-start-1 lg:row-start-1 lg:max-w-none">
           <PrismicRichText field={description} />
         </div>
-        {ctaLabel && (
+        {ctaLabel && ctaLink.link_type === 'Web' && (
           <div className="mt-8">
             <Link
               href={(ctaLink as FilledLinkToWebField).url}
