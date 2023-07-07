@@ -42,7 +42,7 @@
     "prettier": "^2.8.8",
     "prismic-ts-codegen": "^0.1.10",
     "slice-machine-ui": "^1.0.3",
-    "stylelint": "^15.6.2",
+    "stylelint": "^15.10.1",
     "tailwindcss": "^3.3.2",
     "typescript": "5.0.4"
   },
