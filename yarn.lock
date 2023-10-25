@@ -524,13 +524,6 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@beskar-labs/use-theme@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@beskar-labs/use-theme/-/use-theme-2.0.3.tgz#52b6d4a96c29096d8db239dd7cca0d91152b6afd"
-  integrity sha512-YVdfVDqnE7tHN4e7BRr6XN2Yohvl4WwNxQ9Klu6o9pphS70mFx5tbATl1G1wuXXPbxg6lF7tFZQz5eRBDZUVaw==
-  dependencies:
-    "@react-hookz/web" "^23.0.0"
-
 "@csstools/css-parser-algorithms@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@csstools/css-parser-algorithms/-/css-parser-algorithms-2.1.1.tgz#7b62e6412a468a2d1096ed267edd1e4a7fd4a119"
@@ -1973,18 +1966,6 @@
     "@react-types/shared" "^3.18.1"
     "@swc/helpers" "^0.4.14"
     clsx "^1.1.1"
-
-"@react-hookz/deep-equal@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@react-hookz/deep-equal/-/deep-equal-1.0.4.tgz#68a71f36cbc88724b3ce6f4036183778b6e7f282"
-  integrity sha512-N56fTrAPUDz/R423pag+n6TXWbvlBZDtTehaGFjK0InmN+V2OFWLE/WmORhmn6Ce7dlwH5+tQN1LJFw3ngTJVg==
-
-"@react-hookz/web@^23.0.0":
-  version "23.0.1"
-  resolved "https://registry.yarnpkg.com/@react-hookz/web/-/web-23.0.1.tgz#768f49f8a5ef117738259a307906cb738c2679c8"
-  integrity sha512-YZR/Zh5un5c7Nfch2iSRdBn91jTiByyzd2HY+HsFX8UQcN+xurfamKKWg9+/cudY9azcH3Y/f6Hi+Rm0m7LhHg==
-  dependencies:
-    "@react-hookz/deep-equal" "^1.0.4"
 
 "@react-stately/calendar@3.1.0":
   version "3.1.0"
@@ -7202,6 +7183,11 @@ next-secure-headers@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/next-secure-headers/-/next-secure-headers-2.2.0.tgz#d4eb1b00a424f811c1455d1288990a4aad3026af"
   integrity sha512-C7OfZ9JdSJyYMz2ZBMI/WwNbt0qNjlFWX9afUp8nEUzbz6ez3JbeopdyxSZJZJAzVLIAfyk6n73rFpd4e22jRg==
+
+next-themes@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.2.1.tgz#0c9f128e847979daf6c67f70b38e6b6567856e45"
+  integrity sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==
 
 next@13.4.3:
   version "13.4.3"

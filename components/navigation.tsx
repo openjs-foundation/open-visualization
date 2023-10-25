@@ -4,7 +4,7 @@ import { Disclosure } from '@headlessui/react';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import useTheme from '@beskar-labs/use-theme';
+import { useTheme } from 'next-themes';
 import { Menu, Moon, Sun, X } from 'lucide-react';
 import type { SettingsDocumentData } from '@/prismicio-types';
 import type { FilledLinkToWebField } from '@prismicio/types';
@@ -15,7 +15,7 @@ type NavbarProps = {
 };
 
 const ModeToggle = () => {
-  const [theme, setTheme] = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <button
