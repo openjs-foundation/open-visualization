@@ -7,9 +7,9 @@ import type { FilledLinkToWebField } from '@prismicio/types';
 import type { FC } from 'react';
 
 type ProjectsProps = {
-  title: HomeDocumentData['projects_title'];
-  description: HomeDocumentData['projects_description'];
-  items: HomeDocumentData['projects'];
+  readonly title: HomeDocumentData['projects_title'];
+  readonly description: HomeDocumentData['projects_description'];
+  readonly items: HomeDocumentData['projects'];
 };
 
 const Projects: FC<ProjectsProps> = ({ title, description, items }) => (

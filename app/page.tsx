@@ -33,7 +33,7 @@ const Home = async (): Promise<ReactElement> => {
         actions={data.hero_actions}
         focusAreas={data.focus_areas}
       />
-      {data.callout_active && (
+      {data.callout_active ? (
         <Callout
           caption={data.callout_caption}
           title={data.callout_title}
@@ -42,7 +42,7 @@ const Home = async (): Promise<ReactElement> => {
           ctaLink={data.callout_cta_link}
           image={data.callout_image}
         />
-      )}
+      ) : null}
       <About
         title={data.about_title}
         description={data.about_description}

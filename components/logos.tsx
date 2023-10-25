@@ -3,7 +3,7 @@ import type { HomeDocumentData } from '@/prismicio-types';
 import type { FC } from 'react';
 
 type LogosProps = {
-  logos: HomeDocumentData['collaborators'];
+  readonly logos: HomeDocumentData['collaborators'];
 };
 
 const Logos: FC<LogosProps> = ({ logos }) => (

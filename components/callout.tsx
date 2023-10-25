@@ -8,12 +8,12 @@ import type { HomeDocumentData } from '@/prismicio-types';
 import type { FC } from 'react';
 
 type CalloutProps = {
-  caption: HomeDocumentData['callout_caption'];
-  title: HomeDocumentData['callout_title'];
-  description: HomeDocumentData['callout_description'];
-  ctaLabel: HomeDocumentData['callout_cta_label'];
-  ctaLink: HomeDocumentData['callout_cta_link'];
-  image: HomeDocumentData['callout_image'];
+  readonly caption: HomeDocumentData['callout_caption'];
+  readonly title: HomeDocumentData['callout_title'];
+  readonly description: HomeDocumentData['callout_description'];
+  readonly ctaLabel: HomeDocumentData['callout_cta_label'];
+  readonly ctaLink: HomeDocumentData['callout_cta_link'];
+  readonly image: HomeDocumentData['callout_image'];
 };
 
 const Callout: FC<CalloutProps> = ({
@@ -35,7 +35,7 @@ const Callout: FC<CalloutProps> = ({
           <div className="prose prose-sm mx-auto mt-5 text-gray-500 prose-a:text-primary-blue dark:text-gray-400 lg:col-start-1 lg:row-start-1 lg:max-w-none">
             <PrismicRichText field={description} />
           </div>
-          {ctaLabel && ctaLink.link_type === 'Web' && (
+          {ctaLabel && ctaLink.link_type === 'Web' ? (
             <div className="mt-8">
               <Link
                 href={(ctaLink as FilledLinkToWebField).url}
@@ -48,10 +48,10 @@ const Callout: FC<CalloutProps> = ({
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>
-          )}
+          ) : null}
         </div>
         <div className="h-full w-full">
-          {image.url && (
+          {image.url ? (
             <Image
               src={image.url}
               alt={image.alt ?? ''}
@@ -59,7 +59,7 @@ const Callout: FC<CalloutProps> = ({
               height={image.dimensions.height}
               className="h-full w-full rounded object-cover object-left"
             />
-          )}
+          ) : null}
         </div>
       </div>
     </div>

@@ -11,10 +11,10 @@ import type { FC } from 'react';
 const fullConfig = resolveConfig(tailwindConfig);
 
 type HeroProps = {
-  title: HomeDocumentData['hero_title'];
-  description: HomeDocumentData['hero_description'];
-  actions: HomeDocumentData['hero_actions'];
-  focusAreas: HomeDocumentData['focus_areas'];
+  readonly title: HomeDocumentData['hero_title'];
+  readonly description: HomeDocumentData['hero_description'];
+  readonly actions: HomeDocumentData['hero_actions'];
+  readonly focusAreas: HomeDocumentData['focus_areas'];
 };
 
 const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (

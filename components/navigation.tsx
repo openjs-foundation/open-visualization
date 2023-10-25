@@ -11,7 +11,7 @@ import type { FilledLinkToWebField } from '@prismicio/types';
 import type { FC } from 'react';
 
 type NavbarProps = {
-  items?: SettingsDocumentData['navigation'];
+  readonly items?: SettingsDocumentData['navigation'];
 };
 
 const ModeToggle = () => {

@@ -6,10 +6,10 @@ import type { FilledLinkToWebField } from '@prismicio/types';
 import type { HomeDocumentData, SettingsDocumentData } from '@/prismicio-types';
 
 type FooterProps = {
-  navigation: SettingsDocumentData['navigation'];
-  description: HomeDocumentData['hero_description'];
-  projects: HomeDocumentData['projects'];
-  community: HomeDocumentData['community_outlinks'];
+  readonly navigation: SettingsDocumentData['navigation'];
+  readonly description: HomeDocumentData['hero_description'];
+  readonly projects: HomeDocumentData['projects'];
+  readonly community: HomeDocumentData['community_outlinks'];
 };
 
 const social = [

@@ -6,7 +6,7 @@ import Providers from '@/components/providers';
 import type { FC, ReactNode } from 'react';
 
 type LayoutProps = {
-  children: ReactNode;
+  readonly children: ReactNode;
 };
 
 const Layout: FC<LayoutProps> = ({ children }) => (

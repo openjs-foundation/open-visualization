@@ -14,9 +14,9 @@ import type { FilledLinkToWebField } from '@prismicio/types';
 import type { FC } from 'react';
 
 type CommunityProps = {
-  title: HomeDocumentData['community_title'];
-  description: HomeDocumentData['community_description'];
-  items: HomeDocumentData['community_outlinks'];
+  readonly title: HomeDocumentData['community_title'];
+  readonly description: HomeDocumentData['community_description'];
+  readonly items: HomeDocumentData['community_outlinks'];
 };
 
 const icons = [Heart, Plus, Heart, Slack, Calendar, Pencil, Clock];

@@ -5,14 +5,14 @@ import type { HomeDocumentData } from '@/prismicio-types';
 import type { FC } from 'react';
 
 type AboutProps = {
-  title: HomeDocumentData['about_title'];
-  description: HomeDocumentData['about_description'];
-  content: HomeDocumentData['about_content'];
+  readonly title: HomeDocumentData['about_title'];
+  readonly description: HomeDocumentData['about_description'];
+  readonly content: HomeDocumentData['about_content'];
   /*
    * ctaLabel: HomeDocumentData['about_cta_label'];
    * ctaLink: HomeDocumentData['about_cta_link'];
    */
-  image: HomeDocumentData['about_image'];
+  readonly image: HomeDocumentData['about_image'];
 };
 
 const About: FC<AboutProps> = ({
