@@ -7,6 +7,7 @@ import Community from '@/components/community';
 import Footer from '@/components/footer';
 import Navigation from '@/components/navigation';
 import Callout from '@/components/callout';
+import Summits from '@/components/summits';
 import { createMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import type { ReactElement } from 'react';
@@ -43,6 +44,11 @@ const Home = async (): Promise<ReactElement> => {
           image={data.callout_image}
         />
       ) : null}
+      <Summits
+        title={data.section_title}
+        description={data.section_description}
+        items={data.summits}
+      />
       <About
         title={data.about_title}
         description={data.about_description}
