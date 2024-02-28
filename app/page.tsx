@@ -1,4 +1,4 @@
-import {createClient} from '@/lib/prismic';
+import { createClient } from '@/lib/prismic';
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
 import About from '@/components/about';
@@ -7,13 +7,13 @@ import Community from '@/components/community';
 import Footer from '@/components/footer';
 import Navigation from '@/components/navigation';
 import Callout from '@/components/callout';
-import {createMetadata} from '@/lib/metadata';
-import type {Metadata} from 'next';
-import type {ReactElement} from 'react';
-import Summits from "@/components/summits";
+import Summits from '@/components/summits';
+import { createMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+import type { ReactElement } from 'react';
 
 export const generateMetadata = async (): Promise<Metadata> => {
-  const {data} = await createClient().getSingle('home');
+  const { data } = await createClient().getSingle('home');
 
   return createMetadata(data.title ?? '', data.description ?? '');
 };
@@ -27,7 +27,7 @@ const Home = async (): Promise<ReactElement> => {
 
   return (
     <>
-      <Navigation items={settings.navigation}/>
+      <Navigation items={settings.navigation} />
       <Hero
         title={data.hero_title}
         description={data.hero_description}
@@ -69,7 +69,7 @@ const Home = async (): Promise<ReactElement> => {
         description={data.community_description}
         items={data.community_outlinks}
       />
-      <Logos logos={data.collaborators}/>
+      <Logos logos={data.collaborators} />
       <Footer
         navigation={settings.navigation}
         description={data.hero_description}
