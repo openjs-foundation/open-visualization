@@ -417,13 +417,6 @@
             }
           }
         }
-      },
-      "slices7": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {}
-        }
       }
     }
   }
