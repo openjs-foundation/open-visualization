@@ -8,7 +8,7 @@ const nextConfig = {
     domains: [
       'images.unsplash.com',
       'open-visualization.cdn.prismic.io',
-      'images.prismic.io',
+      'images.prismic.io'
     ],
   },
   headers() {
