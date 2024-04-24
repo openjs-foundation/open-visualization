@@ -19,7 +19,7 @@ const Summits: FC<SummitsProps> = ({ title, items, description }) => (
         <h2 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
           {title}
         </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 w-1/2">
+        <p className="text-lg text-gray-600 dark:text-gray-300 w-full md:w-1/2">
           {description}
         </p>
       </div>
@@ -51,7 +51,7 @@ const Summits: FC<SummitsProps> = ({ title, items, description }) => (
               />
 
               <div className="flex w-full items-center justify-between space-x-6 p-6">
-                <div className="flex-1">
+                <div className="flex-1 max-w-full">
                   <div className="flex flex-col mb-2">
                     <div className="mb-2">
                       {summit_dates!.split(',')[0]} →{' '}
