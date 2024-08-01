@@ -134,7 +134,7 @@
       "__TYPE__": "LinkContent",
       "value": {
         "__TYPE__": "ExternalLink",
-        "url": "http://twitter.com"
+        "url": "http://x.com"
       }
     },
     "about_image": {
@@ -254,7 +254,7 @@
       "__TYPE__": "LinkContent",
       "value": {
         "__TYPE__": "ExternalLink",
-        "url": "http://twitter.com"
+        "url": "http://x.com"
       }
     },
     "community_outlinks": {
