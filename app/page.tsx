@@ -1,4 +1,8 @@
 import { createClient } from '@/lib/prismic';
+import { createMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+import type { ReactElement } from 'react';
+
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
 import About from '@/components/about';
@@ -8,9 +12,14 @@ import Footer from '@/components/footer';
 import Navigation from '@/components/navigation';
 import Callout from '@/components/callout';
 import Summits from '@/components/summits';
-import { createMetadata } from '@/lib/metadata';
-import type { Metadata } from 'next';
-import type { ReactElement } from 'react';
+
+// vis.gl additions
+import MyApp from '@/components/visgl/pages/_app';
+// import VisGLHero from '@/components/visgl/pages/index';
+import FrameworksPage from '@/components/visgl/pages/frameworks';
+import ShowcasePage from '@/components/visgl/pages/showcases'
+import BlogPage from '@/components/visgl/pages/blog';
+import NewsPage from '@/components/visgl/pages/news';
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { data } = await createClient().getSingle('home');
@@ -69,6 +78,11 @@ const Home = async (): Promise<ReactElement> => {
         description={data.community_description}
         items={data.community_outlinks}
       />
+      {/* <MyApp><VisGLHero /></MyApp> */}
+      <MyApp><FrameworksPage /></MyApp>
+      <MyApp><ShowcasePage /></MyApp>
+      <MyApp><BlogPage /></MyApp>
+      <MyApp><NewsPage /></MyApp>
       <Logos logos={data.collaborators} />
       <Footer
         navigation={settings.navigation}

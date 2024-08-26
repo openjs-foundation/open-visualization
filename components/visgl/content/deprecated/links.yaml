@@ -1,0 +1,39 @@
+- navigation:
+    type: MENU
+    title: Frameworks
+    items:
+      - item:
+          active: true
+          label: vis.gl
+          url: http://vis.gl
+      - item:
+          label: deck.gl
+          url: http://deck.gl
+      - item:
+          label: luma.gl
+          url: http://luma.gl
+      - item:
+          label: react-map-gl
+          url: https://visgl.github.io/react-map-gl/
+      - item:
+          label: react-google-maps
+          url: https://visgl.github.io/react-google-maps/
+- navigation:
+    type: LINKS
+    title: Navigation
+    items:
+      - item:
+          label: Home
+          route: /
+      - item:
+          label: Frameworks
+          route: /frameworks
+      - item:
+          label: Showcases
+          route: /showcases
+      - item:
+          label: News
+          route: /news
+      - item:
+          label: Blog
+          route: /blog

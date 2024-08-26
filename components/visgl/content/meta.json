@@ -1,0 +1,68 @@
+[
+  {
+    "page": "home",
+    "path": "/",
+    "title": "vis.gl - OpenJS Foundation",
+    "meta": [
+      {
+        "item": null,
+        "name": "description",
+        "content": "Cutting edge technology meets beautiful data visualization."
+      },
+      {
+        "item": null,
+        "name": "keywords",
+        "content": "visualization, data visualization, webGL, OpenJS"
+      }
+    ]
+  },
+  {
+    "page": "about",
+    "path": "/about",
+    "title": "About vis.gl",
+    "meta": [
+      {
+        "item": null,
+        "name": "description",
+        "content": "Join an open team of software engineers, information designers, and computer graphics specialists."
+      },
+      {
+        "item": null,
+        "name": "keywords",
+        "content": "OpenJS, visualization, engineering"
+      }
+    ]
+  },
+  {
+    "page": "news",
+    "path": "/news",
+    "title": "vis.gl in the news",
+    "meta": [
+      {
+        "item": null,
+        "name": "description",
+        "content": "Learn more about how our work is creating impact"
+      },
+      {
+        "item": null,
+        "name": "keywords",
+        "content": "OpenJS, visualization, engineering, events, meetups, articles"
+      }
+    ]
+  },
+  {
+    "page": "showcases",
+    "path": "/showcases",
+    "title": "vis.gl showcase"
+  },
+  {
+    "page": "blog",
+    "path": "/blog",
+    "title": "Blog posts about vis.gl"
+  },
+  {
+    "page": "frameworks",
+    "path": "/frameworks",
+    "title": "Frameworks of vis.gl"
+  }
+]
