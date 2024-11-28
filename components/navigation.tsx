@@ -58,7 +58,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => (
                   key={item.navigation_label}
                   href={(
                     item.navigation_link as FilledLinkToWebField
-                  ).url.replace('https://#', '#')}
+                  ).url.replace('https://#', '/#')}
                   className={clsx(
                     'inline-flex h-full items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white',
                     'border-transparent text-gray-500 hover:border-primary-blue hover:text-gray-700'

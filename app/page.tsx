@@ -1,25 +1,23 @@
-import { createClient } from '@/lib/prismic';
 import { createMetadata } from '@/lib/metadata';
-import type { Metadata } from 'next';
-import type { ReactElement } from 'react';
+import { createClient } from '@/lib/prismic';
 
-import Hero from '@/components/hero';
-import Logos from '@/components/logos';
 import About from '@/components/about';
-import Projects from '@/components/projects';
+import Callout from '@/components/callout';
 import Community from '@/components/community';
 import Footer from '@/components/footer';
-import Navigation from '@/components/navigation';
-import Callout from '@/components/callout';
+import Hero from '@/components/hero';
+import Logos from '@/components/logos';
+import Projects from '@/components/projects';
 import Summits from '@/components/summits';
 
 // vis.gl additions
 import MyApp from '@/components/visgl/pages/_app';
 // import VisGLHero from '@/components/visgl/pages/index';
-import FrameworksPage from '@/components/visgl/pages/frameworks';
-import ShowcasePage from '@/components/visgl/pages/showcases'
 import BlogPage from '@/components/visgl/pages/blog';
 import NewsPage from '@/components/visgl/pages/news';
+import ShowcasePage from '@/components/visgl/pages/showcases';
+import type { Metadata } from 'next';
+import type { ReactElement } from 'react';
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { data } = await createClient().getSingle('home');
@@ -36,7 +34,6 @@ const Home = async (): Promise<ReactElement> => {
 
   return (
     <>
-      <Navigation items={settings.navigation} />
       <Hero
         title={data.hero_title}
         description={data.hero_description}
@@ -79,17 +76,16 @@ const Home = async (): Promise<ReactElement> => {
         items={data.community_outlinks}
       />
       {/* <MyApp><VisGLHero /></MyApp> */}
-      <MyApp><FrameworksPage /></MyApp>
-      <MyApp><ShowcasePage /></MyApp>
-      <MyApp><BlogPage /></MyApp>
-      <MyApp><NewsPage /></MyApp>
+      <MyApp>
+        <ShowcasePage />
+      </MyApp>
+      <MyApp>
+        <BlogPage />
+      </MyApp>
+      <MyApp>
+        <NewsPage />
+      </MyApp>
       <Logos logos={data.collaborators} />
-      <Footer
-        navigation={settings.navigation}
-        description={data.hero_description}
-        projects={data.projects}
-        community={data.community_outlinks}
-      />
     </>
   );
 };

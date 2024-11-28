@@ -58,7 +58,7 @@ const Projects: FC<ProjectsProps> = ({ title, description, items }) => (
                         'text-gray-900 ring-gray-900/10 hover:ring-gray-900/20 dark:text-white dark:ring-white/10'
                       )}
                     >
-                      Download {project_title}
+                      Explore {project_title}
                       <ArrowUpRight className="h-4 w-4" />
                     </Link>
                   </p>
