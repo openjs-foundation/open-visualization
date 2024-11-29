@@ -56,5 +56,9 @@
   "prettier": "eslint-config-harmony/prettier",
   "stylelint": {
     "extends": "eslint-config-harmony/stylelint"
+  },
+  "volta": {
+    "node": "20.18.1",
+    "yarn": "1.22.22"
   }
 }
