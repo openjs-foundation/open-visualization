@@ -1,62 +1,14 @@
 {
   "frameworkGroups": [
     {
-      "title": null,
-      "description": "The vis.gl frameworks are designed for GPU powered geospatial visualization and analytics on the web. The frameworks are designed to be independently usable while following a common style that makes them work seamlessly together. Each framework provides a number of sub-modules that export composable components such as loaders, visualization layers, and math modules that developers can cherry-pick and combine to achieve desired results.\n",
+      "title": "Core Frameworks - Common",
+      "description": "The core vis.gl frameworks are designed to be independently usable while working seamlessly together. Developers select composable components such as loaders, visualization layers, and math modules, and combine them to quickly achieve desired results.\n",
       "entries": [
-        {
-          "name": "kepler.gl",
-          "url": "https://kepler.gl",
-          "image": "/visgl/images/frameworks/kepler.png",
-          "description": "The kepler.gl demo application is a widely used geospatial tool for visualization and exploration of geospatial data using deck.gl. It demonstrates the power of the kepler.gl application framework, designed to let users build advanced custom geospatial applications.\n"
-        },
-        {
-          "name": "deck.gl",
-          "url": "https://deck.gl",
-          "image": "/visgl/images/frameworks/deck.png",
-          "description": "Providing high-performance, GPU powered visualization layers for  large scale geospatial data. deck.gl is the corner stone of the vis.gl framework suite. A selection of submodules provide layers for various geospatial and 3D  use cases.\n"
-        },
-        {
-          "name": "pydeck.gl",
-          "url": "https://pydeck.gl",
-          "image": "/visgl/images/frameworks/pydeck.png",
-          "description": "Python bindings for deck.gl that enable powerful custom geospatial visualizations to be programmed directly in Jupyter Notebooks.\n"
-        },
-        {
-          "name": "loaders.gl",
-          "url": "https://loaders.gl",
-          "image": "/visgl/images/frameworks/loaders.png",
-          "description": "A wide range of highly optimized, framework-independent loaders for geospatial,  tabular and 3D file formats. Supports worker based binary data loading. Supported outputs includes geospatial layers, point clouds, 3D geometries,  images, textures and tabular data.\n"
-        },
         {
           "name": "luma.gl",
           "url": "https://luma.gl",
           "image": "/visgl/images/frameworks/luma.png",
-          "description": "A high-performance WebGL library for high-performance visualization and GPU computation.\n"
-        },
-        {
-          "name": "hubble.gl",
-          "url": "https://hubble.gl",
-          "image": "/visgl/images/frameworks/hubble.png",
-          "description": "A powerful animation and video capture solution for deck.gl and kepler.gl visualizations.\n"
-        },
-        {
-          "name": "react-map-gl",
-          "url": "https://visgl.github.io/react-map-gl",
-          "image": "/visgl/images/frameworks/react-map-gl.png",
-          "description": "A React wrapper for Mapbox GL JS that integrates with deck.gl.\n"
-        },
-        {
-          "name": "react-google-maps",
-          "url": "https://visgl.github.io/react-google-maps/",
-          "image": "/visgl/images/frameworks/react-google-maps.jpeg",
-          "description": "A React wrapper for the Google Maps JavaScript API that integrates with deck.gl.\n"
-        },
-        {
-          "name": "flowmap.gl",
-          "url": "https://flowmap.gl/",
-          "image": "/visgl/images/frameworks/FlowmapBlue.jpg",
-          "description": "Flowmap.gl is a flow map drawing layer for deck.gl. It can be used for visualization of geographic movement: mobility, transportation, migration, etc.\n"
+          "description": "A WebGPU and WebGL2 library for high-performance visualization and GPU computation on the web.\n"
         },
         {
           "name": "math.gl",
@@ -69,18 +21,102 @@
           "url": "https://visgl.github.io/probe.gl",
           "image": "/visgl/images/frameworks/probe.png",
           "description": "JavaScript Console Logging, Instrumentation, Benchmarking and Test Utilities.\n"
+        }
+      ]
+    },
+    {
+      "title": "Core Frameworks - Geospatial",
+      "description": "The famous vis.gl frameworks for geospatial visualization and analytics on the web.\n",
+      "entries": [
+        {
+          "name": "kepler.gl",
+          "url": "https://kepler.gl",
+          "image": "/visgl/images/frameworks/kepler.png",
+          "description": "kepler.gl is a widely used geospatial tool for interactive exploration of geospatial data using deck.gl. Also, the kepler.gl application framework enables custom geospatial applications.\n"
         },
         {
-          "name": "deck.gl-community",
+          "name": "deck.gl",
+          "url": "https://deck.gl",
+          "image": "/visgl/images/frameworks/deck.png",
+          "description": "High-performance, GPU powered visualization layers for large scale geospatial data. Submodules provide layers for various geospatial and 3D  use cases.\n"
+        },
+        {
+          "name": "loaders.gl",
+          "url": "https://loaders.gl",
+          "image": "/visgl/images/frameworks/loaders.png",
+          "description": "Optimized, framework-independent loaders for geospatial, tabular and 3D file formats. Supports worker-based, binary data loading.\n"
+        },
+        {
+          "name": "pydeck.gl",
+          "url": "https://pydeck.gl",
+          "image": "/visgl/images/frameworks/pydeck.png",
+          "description": "Python bindings for deck.gl that enable custom geospatial visualizations to be programmed directly in Jupyter Notebooks.\n"
+        },
+        {
+          "name": "react-map-gl",
+          "url": "https://visgl.github.io/react-map-gl",
+          "image": "/visgl/images/frameworks/react-map-gl.png",
+          "description": "A React wrapper for Maplibra and Mapbox GL JS that integrates with deck.gl.\n"
+        },
+        {
+          "name": "react-google-maps",
+          "url": "https://visgl.github.io/react-google-maps/",
+          "image": "/visgl/images/frameworks/react-google-maps.jpeg",
+          "description": "A React wrapper for the Google Maps JavaScript API that integrates with deck.gl.\n"
+        },
+        {
+          "name": "hubble.gl",
+          "url": "https://hubble.gl",
+          "image": "/visgl/images/frameworks/hubble.png",
+          "description": "A powerful animation and video capture solution for deck.gl and kepler.gl visualizations.\n"
+        },
+        {
+          "name": "flowmap.gl",
+          "url": "https://flowmap.gl/",
+          "image": "/visgl/images/frameworks/FlowmapBlue.jpg",
+          "description": "A powerful flow map drawing layer for deck.gl. For visualization of geographic movement: mobility, transportation, migration, etc.\n"
+        }
+      ]
+    },
+    {
+      "title": "Community Frameworks - Geospatial",
+      "description": "A number of community-maintained, \"non-official\" vis.gl frameworks under open governance. Offering layers, basemaps, add-on modules for deck.gl.",
+      "entries": [
+        {
+          "name": "deck.gl-community/editable-layers",
           "url": "https://visgl.github.io/deck.gl-community",
           "image": "/visgl/images/frameworks/deck.gl-community.png",
-          "description": "Unofficial layers, basemaps, add-on modules for deck.gl including high-performance feature editing layers for deck.gl.\n"
+          "description": "High-performance feature editing layers for deck.gl.\n"
+        },
+        {
+          "name": "deck.gl-community/leaflet",
+          "url": "https://visgl.github.io/deck.gl-community",
+          "image": "/visgl/images/frameworks/deck.gl-community.png",
+          "description": "Unofficial basemap add-on module for deck.gl.\n"
+        },
+        {
+          "name": "deck.gl-community/bing-maps",
+          "url": "https://visgl.github.io/deck.gl-community",
+          "image": "/visgl/images/frameworks/deck.gl-community.png",
+          "description": "Unofficial basemap add-on module for deck.gl.\n"
+        }
+      ]
+    },
+    {
+      "title": "Community Frameworks - Infovis (Non-Geospatial)",
+      "description": "While Geospatial is a main driver of deck.gl development, non-geospatial use cases are on the rise.",
+      "entries": [
+        {
+          "name": "deck.gl-community/graph-layers",
+          "url": "https://visgl.github.io/deck.gl-community",
+          "image": "/visgl/images/frameworks/deck.gl-community.png",
+          "description": "A set of graph-layers for deck.gl including GPU powered layout algorithms.\n"
         }
       ]
     },
     {
       "title": "Related Frameworks",
-      "description": "In addition to the core frameworks, the vis.gl framework suite integrates with a number of related open source frameworks that are not under open governance.\n",
+      "description": "The vis.gl framework suite deeply integrates with certain open source frameworks that are not under the OpenJS Open Visualization umbrella.\n",
       "entries": [
         {
           "name": "H3",
