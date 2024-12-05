@@ -158,7 +158,13 @@ const Navigation: FC<NavbarProps> = ({ items: originalItems, projects }) => {
                               <NavigationMenuListItem
                                 key={project.project_title}
                                 title={project.project_title ?? ''}
-                                href={`/project/${project.project_title?.toLowerCase()}`}
+                                href={
+                                  // This is a temporary fix until we have published the vis.gl page
+                                  // so that we can change the project links in Prismic
+                                  project.project_title === 'Vis.gl'
+                                    ? '/project/vis.gl'
+                                    : (project.project_link.url ?? '#')
+                                }
                                 image={project.project_image}
                               >
                                 {project.project_description}
