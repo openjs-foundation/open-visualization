@@ -30,6 +30,7 @@ const NavigationMenuItem = React.forwardRef<
             alt={image.alt ?? ''}
             width={100}
             height={100}
+            className="h-16 w-30 rounded object-cover"
           />
         ) : null}
         <div className="flex flex-col gap-2">

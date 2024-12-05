@@ -6,6 +6,7 @@ import { createClient, repositoryName } from '@/lib/prismic';
 import type { FC, ReactElement, ReactNode } from 'react';
 import '../styles/globals.css';
 import Footer from '@/components/footer';
+import news from '@/content/news.json';
 
 type LayoutProps = {
   readonly children: ReactNode;
@@ -24,6 +25,7 @@ const Layout: FC<LayoutProps> = async ({ children }): Promise<ReactElement> => {
             <NavigationBar
               items={settings.navigation}
               projects={data.projects}
+              news={news}
             />
             {children}
             <Footer

@@ -30,11 +30,9 @@ import type {
 import type { FilledLinkToWebField, ImageField } from '@prismicio/types';
 import type { ElementType, FC } from 'react';
 import ProjectsMenuContent from '@/components/navigation/projects-menu-content';
+import NewsMenuContent from '@/components/navigation/news-menu-content';
+import type { NewsItem } from '@/content/news.json';
 
-type NavbarProps = {
-  readonly items?: SettingsDocumentData['navigation'];
-  readonly projects?: HomeDocumentData['projects'];
-};
 const NAV_MENU_TRIGGER_STYLE = cn(navigationMenuTriggerStyle(), {
   // 'text-white hover:bg-gray-800': true,
   'bg-transparent focus:bg-transparent ': true,
@@ -72,7 +70,11 @@ const addItemAfter = (
   return updatedItems;
 };
 
-const NavigationBar: FC<NavbarProps> = ({ items: originalItems, projects }) => {
+const NavigationBar: FC<NavbarProps> = ({
+  items: originalItems,
+  projects,
+  news,
+}) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const items = useMemo(() => {
     let updatedItems = addItemAfter(originalItems, 'Projects', {
@@ -119,6 +121,21 @@ const NavigationBar: FC<NavbarProps> = ({ items: originalItems, projects }) => {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                           <ProjectsMenuContent projects={projects} />
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+                    );
+                  }
+
+                  if (item.navigation_label === 'News') {
+                    return (
+                      <NavigationMenuItem key={item.navigation_label}>
+                        <NavigationMenuTrigger
+                          className={NAV_MENU_TRIGGER_STYLE}
+                        >
+                          {item.navigation_label}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <NewsMenuContent news={news} />
                         </NavigationMenuContent>
                       </NavigationMenuItem>
                     );
