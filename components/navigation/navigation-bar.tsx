@@ -1,37 +1,37 @@
 'use client';
 
-import clsx from 'clsx';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useTheme } from 'next-themes';
-import { Menu, Moon, Sun, X } from 'lucide-react';
-import React, { useMemo } from 'react';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
-  NavigationMenuList,
-  NavigationMenuLink,
-  navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
+import NewsMenuContent from '@/components/navigation/news-menu-content';
+import ProjectsMenuContent from '@/components/navigation/projects-menu-content';
+import SummitsMenuContent from '@/components/navigation/summits-menu-content';
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerTrigger,
 } from '@/components/ui/drawer';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
+import type { NewsItem } from '@/content/news.json';
 import { cn } from '@/lib/utils';
 import type {
   HomeDocumentData,
   SettingsDocumentData,
   SettingsDocumentDataNavigationItem,
 } from '@/prismicio-types';
-import type { FilledLinkToWebField, ImageField } from '@prismicio/types';
-import type { ElementType, FC } from 'react';
-import ProjectsMenuContent from '@/components/navigation/projects-menu-content';
-import NewsMenuContent from '@/components/navigation/news-menu-content';
-import type { NewsItem } from '@/content/news.json';
+import type { FilledLinkToWebField } from '@prismicio/types';
+import { Menu, Moon, Sun, X } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+import Link from 'next/link';
+import type { FC } from 'react';
+import React, { useMemo } from 'react';
 
 const NAV_MENU_TRIGGER_STYLE = cn(navigationMenuTriggerStyle(), {
   // 'text-white hover:bg-gray-800': true,
@@ -70,10 +70,18 @@ const addItemAfter = (
   return updatedItems;
 };
 
+type NavbarProps = {
+  readonly items?: SettingsDocumentData['navigation'];
+  readonly projects?: HomeDocumentData['projects'];
+  readonly news?: NewsItem[];
+  readonly summits?: HomeDocumentData['summits'];
+};
+
 const NavigationBar: FC<NavbarProps> = ({
   items: originalItems,
   projects,
   news,
+  summits,
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const items = useMemo(() => {
@@ -136,6 +144,21 @@ const NavigationBar: FC<NavbarProps> = ({
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                           <NewsMenuContent news={news} />
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+                    );
+                  }
+
+                  if (item.navigation_label === 'Summits') {
+                    return (
+                      <NavigationMenuItem key={item.navigation_label}>
+                        <NavigationMenuTrigger
+                          className={NAV_MENU_TRIGGER_STYLE}
+                        >
+                          {item.navigation_label}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <SummitsMenuContent summits={summits} />
                         </NavigationMenuContent>
                       </NavigationMenuItem>
                     );

@@ -7,14 +7,10 @@ import Community from '@/components/community';
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
 import Projects from '@/components/projects';
-import Summits from '@/components/summits';
 
 // vis.gl additions
-import MyApp from '@/components/visgl/pages/_app';
 // import VisGLHero from '@/components/visgl/pages/index';
 
-import NewsPage from '@/components/visgl/pages/news';
-import ShowcasePage from '@/components/visgl/pages/showcases';
 import type { Metadata } from 'next';
 import type { ReactElement } from 'react';
 
@@ -29,7 +25,7 @@ export const revalidate = 0;
 const Home = async (): Promise<ReactElement> => {
   const client = createClient();
   const { data } = await client.getSingle('home');
-  const { data: settings } = await client.getSingle('settings');
+  // const { data: settings } = await client.getSingle('settings');
 
   return (
     <>
@@ -49,11 +45,6 @@ const Home = async (): Promise<ReactElement> => {
           image={data.callout_image}
         />
       ) : null}
-      <Summits
-        title={data.section_title}
-        description={data.section_description}
-        items={data.summits}
-      />
       <About
         title={data.about_title}
         description={data.about_description}

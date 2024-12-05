@@ -26,6 +26,7 @@ const Layout: FC<LayoutProps> = async ({ children }): Promise<ReactElement> => {
               items={settings.navigation}
               projects={data.projects}
               news={news}
+              summits={data.summits}
             />
             {children}
             <Footer
