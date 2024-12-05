@@ -1,5 +1,5 @@
 import ImageBox from '@/components/visgl/components/image-box';
-import frameworksYaml from '@/components/visgl/content/frameworks.json';
+import frameworksYaml from '@/content/frameworks.json';
 import markdownToHtml from '@/components/visgl/lib/markdownToHtml';
 import React from 'react';
 
