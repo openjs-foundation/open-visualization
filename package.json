@@ -64,6 +64,7 @@
   },
   "volta": {
     "node": "20.18.1",
+    "_yarnComment_": "Vercel only supports Yarn 1",
     "yarn": "1.22.22"
   }
 }
