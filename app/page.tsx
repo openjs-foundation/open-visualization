@@ -75,9 +75,9 @@ const Home = async (): Promise<ReactElement> => {
         items={data.community_outlinks}
       />
       {/* <MyApp><VisGLHero /></MyApp> */}
-      <MyApp>
+      {/* <MyApp>
         <ShowcasePage />
-      </MyApp>
+      </MyApp> */}
       <Logos logos={data.collaborators} />
     </>
   );

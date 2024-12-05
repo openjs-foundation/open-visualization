@@ -35,8 +35,8 @@ type NavbarProps = {
   readonly projects?: HomeDocumentData['projects'];
 };
 const NAV_MENU_TRIGGER_STYLE = cn(navigationMenuTriggerStyle(), {
-  'text-white': true,
-  'bg-transparent focus:bg-transparent hover:bg-gray-800': true,
+  // 'text-white hover:bg-gray-800': true,
+  'bg-transparent focus:bg-transparent ': true,
 });
 
 const NavigationMenuListItem = React.forwardRef<
@@ -152,8 +152,8 @@ const Navigation: FC<NavbarProps> = ({ items: originalItems, projects }) => {
                         >
                           {item.navigation_label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <ul className="grid w-[300px] gap-3 p-4 md:w-[400px] lg:grid-cols-2 lg:w-[500px]">
+                        <NavigationMenuContent className=" flex flex-col">
+                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] lg:grid-cols-2 lg:w-[600px]">
                             {projects?.map((project) => (
                               <NavigationMenuListItem
                                 key={project.project_title}
@@ -171,6 +171,17 @@ const Navigation: FC<NavbarProps> = ({ items: originalItems, projects }) => {
                               </NavigationMenuListItem>
                             ))}
                           </ul>
+                          <div className="p-4 text-sm text-muted-foreground border-t">
+                            Each project is independently maintained by
+                            passionate contributors who have joined forces with
+                            OpenVis.{' '}
+                            <Link
+                              href="/#get-involved"
+                              className="inline-flex items-center text-primary hover:underline"
+                            >
+                              Join our community →
+                            </Link>
+                          </div>
                         </NavigationMenuContent>
                       </NavigationMenuItem>
                     );
