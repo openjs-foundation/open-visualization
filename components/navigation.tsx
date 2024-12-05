@@ -117,7 +117,7 @@ const Navigation: FC<NavbarProps> = ({ items: originalItems, projects }) => {
 
     updatedItems = addItemAfter(updatedItems, 'Home', {
       navigation_label: 'News',
-      navigation_link: { url: '/#news' } as FilledLinkToWebField,
+      navigation_link: { url: '/news' } as FilledLinkToWebField,
     });
 
     return updatedItems;

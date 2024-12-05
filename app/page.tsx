@@ -78,9 +78,6 @@ const Home = async (): Promise<ReactElement> => {
       <MyApp>
         <ShowcasePage />
       </MyApp>
-      <MyApp>
-        <NewsPage />
-      </MyApp>
       <Logos logos={data.collaborators} />
     </>
   );
