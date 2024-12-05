@@ -49,7 +49,7 @@ const ProjectsMenuContent: React.FC<ProjectsMenuContentProps> = ({
 }) => {
   return (
     <div>
-      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] lg:grid-cols-2 lg:w-[600px]">
+      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] lg:grid-cols-1 lg:w-[600px]">
         {projects?.map((project) => (
           <li key={project.project_title}>
             <NavigationMenuItem
