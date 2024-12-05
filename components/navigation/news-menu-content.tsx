@@ -7,8 +7,11 @@ import type { NewsItem } from '@/content/news.json';
 
 const NavigationMenuItem = React.forwardRef<
   React.ElementRef<'a'>,
-  React.ComponentPropsWithoutRef<'a'> & { readonly image?: string }
->(({ className, title, children, image, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<'a'> & {
+    readonly image?: string;
+    readonly date?: string;
+  }
+>(({ className, title, children, image, date, ...props }, ref) => (
   <NavigationMenuLink asChild>
     <a
       ref={ref}
@@ -33,6 +36,7 @@ const NavigationMenuItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
+          {date && <p className="text-xs text-muted-foreground">{date}</p>}
         </div>
       </div>
     </a>
@@ -54,6 +58,7 @@ const NewsMenuContent: React.FC<NewsMenuContentProps> = ({ news }) => {
               title={item.title}
               href={item.url}
               image={item.image}
+              date={item.date}
             >
               {item.publication}
             </NavigationMenuItem>
