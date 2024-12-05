@@ -140,7 +140,7 @@ const Navigation: FC<NavbarProps> = ({ items: originalItems, projects }) => {
               </Link>
             </div>
           </div>
-          <div className="hidden items-center sm:ml-6 sm:flex sm:space-x-8">
+          <div className="hidden items-center nav:ml-6 nav:flex nav:space-x-8">
             <NavigationMenu>
               <NavigationMenuList>
                 {items?.map((item) => {
@@ -197,7 +197,7 @@ const Navigation: FC<NavbarProps> = ({ items: originalItems, projects }) => {
             <ModeToggle />
           </div>
 
-          <div className="flex items-center sm:hidden">
+          <div className="flex items-center nav:hidden">
             <Drawer open={isOpen} onOpenChange={setIsOpen}>
               <DrawerTrigger asChild>
                 <button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-blue">

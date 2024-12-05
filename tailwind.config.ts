@@ -6,6 +6,10 @@ const config: Config = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      screens: {
+        // Custom breakpoint for navigation menu (when it becomes horizontal)
+        nav: '850px',
+      },
       colors: {
         primary: {
           blue: '#0075C9',
