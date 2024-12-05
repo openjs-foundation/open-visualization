@@ -4,7 +4,6 @@ import { createClient } from '@/lib/prismic';
 import About from '@/components/about';
 import Callout from '@/components/callout';
 import Community from '@/components/community';
-import Footer from '@/components/footer';
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
 import Projects from '@/components/projects';
@@ -13,7 +12,7 @@ import Summits from '@/components/summits';
 // vis.gl additions
 import MyApp from '@/components/visgl/pages/_app';
 // import VisGLHero from '@/components/visgl/pages/index';
-import BlogPage from '@/components/visgl/pages/blog';
+
 import NewsPage from '@/components/visgl/pages/news';
 import ShowcasePage from '@/components/visgl/pages/showcases';
 import type { Metadata } from 'next';
@@ -78,9 +77,6 @@ const Home = async (): Promise<ReactElement> => {
       {/* <MyApp><VisGLHero /></MyApp> */}
       <MyApp>
         <ShowcasePage />
-      </MyApp>
-      <MyApp>
-        <BlogPage />
       </MyApp>
       <MyApp>
         <NewsPage />

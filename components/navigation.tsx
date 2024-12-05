@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { Menu, Moon, Sun, X } from 'lucide-react';
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -22,9 +22,13 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer';
 import { cn } from '@/lib/utils';
-import type { HomeDocumentData, SettingsDocumentData } from '@/prismicio-types';
+import type {
+  HomeDocumentData,
+  SettingsDocumentData,
+  SettingsDocumentDataNavigationItem,
+} from '@/prismicio-types';
 import type { FilledLinkToWebField, ImageField } from '@prismicio/types';
-import type { FC } from 'react';
+import type { ElementType, FC } from 'react';
 
 type NavbarProps = {
   readonly items?: SettingsDocumentData['navigation'];
@@ -87,8 +91,37 @@ const ModeToggle = () => {
   );
 };
 
-const Navigation: FC<NavbarProps> = ({ items, projects }) => {
+const addItemAfter = (
+  items: NavbarProps['items'],
+  targetLabel: string,
+  newItem: SettingsDocumentDataNavigationItem
+) => {
+  if (!items) return items;
+  const updatedItems = [...items] as typeof items;
+  const targetIndex = updatedItems.findIndex(
+    (item) => item.navigation_label === targetLabel
+  );
+  if (targetIndex !== -1) {
+    updatedItems.splice(targetIndex + 1, 0, newItem);
+  }
+  return updatedItems;
+};
+
+const Navigation: FC<NavbarProps> = ({ items: originalItems, projects }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const items = useMemo(() => {
+    let updatedItems = addItemAfter(originalItems, 'Projects', {
+      navigation_label: 'Blog',
+      navigation_link: { url: '/blog' } as FilledLinkToWebField,
+    });
+
+    updatedItems = addItemAfter(updatedItems, 'Home', {
+      navigation_label: 'News',
+      navigation_link: { url: '/#news' } as FilledLinkToWebField,
+    });
+
+    return updatedItems;
+  }, [originalItems]);
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 bg-white/90 shadow backdrop-blur-sm dark:bg-gray-900/90">
@@ -143,10 +176,6 @@ const Navigation: FC<NavbarProps> = ({ items, projects }) => {
                         href={(
                           item.navigation_link as FilledLinkToWebField
                         ).url.replace('https://#', '/#')}
-                        // className={clsx(
-                        //   'inline-flex h-full items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white',
-                        //   'border-transparent text-gray-500 hover:border-primary-blue hover:text-gray-700'
-                        // )}
                         legacyBehavior
                         passHref
                       >
