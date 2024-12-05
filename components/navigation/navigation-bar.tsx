@@ -29,6 +29,7 @@ import type {
 } from '@/prismicio-types';
 import type { FilledLinkToWebField, ImageField } from '@prismicio/types';
 import type { ElementType, FC } from 'react';
+import ProjectsMenuContent from '@/components/navigation/projects-menu-content';
 
 type NavbarProps = {
   readonly items?: SettingsDocumentData['navigation'];
@@ -38,42 +39,6 @@ const NAV_MENU_TRIGGER_STYLE = cn(navigationMenuTriggerStyle(), {
   // 'text-white hover:bg-gray-800': true,
   'bg-transparent focus:bg-transparent ': true,
 });
-
-const NavigationMenuListItem = React.forwardRef<
-  React.ElementRef<'a'>,
-  React.ComponentPropsWithoutRef<'a'> & { readonly image?: ImageField }
->(({ className, title, children, image, ...props }, ref) => (
-  <li>
-    <NavigationMenuLink asChild>
-      <a
-        ref={ref}
-        className={cn(
-          'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-          className
-        )}
-        {...props}
-      >
-        <div className="flex gap-2">
-          {image?.url ? (
-            <Image
-              src={image.url}
-              alt={image.alt ?? ''}
-              width={100}
-              height={100}
-            />
-          ) : null}
-          <div className="flex flex-col gap-2">
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-              {children}
-            </p>
-          </div>
-        </div>
-      </a>
-    </NavigationMenuLink>
-  </li>
-));
-NavigationMenuListItem.displayName = 'NavigationMenuListItem';
 
 const ModeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -107,7 +72,7 @@ const addItemAfter = (
   return updatedItems;
 };
 
-const Navigation: FC<NavbarProps> = ({ items: originalItems, projects }) => {
+const NavigationBar: FC<NavbarProps> = ({ items: originalItems, projects }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const items = useMemo(() => {
     let updatedItems = addItemAfter(originalItems, 'Projects', {
@@ -152,36 +117,8 @@ const Navigation: FC<NavbarProps> = ({ items: originalItems, projects }) => {
                         >
                           {item.navigation_label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className=" flex flex-col">
-                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] lg:grid-cols-2 lg:w-[600px]">
-                            {projects?.map((project) => (
-                              <NavigationMenuListItem
-                                key={project.project_title}
-                                title={project.project_title ?? ''}
-                                href={
-                                  // This is a temporary fix until we have published the vis.gl page
-                                  // so that we can change the project links in Prismic
-                                  project.project_title === 'Vis.gl'
-                                    ? '/project/vis.gl'
-                                    : (project.project_link.url ?? '#')
-                                }
-                                image={project.project_image}
-                              >
-                                {project.project_description}
-                              </NavigationMenuListItem>
-                            ))}
-                          </ul>
-                          <div className="p-4 text-sm text-muted-foreground border-t">
-                            Each project is independently maintained by
-                            passionate contributors who have joined forces with
-                            OpenVis.{' '}
-                            <Link
-                              href="/#get-involved"
-                              className="inline-flex items-center text-primary hover:underline"
-                            >
-                              Join our community →
-                            </Link>
-                          </div>
+                        <NavigationMenuContent>
+                          <ProjectsMenuContent projects={projects} />
                         </NavigationMenuContent>
                       </NavigationMenuItem>
                     );
@@ -254,4 +191,4 @@ const Navigation: FC<NavbarProps> = ({ items: originalItems, projects }) => {
   );
 };
 
-export default Navigation;
+export default NavigationBar;
