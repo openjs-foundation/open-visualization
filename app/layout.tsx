@@ -1,8 +1,8 @@
+import { PrismicPreview } from '@prismicio/next';
+import { Analytics } from '@vercel/analytics/react';
 import Navigation from '@/components/navigation';
 import Providers from '@/components/providers';
 import { createClient, repositoryName } from '@/lib/prismic';
-import { PrismicPreview } from '@prismicio/next';
-import { Analytics } from '@vercel/analytics/react';
 import type { FC, ReactElement, ReactNode } from 'react';
 import '../styles/globals.css';
 import Footer from '@/components/footer';
@@ -21,7 +21,7 @@ const Layout: FC<LayoutProps> = async ({ children }): Promise<ReactElement> => {
       <body className="bg-white pt-16 dark:bg-gray-900">
         <Providers>
           <PrismicPreview repositoryName={repositoryName}>
-            <Navigation items={settings.navigation} />
+            <Navigation items={settings.navigation} projects={data.projects} />
             {children}
             <Footer
               navigation={settings.navigation}
