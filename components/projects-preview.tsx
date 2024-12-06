@@ -64,6 +64,19 @@ const ProjectsPreview: FC<ProjectsProps> = ({ title, description, items }) => (
         ))}
       </div>
     </div>
+
+    <div className="flex justify-center">
+      <Link
+        href="/projects"
+        className={clsx(
+          'inline-flex items-center gap-2 rounded-lg px-6 py-2.5 text-base font-semibold leading-7 ring-1 transition-colors',
+          'text-gray-900 ring-gray-900/10 hover:ring-gray-900/20 dark:text-white dark:ring-white/10 hover:bg-gray-50 dark:hover:bg-gray-800'
+        )}
+      >
+        Full list of projects
+        <ArrowUpRight className="h-4 w-4" />
+      </Link>
+    </div>
   </div>
 );
 
