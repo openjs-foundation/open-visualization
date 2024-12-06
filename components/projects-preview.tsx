@@ -65,7 +65,7 @@ const ProjectsPreview: FC<ProjectsProps> = ({ title, description, items }) => (
       </div>
     </div>
 
-    <div className="flex justify-center">
+    <div className="flex justify-center pb-8">
       <Link
         href="/projects"
         className={clsx(
