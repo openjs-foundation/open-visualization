@@ -1,28 +1,32 @@
 import Image from 'next/image';
-import frameworksYaml from '@/content/frameworks.json';
+import projectsJson from '@/content/projects.json';
 import markdownToHtml from '@/components/visgl/lib/markdownToHtml';
 import React from 'react';
 
-type FrameworksGroup = {
-  title: string | null;
+type FrameworkEntry = {
+  name: string;
+  image: string;
+  url: string;
   description: string;
-  entries: {
-    name: string;
-    image: string;
-    url: string;
-    description: string;
-  }[];
 };
 
-const FrameworkCard = ({
-  name,
-  image,
-  url,
-  description,
-}: FrameworksGroup['entries'][0]) => (
+type FrameworkGroup = {
+  title: string;
+  description: string;
+  entries: FrameworkEntry[];
+};
+
+type Project = {
+  name: string;
+  description: string;
+  entries?: FrameworkEntry[];
+  groups?: FrameworkGroup[];
+};
+
+const FrameworkCard = ({ name, image, url, description }: FrameworkEntry) => (
   <a
     href={url}
-    className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-102 hover:shadow-lg"
+    className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-102 hover:shadow-lg w-full max-w-sm"
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -64,7 +68,7 @@ const FrameworkCard = ({
   </a>
 );
 
-const FrameworksGroup = ({ group }: { group: FrameworksGroup }) => (
+const FrameworkGroup = ({ group }: { group: FrameworkGroup }) => (
   <div className="mb-16">
     {group.title && (
       <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
@@ -79,11 +83,38 @@ const FrameworksGroup = ({ group }: { group: FrameworksGroup }) => (
         }}
       />
     )}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
       {group.entries.map((framework) => (
         <FrameworkCard key={framework.name} {...framework} />
       ))}
     </div>
+  </div>
+);
+
+const Project = ({ project }: { project: Project }) => (
+  <div className="mb-20">
+    <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      {project.name}
+    </h2>
+    {project.description && (
+      <div
+        className="prose dark:prose-invert max-w-none mb-8"
+        dangerouslySetInnerHTML={{
+          __html: markdownToHtml(project.description),
+        }}
+      />
+    )}
+    {project.entries && (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        {project.entries.map((framework) => (
+          <FrameworkCard key={framework.name} {...framework} />
+        ))}
+      </div>
+    )}
+    {project.groups &&
+      project.groups.map((group, index) => (
+        <FrameworkGroup key={index} group={group} />
+      ))}
   </div>
 );
 
@@ -99,8 +130,8 @@ const ProjectsPage: React.FC = () => (
         </p>
       </div>
 
-      {frameworksYaml.frameworkGroups.map((group, index) => (
-        <FrameworksGroup key={index} group={group} />
+      {projectsJson.projects.map((project, index) => (
+        <Project key={index} project={project} />
       ))}
     </div>
   </div>
