@@ -87,12 +87,12 @@ const FrameworksGroup = ({ group }: { group: FrameworksGroup }) => (
   </div>
 );
 
-const VisGlPage: React.FC = () => (
+const ProjectsPage: React.FC = () => (
   <div className="py-16 px-4 sm:px-6 lg:px-8">
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-12">
         <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mb-3 sm:text-4xl">
-          Vis.gl Frameworks
+          Projects
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
           A suite of composable visualization frameworks
@@ -106,4 +106,4 @@ const VisGlPage: React.FC = () => (
   </div>
 );
 
-export default VisGlPage;
+export default ProjectsPage;

@@ -1,30 +1,6 @@
 {
   "frameworkGroups": [
     {
-      "title": "Core Frameworks - Common",
-      "description": "The core vis.gl frameworks are designed to be independently usable while working seamlessly together. Developers select composable components such as loaders, visualization layers, and math modules, and combine them to quickly achieve desired results.\n",
-      "entries": [
-        {
-          "name": "luma.gl",
-          "url": "https://luma.gl",
-          "image": "/visgl/images/frameworks/luma.png",
-          "description": "A WebGPU and WebGL2 library for high-performance visualization and GPU computation on the web.\n"
-        },
-        {
-          "name": "math.gl",
-          "url": "https://visgl.github.io/math.gl",
-          "image": "/visgl/images/frameworks/math.png",
-          "description": "Math library focusing on 3D and geospatial math.\n"
-        },
-        {
-          "name": "probe.gl",
-          "url": "https://visgl.github.io/probe.gl",
-          "image": "/visgl/images/frameworks/probe.png",
-          "description": "JavaScript Console Logging, Instrumentation, Benchmarking and Test Utilities.\n"
-        }
-      ]
-    },
-    {
       "title": "Core Frameworks - Geospatial",
       "description": "The famous vis.gl frameworks for geospatial visualization and analytics on the web.\n",
       "entries": [
@@ -99,6 +75,30 @@
           "url": "https://visgl.github.io/deck.gl-community",
           "image": "/visgl/images/frameworks/deck.gl-community.png",
           "description": "Unofficial basemap add-on module for deck.gl.\n"
+        }
+      ]
+    },
+    {
+      "title": "Core Frameworks - Common",
+      "description": "The core vis.gl frameworks are designed to be independently usable while working seamlessly together. Developers select composable components such as loaders, visualization layers, and math modules, and combine them to quickly achieve desired results.\n",
+      "entries": [
+        {
+          "name": "luma.gl",
+          "url": "https://luma.gl",
+          "image": "/visgl/images/frameworks/luma.png",
+          "description": "A WebGPU and WebGL2 library for high-performance visualization and GPU computation on the web.\n"
+        },
+        {
+          "name": "math.gl",
+          "url": "https://visgl.github.io/math.gl",
+          "image": "/visgl/images/frameworks/math.png",
+          "description": "Math library focusing on 3D and geospatial math.\n"
+        },
+        {
+          "name": "probe.gl",
+          "url": "https://visgl.github.io/probe.gl",
+          "image": "/visgl/images/frameworks/probe.png",
+          "description": "JavaScript Console Logging, Instrumentation, Benchmarking and Test Utilities.\n"
         }
       ]
     },

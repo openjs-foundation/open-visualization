@@ -50,23 +50,32 @@ const ProjectsMenuContent: React.FC<ProjectsMenuContentProps> = ({
 }) => {
   return (
     <div>
-      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] lg:grid-cols-1 lg:w-[600px]">
-        {projects?.map((project) => (
-          <li key={project.project_title}>
-            <NavigationMenuItem
-              title={project.project_title ?? ''}
-              href={
-                project.project_title === 'Vis.gl'
-                  ? '/project/vis.gl'
-                  : (project.project_link?.url ?? '#')
-              }
-              image={project.project_image}
-            >
-              {project.project_description}
-            </NavigationMenuItem>
-          </li>
-        ))}
-      </ul>
+      <div className="p-4 border-b">
+        <NavigationMenuItem title="Full list of projects" href="/projects">
+          View the full list of projects maintained by OpenVis.
+        </NavigationMenuItem>
+      </div>
+      <div className="p-6 flex flex-col gap-2 w-[400px] md:w-[500px] lg:w-[600px]">
+        <div className="text-sm font-medium leading-none">Main projects</div>
+        <ul className="grid gap-3 p-2 lg:grid-cols-1">
+          {projects?.map((project) => (
+            <li key={project.project_title}>
+              <NavigationMenuItem
+                title={project.project_title ?? ''}
+                href={
+                  // This is temporary until we can change it in Prismic
+                  project.project_title === 'Vis.gl'
+                    ? '/projects'
+                    : (project.project_link?.url ?? '#')
+                }
+                image={project.project_image}
+              >
+                {project.project_description}
+              </NavigationMenuItem>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div className="border-b p-6 pt-2 text-sm text-muted-foreground">
         Each project is independently maintained by passionate contributors who
         have joined forces with OpenVis.{' '}

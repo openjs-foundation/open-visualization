@@ -77,6 +77,20 @@ type NavbarProps = {
   readonly summits?: HomeDocumentData['summits'];
 };
 
+const NavigationMenuTriggerWithLink: FC<{
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+}> = ({ href, children, className }) => {
+  return (
+    <Link href={href} legacyBehavior passHref>
+      <NavigationMenuTrigger className={className}>
+        {children}
+      </NavigationMenuTrigger>
+    </Link>
+  );
+};
+
 const NavigationBar: FC<NavbarProps> = ({
   items: originalItems,
   projects,
@@ -122,11 +136,12 @@ const NavigationBar: FC<NavbarProps> = ({
                   if (item.navigation_label === 'Projects') {
                     return (
                       <NavigationMenuItem key={item.navigation_label}>
-                        <NavigationMenuTrigger
+                        <NavigationMenuTriggerWithLink
+                          href="/projects"
                           className={NAV_MENU_TRIGGER_STYLE}
                         >
                           {item.navigation_label}
-                        </NavigationMenuTrigger>
+                        </NavigationMenuTriggerWithLink>
                         <NavigationMenuContent>
                           <ProjectsMenuContent projects={projects} />
                         </NavigationMenuContent>
