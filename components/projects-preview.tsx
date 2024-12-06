@@ -12,8 +12,43 @@ type ProjectsProps = {
   readonly items: HomeDocumentData['projects'];
 };
 
+const ProjectCard = ({
+  project_title,
+  project_description,
+  project_image,
+}: HomeDocumentData['projects'][0]) => (
+  <Link
+    href={`/projects#${project_title?.toLowerCase().replace(/\s+/g, '-')}`}
+    className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-102 hover:shadow-lg"
+  >
+    <div className="relative aspect-[3/2] w-full">
+      <Image
+        src={project_image.url ?? ''}
+        alt={project_title ?? ''}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className="object-contain p-4 bg-white dark:bg-gray-800"
+        priority={false}
+      />
+    </div>
+
+    <div className="p-6 flex flex-col flex-grow">
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+        {project_title}
+      </h3>
+      <p className="text-base text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+        {project_description}
+      </p>
+      <span className="inline-flex items-center text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300">
+        Learn more about {project_title}
+        <ArrowUpRight className="ml-2 h-4 w-4" />
+      </span>
+    </div>
+  </Link>
+);
+
 const ProjectsPreview: FC<ProjectsProps> = ({ title, description, items }) => (
-  <div className="overflow-hidden bg-gray-100 dark:bg-gray-800" id="projects">
+  <div className="overflow-hidden bg-gray-100 dark:bg-gray-900" id="projects">
     <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
         <h2 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
@@ -23,51 +58,11 @@ const ProjectsPreview: FC<ProjectsProps> = ({ title, description, items }) => (
           {description}
         </p>
       </div>
-      <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
-        {items.map(
-          (
-            { project_description, project_link, project_title, project_image },
-            index
-          ) => (
-            <li
-              key={index}
-              className="col-span-1 divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow dark:divide-gray-700 dark:bg-gray-900"
-            >
-              <Image
-                src={project_image.url ?? ''}
-                alt=""
-                width={project_image.dimensions?.width}
-                height={project_image.dimensions?.height}
-                className="aspect-[5/3] object-cover"
-              />
-              <div className="flex w-full items-center justify-between space-x-6 p-6">
-                <div className="flex-1">
-                  <div className="flex flex-col">
-                    <h3 className="truncate text-2xl font-semibold text-gray-900 dark:text-white">
-                      {project_title}
-                    </h3>
-                    <p className="mt-2 text-base text-gray-500 dark:text-gray-400">
-                      {project_description}
-                    </p>
-                  </div>
-                  <p className="mt-8">
-                    <Link
-                      href={(project_link as FilledLinkToWebField).url}
-                      className={clsx(
-                        'inline-flex items-center gap-2 rounded-lg px-4 py-1.5 text-base font-semibold leading-7 ring-1 transition-colors',
-                        'text-gray-900 ring-gray-900/10 hover:ring-gray-900/20 dark:text-white dark:ring-white/10'
-                      )}
-                    >
-                      Explore {project_title}
-                      <ArrowUpRight className="h-4 w-4" />
-                    </Link>
-                  </p>
-                </div>
-              </div>
-            </li>
-          )
-        )}
-      </ul>
+      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-[repeat(auto-fit,minmax(0,384px))] justify-center">
+        {items.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
+      </div>
     </div>
   </div>
 );

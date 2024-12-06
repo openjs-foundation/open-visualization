@@ -94,8 +94,8 @@ const ProjectGroup = ({ group }: { group: ProjectGroup }) => (
   </div>
 );
 
-const Project = ({ project }: { project: Project }) => (
-  <div className="mb-20">
+const ProjectContainer = ({ project }: { project: Project }) => (
+  <div id={project.name?.toLowerCase().replace(/\s+/g, '-')} className="mb-20">
     <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
       {project.name}
     </h2>
@@ -130,9 +130,8 @@ const ProjectsPage: React.FC = () => (
         </h1>
 
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          Full list of projects and libraries maintained by OpenVis. Each
-          project is independently maintained by passionate contributors who
-          have joined forces with OpenVis.
+          Full list of projects and libraries which are independently maintained
+          by passionate contributors who have joined forces with OpenVis.
         </p>
 
         <p className="mt-5">
@@ -146,7 +145,7 @@ const ProjectsPage: React.FC = () => (
       </div>
 
       {projectsJson.projects.map((project, index) => (
-        <Project key={index} project={project} />
+        <ProjectContainer key={index} project={project} />
       ))}
 
       <div className="mb-16">
