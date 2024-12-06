@@ -12,7 +12,7 @@ type ProjectsProps = {
   readonly items: HomeDocumentData['projects'];
 };
 
-const Projects: FC<ProjectsProps> = ({ title, description, items }) => (
+const ProjectsPreview: FC<ProjectsProps> = ({ title, description, items }) => (
   <div className="overflow-hidden bg-gray-100 dark:bg-gray-800" id="projects">
     <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
@@ -72,4 +72,4 @@ const Projects: FC<ProjectsProps> = ({ title, description, items }) => (
   </div>
 );
 
-export default Projects;
+export default ProjectsPreview;

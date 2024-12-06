@@ -1,8 +1,6 @@
 {
   "projects": [
     {
-      "name": "Kepler.gl",
-      "description": "A powerful open source geospatial analysis tool for large-scale data sets",
       "entries": [
         {
           "name": "kepler.gl",

@@ -5,7 +5,7 @@ import Callout from '@/components/callout';
 import Community from '@/components/community';
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
-import Projects from '@/components/projects';
+import ProjectsPreview from '@/components/projects-preview';
 
 // vis.gl additions
 // import VisGLHero from '@/components/visgl/pages/index';
@@ -32,7 +32,7 @@ const Home = async (): Promise<ReactElement> => {
         title={
           //data.hero_title
           // Temporary change until we can change it in Prismic
-          'Open Source tools for powerful visualization for the web'
+          'Open Source tools for powerful  visualization on the web'
         }
         description={
           //data.hero_description
@@ -54,7 +54,7 @@ const Home = async (): Promise<ReactElement> => {
           image={data.callout_image}
         />
       ) : null}
-      <Projects
+      <ProjectsPreview
         title={data.projects_title}
         description={data.projects_description}
         items={data.projects}

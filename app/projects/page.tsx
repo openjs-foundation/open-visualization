@@ -2,31 +2,34 @@ import Image from 'next/image';
 import projectsJson from '@/content/projects.json';
 import markdownToHtml from '@/components/visgl/lib/markdownToHtml';
 import React from 'react';
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+import clsx from 'clsx';
 
-type FrameworkEntry = {
+type ProjectEntry = {
   name: string;
   image: string;
   url: string;
   description: string;
 };
 
-type FrameworkGroup = {
-  title: string;
-  description: string;
-  entries: FrameworkEntry[];
+type ProjectGroup = {
+  title?: string;
+  description?: string;
+  entries: ProjectEntry[];
 };
 
 type Project = {
   name: string;
   description: string;
-  entries?: FrameworkEntry[];
-  groups?: FrameworkGroup[];
+  entries?: ProjectEntry[];
+  groups?: ProjectGroup[];
 };
 
-const FrameworkCard = ({ name, image, url, description }: FrameworkEntry) => (
+const ProjectCard = ({ name, image, url, description }: ProjectEntry) => (
   <a
     href={url}
-    className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-102 hover:shadow-lg w-full max-w-sm"
+    className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-102 hover:shadow-lg"
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -68,7 +71,7 @@ const FrameworkCard = ({ name, image, url, description }: FrameworkEntry) => (
   </a>
 );
 
-const FrameworkGroup = ({ group }: { group: FrameworkGroup }) => (
+const ProjectGroup = ({ group }: { group: ProjectGroup }) => (
   <div className="mb-16">
     {group.title && (
       <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
@@ -83,9 +86,9 @@ const FrameworkGroup = ({ group }: { group: FrameworkGroup }) => (
         }}
       />
     )}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-[repeat(auto-fit,minmax(0,384px))] justify-center">
       {group.entries.map((framework) => (
-        <FrameworkCard key={framework.name} {...framework} />
+        <ProjectCard key={framework.name} {...framework} />
       ))}
     </div>
   </div>
@@ -105,15 +108,15 @@ const Project = ({ project }: { project: Project }) => (
       />
     )}
     {project.entries && (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-[repeat(auto-fit,minmax(0,384px))] justify-center">
         {project.entries.map((framework) => (
-          <FrameworkCard key={framework.name} {...framework} />
+          <ProjectCard key={framework.name} {...framework} />
         ))}
       </div>
     )}
     {project.groups &&
       project.groups.map((group, index) => (
-        <FrameworkGroup key={index} group={group} />
+        <ProjectGroup key={index} group={group} />
       ))}
   </div>
 );
@@ -125,14 +128,48 @@ const ProjectsPage: React.FC = () => (
         <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mb-3 sm:text-4xl">
           Projects
         </h1>
+
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          A suite of composable visualization frameworks
+          Full list of projects and libraries maintained by OpenVis. Each
+          project is independently maintained by passionate contributors who
+          have joined forces with OpenVis.
+        </p>
+
+        <p className="mt-5">
+          <Link
+            href="/#get-involved"
+            className="inline-flex items-center text-primary hover:underline"
+          >
+            Join our community →
+          </Link>
         </p>
       </div>
 
       {projectsJson.projects.map((project, index) => (
         <Project key={index} project={project} />
       ))}
+
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+          Application Showcase
+        </h2>
+        <p className="text-base text-gray-600 dark:text-gray-300 mb-8">
+          Explore real-world applications and visualizations built with OpenVis
+          frameworks by our community members.
+        </p>
+        <div className="flex justify-center">
+          <Link
+            href="/showcase"
+            className={clsx(
+              'inline-flex items-center gap-2 rounded-lg px-6 py-2.5 text-base font-semibold leading-7 ring-1 transition-colors',
+              'text-gray-900 ring-gray-900/10 hover:ring-gray-900/20 dark:text-white dark:ring-white/10 hover:bg-gray-50 dark:hover:bg-gray-800'
+            )}
+          >
+            Visit Showcase
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
     </div>
   </div>
 );
