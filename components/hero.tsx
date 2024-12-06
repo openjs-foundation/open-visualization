@@ -125,11 +125,17 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
             </div>
           </div>
           <div className="mt-16 aspect-[16/9] w-full overflow-hidden rounded-md sm:mt-32">
-            <iframe
+            <Image
+              alt="Deck.gl examples"
+              width={2048}
+              height={1156}
+              src="https://images.prismic.io/open-visualization/Z1LQEZbqstJ98Huw_deckgl-screenshots.png?auto=format,compress"
+            />
+            {/* <iframe
               src="https://kepler.gl/demo/nyctrips"
               className="h-full w-full overflow-hidden rounded"
               title="kepler.gl demo"
-            />
+            /> */}
           </div>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-2">
             {focusAreas.map(({ focus_area }) => (
