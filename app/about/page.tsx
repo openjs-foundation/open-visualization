@@ -1,7 +1,8 @@
-import Image from 'next/image';
+import { createClient } from '@/lib/prismic';
+import { HomeDocumentData } from '@/prismicio-types';
 import { PrismicRichText } from '@prismicio/react';
 import { Camera } from 'lucide-react';
-import type { HomeDocumentData } from '@/prismicio-types';
+import Image from 'next/image';
 import type { FC } from 'react';
 
 type AboutProps = {
@@ -110,4 +111,18 @@ const About: FC<AboutProps> = ({
   </div>
 );
 
-export default About;
+const AboutPage = async () => {
+  const client = createClient();
+  const { data } = await client.getSingle('home');
+
+  return (
+    <About
+      title={data.about_title}
+      description={data.about_description}
+      content={data.about_content}
+      image={data.about_image}
+    />
+  );
+};
+
+export default AboutPage;

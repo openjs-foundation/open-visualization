@@ -115,7 +115,11 @@ const ArrowIcon = () => (
   </svg>
 );
 
-const Summits: React.FC<SummitsProps> = ({ title, description, items }) => {
+export const Summits: React.FC<SummitsProps> = ({
+  title,
+  description,
+  items,
+}) => {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">

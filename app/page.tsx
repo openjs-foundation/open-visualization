@@ -1,7 +1,6 @@
 import { createMetadata } from '@/lib/metadata';
 import { createClient } from '@/lib/prismic';
 
-import About from '@/components/about';
 import Callout from '@/components/callout';
 import Community from '@/components/community';
 import Hero from '@/components/hero';
@@ -55,16 +54,6 @@ const Home = async (): Promise<ReactElement> => {
           image={data.callout_image}
         />
       ) : null}
-      <About
-        title={data.about_title}
-        description={data.about_description}
-        content={data.about_content}
-        /*
-         * ctaLabel={data.about_cta_label}
-         * ctaLink={data.about_cta_link}
-         */
-        image={data.about_image}
-      />
       <Projects
         title={data.projects_title}
         description={data.projects_description}
