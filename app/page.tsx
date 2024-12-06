@@ -42,7 +42,10 @@ const Home = async (): Promise<ReactElement> => {
           `
         }
         actions={data.hero_actions}
-        focusAreas={data.focus_areas}
+        focusAreas={
+          []
+          //  data.focus_areas
+        }
       />
       {data.callout_active ? (
         <Callout
