@@ -184,14 +184,15 @@ const NavigationBar: FC<NavbarProps> = ({
                     );
                   }
 
-                  let linkUrl = (
-                    item.navigation_link as FilledLinkToWebField
-                  ).url.replace('https://#', '/#');
-                  if (linkUrl === '/#about') linkUrl = '/about';
-
                   return (
                     <NavigationMenuItem key={item.navigation_label}>
-                      <Link href={linkUrl} legacyBehavior passHref>
+                      <Link
+                        href={
+                          (item.navigation_link as FilledLinkToWebField).url
+                        }
+                        legacyBehavior
+                        passHref
+                      >
                         <NavigationMenuLink className={NAV_MENU_TRIGGER_STYLE}>
                           {item.navigation_label}
                         </NavigationMenuLink>
@@ -224,21 +225,18 @@ const NavigationBar: FC<NavbarProps> = ({
                     </DrawerClose>
                   </div>
                   <div className="space-y-1">
-                    {items?.map((item) => {
-                      const url = (
-                        item.navigation_link as FilledLinkToWebField
-                      ).url.replace('https://#', '#');
-                      return (
-                        <Link
-                          key={item.navigation_label}
-                          href={url}
-                          className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {item.navigation_label}
-                        </Link>
-                      );
-                    })}
+                    {items?.map((item) => (
+                      <Link
+                        key={item.navigation_label}
+                        href={
+                          (item.navigation_link as FilledLinkToWebField).url
+                        }
+                        className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.navigation_label}
+                      </Link>
+                    ))}
                   </div>
                   <div className="pt-4">
                     <ModeToggle />
