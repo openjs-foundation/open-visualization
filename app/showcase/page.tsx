@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import showcasesYaml from '@/content/showcases.json';
+import ArrowIcon from '@/components/icons/arrow-icon';
 
 export type ShowcaseEntry = {
   description: string;
@@ -86,19 +87,7 @@ const Case: React.FC<CaseProps> = ({
         </p>
         <span className="inline-flex items-center text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300">
           {label}
-          <svg
-            className="ml-2 w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            />
-          </svg>
+          <ArrowIcon />
         </span>
       </div>
     </a>

@@ -1,18 +1,27 @@
 import React from 'react';
 import blogYaml from '@/content/blog.json';
 import Image from 'next/image';
+import ArrowIcon from '@/components/icons/arrow-icon';
+
+interface BlogPostProps {
+  title: string;
+  date: string;
+  image: string;
+  blurb: string;
+  url: string;
+}
 
 const BlogPage = () => {
   return (
-    <div id="news" className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-12">
+    <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
+      <div className="mb-12">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mb-3">
           Open Visualization Collaboration Space Blog
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
           Deep dives into the vis.gl frameworks
         </p>
-        <div className="max-w-3xl mx-auto text-base text-gray-600 dark:text-gray-400 space-y-4">
+        <div className="mx-auto text-base text-gray-600 dark:text-gray-400 space-y-4">
           <p>
             The vis.gl blog introduces new releases, provides in-depth technical
             expositions and showcases applications of the vis.gl frameworks.
@@ -44,7 +53,7 @@ const BlogPage = () => {
   );
 };
 
-function BlogPost({ title, date, image, blurb, url }) {
+function BlogPost({ title, date, image, blurb, url }: BlogPostProps) {
   return (
     <a
       href={url}
@@ -73,19 +82,7 @@ function BlogPost({ title, date, image, blurb, url }) {
         </p>
         <span className="inline-flex items-center text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300">
           Read Article
-          <svg
-            className="ml-2 w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            />
-          </svg>
+          <ArrowIcon />
         </span>
       </div>
     </a>

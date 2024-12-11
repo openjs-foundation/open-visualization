@@ -47,6 +47,12 @@ const Home = async (): Promise<ReactElement> => {
           //  data.focus_areas
         }
       />
+
+      <ProjectsPreview
+        title="Projects"
+        description="A suite of open source tools for high performance data visualization and computation for the web."
+        items={data.projects}
+      />
       {data.callout_active ? (
         <Callout
           caption={data.callout_caption}
@@ -57,11 +63,7 @@ const Home = async (): Promise<ReactElement> => {
           image={data.callout_image}
         />
       ) : null}
-      <ProjectsPreview
-        title={data.projects_title}
-        description={data.projects_description}
-        items={data.projects}
-      />
+
       <Community
         title={data.community_title}
         description={data.community_description}

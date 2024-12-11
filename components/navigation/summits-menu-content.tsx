@@ -47,6 +47,11 @@ type SummitsMenuContentProps = {
 const SummitsMenuContent: React.FC<SummitsMenuContentProps> = ({ summits }) => {
   return (
     <div>
+      <div className="p-4 border-b">
+        <NavigationMenuItem title="View all summits →" href="/summits">
+          View the full history of OpenVis summits.
+        </NavigationMenuItem>
+      </div>
       <ul className="grid w-[400px] gap-3 p-4">
         {summits?.slice(0, 3).map((item) => (
           <li key={item.summit_name}>
@@ -60,14 +65,6 @@ const SummitsMenuContent: React.FC<SummitsMenuContentProps> = ({ summits }) => {
           </li>
         ))}
       </ul>
-      <div className="p-4 pt-2 border-t">
-        <Link
-          href="/summits"
-          className="inline-flex items-center text-primary hover:underline"
-        >
-          View all summits →
-        </Link>
-      </div>
     </div>
   );
 };

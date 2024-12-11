@@ -21,13 +21,13 @@ const ProjectCard = ({
     href={`/projects#${project_title?.toLowerCase().replace(/\s+/g, '-')}`}
     className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-102 hover:shadow-lg"
   >
-    <div className="relative aspect-[3/2] w-full">
+    <div className="relative aspect-[16/10] w-full">
       <Image
         src={project_image.url ?? ''}
         alt={project_title ?? ''}
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className="object-contain p-4 bg-white dark:bg-gray-800"
+        className="object-cover p-4 bg-white dark:bg-gray-800"
         priority={false}
       />
     </div>
@@ -48,17 +48,17 @@ const ProjectCard = ({
 );
 
 const ProjectsPreview: FC<ProjectsProps> = ({ title, description, items }) => (
-  <div className="overflow-hidden bg-gray-100 dark:bg-gray-900" id="projects">
-    <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
+  <div className="overflow-hidden" id="projects">
+    <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-4 sm:px-6 lg:px-8">
+      {/* <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:gap-4">
         <h2 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
           {title}
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300">
           {description}
         </p>
-      </div>
-      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-[repeat(auto-fit,minmax(0,384px))] justify-center">
+      </div> */}
+      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(0,400px))] justify-center">
         {items.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}

@@ -4,6 +4,9 @@ import { NavigationMenuLink } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
 import React from 'react';
 import type { NewsItem } from '@/content/news.json';
+import clsx from 'clsx';
+import { ArrowUpRight } from 'lucide-react';
+import ArrowIcon from '../icons/arrow-icon';
 
 const NavigationMenuItem = React.forwardRef<
   React.ElementRef<'a'>,
@@ -51,6 +54,12 @@ type NewsMenuContentProps = {
 const NewsMenuContent: React.FC<NewsMenuContentProps> = ({ news }) => {
   return (
     <div>
+      <div className="p-4 border-b">
+        <NavigationMenuItem title="View all news →" href="/news">
+          View the full history of OpenVis news.
+        </NavigationMenuItem>
+      </div>
+
       <ul className="grid w-[400px] gap-3 p-4">
         {news?.slice(0, 3).map((item) => (
           <li key={item.title}>
@@ -65,14 +74,6 @@ const NewsMenuContent: React.FC<NewsMenuContentProps> = ({ news }) => {
           </li>
         ))}
       </ul>
-      <div className="p-4 pt-2 border-t">
-        <Link
-          href="/news"
-          className="inline-flex items-center text-primary hover:underline"
-        >
-          View all news →
-        </Link>
-      </div>
     </div>
   );
 };

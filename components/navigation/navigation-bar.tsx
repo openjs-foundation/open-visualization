@@ -136,12 +136,11 @@ const NavigationBar: FC<NavbarProps> = ({
                   if (item.navigation_label === 'Projects') {
                     return (
                       <NavigationMenuItem key={item.navigation_label}>
-                        <NavigationMenuTriggerWithLink
-                          href="/projects"
+                        <NavigationMenuTrigger
                           className={NAV_MENU_TRIGGER_STYLE}
                         >
                           {item.navigation_label}
-                        </NavigationMenuTriggerWithLink>
+                        </NavigationMenuTrigger>
                         <NavigationMenuContent>
                           <ProjectsMenuContent projects={projects} />
                         </NavigationMenuContent>

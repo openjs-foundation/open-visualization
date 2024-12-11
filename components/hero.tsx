@@ -7,6 +7,7 @@ import tailwindConfig from '@/tailwind.config';
 import type { HomeDocumentData } from '@/prismicio-types';
 import type { FilledLinkToWebField } from '@prismicio/types';
 import type { FC } from 'react';
+import ProjectsPreview from './projects-preview';
 
 const fullConfig = resolveConfig(tailwindConfig);
 
@@ -51,7 +52,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
     </div>
     <main>
       <div className="relative px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl pt-20 sm:py-32">
+        <div className="mx-auto max-w-4xl pt-20 sm:pt-32 sm:pb-16">
           <div>
             <div>
               <Image
@@ -67,7 +68,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center">
                 {description}
               </p>
-              <div className="mt-8 flex gap-x-4 sm:justify-center">
+              {/* <div className="mt-8 flex gap-x-4 sm:justify-center">
                 {actions.map(({ action_label, action_link }, index) => (
                   <Link
                     key={action_label}
@@ -91,7 +92,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
                     </span>
                   </Link>
                 ))}
-              </div>
+              </div> */}
             </div>
             <div className="pointer-events-none absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
               <svg
@@ -124,7 +125,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
               </svg>
             </div>
           </div>
-          <div className="mt-16 aspect-[16/9] w-full overflow-hidden rounded-md sm:mt-32">
+          {/* <div className="mt-16 aspect-[16/9] w-full overflow-hidden rounded-md sm:mt-32">
             <Link href="/projects">
               <Image
                 alt="Deck.gl examples"
@@ -134,13 +135,9 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
                 className="transition-transform hover:scale-105"
               />
             </Link>
-            {/* <iframe
-              src="https://kepler.gl/demo/nyctrips"
-              className="h-full w-full overflow-hidden rounded"
-              title="kepler.gl demo"
-            /> */}
-          </div>
-          <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-2">
+
+          </div> */}
+          {/* <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-2">
             {focusAreas.map(({ focus_area }) => (
               <span
                 key={focus_area}
@@ -153,7 +150,7 @@ const Hero: FC<HeroProps> = ({ title, description, actions, focusAreas }) => (
                 {focus_area}
               </span>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </main>

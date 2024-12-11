@@ -20,18 +20,20 @@ const SummitCard = ({
   summit_image,
   participants_image,
   additional_participants_number,
-}) => (
+}: HomeDocumentData['summits'][number]) => (
   <div className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-102 hover:shadow-lg">
-    <div className="relative aspect-video w-full">
-      <Image
-        src={summit_image.url}
-        alt={summit_name ?? ''}
-        fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className="object-cover"
-        priority={false}
-      />
-    </div>
+    {summit_image.url ? (
+      <div className="relative aspect-video w-full">
+        <Image
+          src={summit_image.url}
+          alt={summit_name ?? ''}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover"
+          priority={false}
+        />
+      </div>
+    ) : null}
 
     <div className="p-6 flex flex-col flex-grow">
       <div className="mb-4">
@@ -56,13 +58,15 @@ const SummitCard = ({
 
       <div className="flex items-center mb-6">
         <div className="flex items-center">
-          <Image
-            src={participants_image.url}
-            alt=""
-            width={participants_image.dimensions?.width}
-            height={44}
-            className="object-cover"
-          />
+          {participants_image?.url ? (
+            <Image
+              src={participants_image.url}
+              alt=""
+              width={participants_image.dimensions?.width}
+              height={44}
+              className="object-cover"
+            />
+          ) : null}
           <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
             {additional_participants_number}
           </span>

@@ -51,12 +51,11 @@ const ProjectsMenuContent: React.FC<ProjectsMenuContentProps> = ({
   return (
     <div>
       <div className="p-4 border-b">
-        <NavigationMenuItem title="Full list of projects" href="/projects">
+        <NavigationMenuItem title="Full list of projects →" href="/projects">
           View the full list of projects maintained by OpenVis.
         </NavigationMenuItem>
       </div>
       <div className="p-6 flex flex-col gap-2 w-[400px] md:w-[500px] lg:w-[600px]">
-        <div className="text-sm font-medium leading-none">Main projects</div>
         <ul className="grid gap-3 p-2 lg:grid-cols-1">
           {projects?.map((project) => (
             <li key={project.project_title}>
@@ -76,7 +75,7 @@ const ProjectsMenuContent: React.FC<ProjectsMenuContentProps> = ({
           ))}
         </ul>
       </div>
-      <div className="border-b p-6 pt-2 text-sm text-muted-foreground">
+      {/* <div className="border-b p-6 pt-2 text-sm text-muted-foreground">
         Each project is independently maintained by passionate contributors who
         have joined forces with OpenVis.{' '}
         <Link
@@ -85,7 +84,7 @@ const ProjectsMenuContent: React.FC<ProjectsMenuContentProps> = ({
         >
           Join our community →
         </Link>
-      </div>
+      </div> */}
       <div className="p-4">
         <NavigationMenuItem title="Application Showcase" href="/showcase">
           Explore real-world applications and visualizations built with OpenVis
