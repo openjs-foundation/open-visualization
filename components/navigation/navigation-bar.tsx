@@ -3,6 +3,7 @@
 import NewsMenuContent from '@/components/navigation/news-menu-content';
 import ProjectsMenuContent from '@/components/navigation/projects-menu-content';
 import SummitsMenuContent from '@/components/navigation/summits-menu-content';
+import BlogMenuContent from '@/components/navigation/blog-menu-content';
 import {
   Drawer,
   DrawerClose,
@@ -19,6 +20,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import type { NewsItem } from '@/content/news.json';
+import type { BlogPost } from '@/content/blog.json';
 import { cn } from '@/lib/utils';
 import type {
   HomeDocumentData,
@@ -74,6 +76,7 @@ type NavbarProps = {
   readonly items?: SettingsDocumentData['navigation'];
   readonly projects?: HomeDocumentData['projects'];
   readonly news?: NewsItem[];
+  readonly blogPosts?: BlogPost[];
   readonly summits?: HomeDocumentData['summits'];
 };
 
@@ -92,25 +95,13 @@ const NavigationMenuTriggerWithLink: FC<{
 };
 
 const NavigationBar: FC<NavbarProps> = ({
-  items: originalItems,
+  items,
   projects,
   news,
   summits,
+  blogPosts,
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const items = useMemo(() => {
-    let updatedItems = addItemAfter(originalItems, 'Projects', {
-      navigation_label: 'Blog',
-      navigation_link: { url: '/blog' } as FilledLinkToWebField,
-    });
-
-    updatedItems = addItemAfter(updatedItems, 'Home', {
-      navigation_label: 'News',
-      navigation_link: { url: '/news' } as FilledLinkToWebField,
-    });
-
-    return updatedItems;
-  }, [originalItems]);
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 bg-white/90 shadow backdrop-blur-sm dark:bg-gray-900/90">
@@ -173,6 +164,21 @@ const NavigationBar: FC<NavbarProps> = ({
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                           <SummitsMenuContent summits={summits} />
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+                    );
+                  }
+
+                  if (item.navigation_label === 'Blog') {
+                    return (
+                      <NavigationMenuItem key={item.navigation_label}>
+                        <NavigationMenuTrigger
+                          className={NAV_MENU_TRIGGER_STYLE}
+                        >
+                          {item.navigation_label}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <BlogMenuContent posts={blogPosts} />
                         </NavigationMenuContent>
                       </NavigationMenuItem>
                     );

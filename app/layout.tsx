@@ -7,6 +7,7 @@ import type { FC, ReactElement, ReactNode } from 'react';
 import '../styles/globals.css';
 import Footer from '@/components/footer';
 import news from '@/content/news.json';
+import blogPosts from '@/content/blog.json';
 
 type LayoutProps = {
   readonly children: ReactNode;
@@ -27,6 +28,7 @@ const Layout: FC<LayoutProps> = async ({ children }): Promise<ReactElement> => {
               projects={data.projects}
               news={news}
               summits={data.summits}
+              blogPosts={blogPosts}
             />
             {children}
             <Footer

@@ -1,15 +1,8 @@
 import React from 'react';
 import blogYaml from '@/content/blog.json';
+import type { BlogPost } from '@/content/blog.json';
 import Image from 'next/image';
 import ArrowIcon from '@/components/icons/arrow-icon';
-
-interface BlogPostProps {
-  title: string;
-  date: string;
-  image: string;
-  blurb: string;
-  url: string;
-}
 
 const BlogPage = () => {
   return (
@@ -53,7 +46,7 @@ const BlogPage = () => {
   );
 };
 
-function BlogPost({ title, date, image, blurb, url }: BlogPostProps) {
+function BlogPost({ title, date, image, blurb, url }: BlogPost) {
   return (
     <a
       href={url}
