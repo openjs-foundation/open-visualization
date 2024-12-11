@@ -11,28 +11,41 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.17",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@prismicio/client": "^7.3.1",
     "@prismicio/helpers": "^2.3.9",
     "@prismicio/next": "^1.3.6",
     "@prismicio/react": "^2.7.3",
     "@prismicio/slice-simulator-react": "^0.2.3",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-navigation-menu": "^1.2.1",
     "@types/node": "20.8.9",
     "@types/react": "18.2.32",
     "@types/react-dom": "18.2.14",
     "@vercel/analytics": "^1.1.1",
-    "clsx": "^2.0.0",
-    "lucide-react": "^0.289.0",
+    "class-variance-authority": "^0.7.1",
+    "classnames": "^2.5.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.466.0",
+    "markdown-it": "^14.1.0",
     "next": "13.5.6",
+    "next-nprogress-bar": "^2.3.15",
     "next-secure-headers": "^2.2.0",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-waypoint": "^10.3.0",
+    "styled-components": "^6.1.12",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "vaul": "^1.1.1"
   },
   "devDependencies": {
     "@prismicio/types": "^0.2.8",
     "@slicemachine/adapter-next": "^0.3.21",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/markdown-it": "^14",
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
     "eslint": "^8.52.0",
@@ -49,5 +62,10 @@
   "prettier": "eslint-config-harmony/prettier",
   "stylelint": {
     "extends": "eslint-config-harmony/stylelint"
+  },
+  "volta": {
+    "node": "20.18.1",
+    "_yarnComment_": "Vercel only supports Yarn 1",
+    "yarn": "1.22.22"
   }
 }
