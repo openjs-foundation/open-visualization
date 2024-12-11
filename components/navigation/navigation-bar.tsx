@@ -56,22 +56,6 @@ const ModeToggle = () => {
   );
 };
 
-const addItemAfter = (
-  items: NavbarProps['items'],
-  targetLabel: string,
-  newItem: SettingsDocumentDataNavigationItem
-) => {
-  if (!items) return items;
-  const updatedItems = [...items] as typeof items;
-  const targetIndex = updatedItems.findIndex(
-    (item) => item.navigation_label === targetLabel
-  );
-  if (targetIndex !== -1) {
-    updatedItems.splice(targetIndex + 1, 0, newItem);
-  }
-  return updatedItems;
-};
-
 type NavbarProps = {
   readonly items?: SettingsDocumentData['navigation'];
   readonly projects?: HomeDocumentData['projects'];
@@ -102,6 +86,20 @@ const NavigationBar: FC<NavbarProps> = ({
   blogPosts,
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+
+  const isValidUrl = (url: string) => {
+    try {
+      new URL(url);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  const getValidUrl = (item: SettingsDocumentDataNavigationItem) => {
+    const url = (item.navigation_link as FilledLinkToWebField)?.url;
+    return url && isValidUrl(url) ? url : '#';
+  };
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 bg-white/90 shadow backdrop-blur-sm dark:bg-gray-900/90">
@@ -186,13 +184,7 @@ const NavigationBar: FC<NavbarProps> = ({
 
                   return (
                     <NavigationMenuItem key={item.navigation_label}>
-                      <Link
-                        href={
-                          (item.navigation_link as FilledLinkToWebField).url
-                        }
-                        legacyBehavior
-                        passHref
-                      >
+                      <Link href={getValidUrl(item)} legacyBehavior passHref>
                         <NavigationMenuLink className={NAV_MENU_TRIGGER_STYLE}>
                           {item.navigation_label}
                         </NavigationMenuLink>
@@ -228,9 +220,7 @@ const NavigationBar: FC<NavbarProps> = ({
                     {items?.map((item) => (
                       <Link
                         key={item.navigation_label}
-                        href={
-                          (item.navigation_link as FilledLinkToWebField).url
-                        }
+                        href={getValidUrl(item)}
                         className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
                         onClick={() => setIsOpen(false)}
                       >
