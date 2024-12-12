@@ -7,6 +7,9 @@ import Hero from '@/components/hero';
 import Logos from '@/components/logos';
 import ProjectsPreview from '@/components/projects-preview';
 
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
+
 // vis.gl additions
 // import VisGLHero from '@/components/visgl/pages/index';
 
@@ -18,8 +21,6 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
   return createMetadata(data.title ?? '', data.description ?? '');
 };
-
-export const revalidate = 0;
 
 const Home = async (): Promise<ReactElement> => {
   const client = createClient();
