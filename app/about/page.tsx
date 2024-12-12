@@ -5,6 +5,8 @@ import { Camera } from 'lucide-react';
 import Image from 'next/image';
 import type { FC } from 'react';
 
+export const revalidate = 0;
+
 type AboutProps = {
   readonly title: HomeDocumentData['about_title'];
   readonly description: HomeDocumentData['about_description'];

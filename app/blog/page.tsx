@@ -3,7 +3,7 @@ import blogYaml from '@/content/blog.json';
 import type { BlogPost } from '@/content/blog.json';
 import Image from 'next/image';
 import ArrowIcon from '@/components/icons/arrow-icon';
-
+export const revalidate = 0;
 const BlogPage = () => {
   return (
     <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
