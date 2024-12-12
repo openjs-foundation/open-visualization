@@ -5,6 +5,7 @@ import { Camera } from 'lucide-react';
 import Image from 'next/image';
 import type { FC } from 'react';
 
+export const fetchCache = 'force-no-store';
 export const revalidate = 0;
 
 type AboutProps = {
