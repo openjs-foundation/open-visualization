@@ -1,9 +1,9 @@
 'use client';
 
+import BlogMenuContent from '@/components/navigation/blog-menu-content';
 import NewsMenuContent from '@/components/navigation/news-menu-content';
 import ProjectsMenuContent from '@/components/navigation/projects-menu-content';
 import SummitsMenuContent from '@/components/navigation/summits-menu-content';
-import BlogMenuContent from '@/components/navigation/blog-menu-content';
 import {
   Drawer,
   DrawerClose,
@@ -19,21 +19,16 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import type { NewsItem } from '@/content/news.json';
 import type { BlogPost } from '@/content/blog.json';
+import type { NewsItem } from '@/content/news.json';
 import { cn } from '@/lib/utils';
-import type {
-  HomeDocumentData,
-  SettingsDocumentData,
-  SettingsDocumentDataNavigationItem,
-} from '@/prismicio-types';
-import type { FilledLinkToWebField } from '@prismicio/types';
+import type { HomeDocumentData } from '@/prismicio-types';
 import { Menu, Moon, Sun, X } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
-import React, { useMemo } from 'react';
+import React from 'react';
 
 const NAV_MENU_TRIGGER_STYLE = cn(navigationMenuTriggerStyle(), {
   // 'text-white hover:bg-gray-800': true,
@@ -57,49 +52,19 @@ const ModeToggle = () => {
 };
 
 type NavbarProps = {
-  readonly items?: SettingsDocumentData['navigation'];
   readonly projects?: HomeDocumentData['projects'];
   readonly news?: NewsItem[];
-  readonly blogPosts?: BlogPost[];
   readonly summits?: HomeDocumentData['summits'];
-};
-
-const NavigationMenuTriggerWithLink: FC<{
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-}> = ({ href, children, className }) => {
-  return (
-    <Link href={href} legacyBehavior passHref>
-      <NavigationMenuTrigger className={className}>
-        {children}
-      </NavigationMenuTrigger>
-    </Link>
-  );
+  readonly blogPosts?: BlogPost[];
 };
 
 const NavigationBar: FC<NavbarProps> = ({
-  items,
   projects,
   news,
   summits,
   blogPosts,
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-
-  const isValidUrl = (url: string) => {
-    try {
-      new URL(url);
-      return true;
-    } catch {
-      return false;
-    }
-  };
-
-  const getValidUrl = (item: SettingsDocumentDataNavigationItem) => {
-    const url = (item.navigation_link as FilledLinkToWebField)?.url;
-    return url && isValidUrl(url) ? url : '#';
-  };
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 bg-white/90 shadow backdrop-blur-sm dark:bg-gray-900/90">
@@ -121,77 +86,65 @@ const NavigationBar: FC<NavbarProps> = ({
           <div className="hidden items-center nav:ml-6 nav:flex nav:space-x-8">
             <NavigationMenu>
               <NavigationMenuList>
-                {items?.map((item) => {
-                  if (item.navigation_label === 'Projects') {
-                    return (
-                      <NavigationMenuItem key={item.navigation_label}>
-                        <NavigationMenuTrigger
-                          className={NAV_MENU_TRIGGER_STYLE}
-                        >
-                          {item.navigation_label}
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <ProjectsMenuContent projects={projects} />
-                        </NavigationMenuContent>
-                      </NavigationMenuItem>
-                    );
-                  }
+                <NavigationMenuItem>
+                  <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink className={NAV_MENU_TRIGGER_STYLE}>
+                      Home
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
 
-                  if (item.navigation_label === 'News') {
-                    return (
-                      <NavigationMenuItem key={item.navigation_label}>
-                        <NavigationMenuTrigger
-                          className={NAV_MENU_TRIGGER_STYLE}
-                        >
-                          {item.navigation_label}
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <NewsMenuContent news={news} />
-                        </NavigationMenuContent>
-                      </NavigationMenuItem>
-                    );
-                  }
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={NAV_MENU_TRIGGER_STYLE}>
+                    News
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <NewsMenuContent news={news} />
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-                  if (item.navigation_label === 'Summits') {
-                    return (
-                      <NavigationMenuItem key={item.navigation_label}>
-                        <NavigationMenuTrigger
-                          className={NAV_MENU_TRIGGER_STYLE}
-                        >
-                          {item.navigation_label}
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <SummitsMenuContent summits={summits} />
-                        </NavigationMenuContent>
-                      </NavigationMenuItem>
-                    );
-                  }
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={NAV_MENU_TRIGGER_STYLE}>
+                    Projects
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ProjectsMenuContent projects={projects} />
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-                  if (item.navigation_label === 'Blog') {
-                    return (
-                      <NavigationMenuItem key={item.navigation_label}>
-                        <NavigationMenuTrigger
-                          className={NAV_MENU_TRIGGER_STYLE}
-                        >
-                          {item.navigation_label}
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <BlogMenuContent posts={blogPosts} />
-                        </NavigationMenuContent>
-                      </NavigationMenuItem>
-                    );
-                  }
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={NAV_MENU_TRIGGER_STYLE}>
+                    Summits
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <SummitsMenuContent summits={summits} />
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-                  return (
-                    <NavigationMenuItem key={item.navigation_label}>
-                      <Link href={getValidUrl(item)} legacyBehavior passHref>
-                        <NavigationMenuLink className={NAV_MENU_TRIGGER_STYLE}>
-                          {item.navigation_label}
-                        </NavigationMenuLink>
-                      </Link>
-                    </NavigationMenuItem>
-                  );
-                })}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={NAV_MENU_TRIGGER_STYLE}>
+                    Blog
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <BlogMenuContent posts={blogPosts} />
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link href="/about" legacyBehavior passHref>
+                    <NavigationMenuLink className={NAV_MENU_TRIGGER_STYLE}>
+                      About
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link href="/#get-involved" legacyBehavior passHref>
+                    <NavigationMenuLink className={NAV_MENU_TRIGGER_STYLE}>
+                      Get Involved
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
             <ModeToggle />
@@ -217,16 +170,55 @@ const NavigationBar: FC<NavbarProps> = ({
                     </DrawerClose>
                   </div>
                   <div className="space-y-1">
-                    {items?.map((item) => (
-                      <Link
-                        key={item.navigation_label}
-                        href={getValidUrl(item)}
-                        className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.navigation_label}
-                      </Link>
-                    ))}
+                    <Link
+                      href="/"
+                      className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      href="/news"
+                      className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      News
+                    </Link>
+                    <Link
+                      href="/projects"
+                      className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Projects
+                    </Link>
+                    <Link
+                      href="/summits"
+                      className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Summits
+                    </Link>
+                    <Link
+                      href="/blog"
+                      className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Blog
+                    </Link>
+                    <Link
+                      href="/about"
+                      className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      About
+                    </Link>
+                    <Link
+                      href="/get-involved"
+                      className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Get Involved
+                    </Link>
                   </div>
                   <div className="pt-4">
                     <ModeToggle />
