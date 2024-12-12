@@ -1,4 +1,4 @@
-import TwitterIcon from './icons/twitter';
+import XIcon from './icons/x';
 import GoogleCalendarIcon from './icons/googleCalendar';
 import LinkedInIcon from './icons/linkedin';
 import type { FC } from 'react';
@@ -14,9 +14,9 @@ type FooterProps = {
 
 const social = [
   {
-    name: 'Twitter',
-    href: 'https://twitter.com/openjsf',
-    icon: TwitterIcon,
+    name: 'X',
+    href: 'https://x.com/openjsf',
+    icon: XIcon,
   },
   {
     name: 'LinkedIn',
