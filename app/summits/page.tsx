@@ -5,6 +5,9 @@ import Link from 'next/link';
 import type { HomeDocumentData } from '@/prismicio-types';
 import type { FilledLinkToWebField } from '@prismicio/types';
 
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
+
 type SummitsProps = {
   readonly title: HomeDocumentData['section_title'];
   readonly description: HomeDocumentData['section_description'];

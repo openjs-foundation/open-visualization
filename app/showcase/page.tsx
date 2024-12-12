@@ -1,8 +1,9 @@
-'use client';
-
 import Image from 'next/image';
 import showcasesYaml from '@/content/showcases.json';
 import ArrowIcon from '@/components/icons/arrow-icon';
+
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
 
 export type ShowcaseEntry = {
   description: string;

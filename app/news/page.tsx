@@ -2,6 +2,9 @@ import Image from 'next/image';
 import newsYaml from '@/content/news.json';
 import ArrowIcon from '@/components/icons/arrow-icon';
 
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
+
 const NewsPage = () => {
   return (
     <div id="news" className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">

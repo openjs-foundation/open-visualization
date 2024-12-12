@@ -24,7 +24,7 @@ const Layout: FC<LayoutProps> = async ({ children }): Promise<ReactElement> => {
         <Providers>
           <PrismicPreview repositoryName={repositoryName}>
             <NavigationBar
-              items={settings.navigation}
+              // items={settings.navigation}
               projects={data.projects}
               news={news}
               summits={data.summits}
