@@ -29,6 +29,24 @@ type Project = {
   groups?: ProjectGroup[];
 };
 
+const CATEGORY_ORDER = [
+  'applications',
+  'main',
+  'extensions',
+  'integrations',
+  'core',
+  'utilities',
+];
+
+const CATEGORY_COLORS = {
+  applications: 'bg-gray-100 dark:bg-gray-800',
+  main: 'bg-green-50 dark:bg-green-950',
+  extensions: 'bg-gray-50 dark:bg-gray-900',
+  integrations: 'bg-gray-50 dark:bg-gray-900',
+  core: 'bg-gray-100 dark:bg-gray-800',
+  utilities: 'bg-gray-100 dark:bg-gray-800',
+};
+
 const ProjectContainer = ({ project }: { project: Project }) => (
   <div id={project.name?.toLowerCase().replace(/\s+/g, '-')} className="mb-20">
     <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
@@ -56,56 +74,40 @@ const ProjectContainer = ({ project }: { project: Project }) => (
   </div>
 );
 
-const ProjectsPage: React.FC = () => (
-  <div className="py-16 px-4 sm:px-6 lg:px-8">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="mb-12">
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mb-3 sm:text-4xl">
-          Projects
-        </h1>
+const ProjectsPage: React.FC = () => {
+  const sortedGroups = projectsJson.projects[0].groups.sort(
+    (a, b) =>
+      CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category)
+  );
 
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          Full list of projects and libraries which are independently maintained
-          by passionate contributors who have joined forces with OpenVis.
-        </p>
+  return (
+    <div className="py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-12">
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mb-3 sm:text-4xl">
+            {projectsJson.projects[0].name}
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400">
+            {projectsJson.projects[0].description}
+          </p>
+        </div>
 
-        <p className="mt-5">
-          <Link
-            href="/#get-involved"
-            className="inline-flex items-center text-primary hover:underline"
-          >
-            Join our community →
-          </Link>
-        </p>
-      </div>
-
-      {projectsJson.projects.map((project, index) => (
-        <ProjectContainer key={index} project={project} />
-      ))}
-
-      <div className="mb-16">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-          Application Showcase
-        </h2>
-        <p className="text-base text-gray-600 dark:text-gray-300 mb-8">
-          Explore real-world applications and visualizations built with OpenVis
-          frameworks by our community members.
-        </p>
-        <div className="flex justify-center">
-          <Link
-            href="/showcase"
-            className={clsx(
-              'inline-flex items-center gap-2 rounded-lg px-6 py-2.5 text-base font-semibold leading-7 ring-1 transition-colors',
-              'text-gray-900 ring-gray-900/10 hover:ring-gray-900/20 dark:text-white dark:ring-white/10 hover:bg-gray-50 dark:hover:bg-gray-800'
-            )}
-          >
-            Visit Showcase
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
+        <div className="space-y-8">
+          {sortedGroups.map((group) => (
+            <div
+              key={group.title}
+              className={clsx(
+                'rounded-lg p-6',
+                CATEGORY_COLORS[group.category]
+              )}
+            >
+              <ProjectGroup group={group} />
+            </div>
+          ))}
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default ProjectsPage;
