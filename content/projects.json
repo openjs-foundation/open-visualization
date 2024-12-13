@@ -1,9 +1,35 @@
 {
   "projects": [
     {
-      "name": "Deck.gl Ecosystem",
+      "name": "The deck.gl Ecosystem",
       "description": "A suite of composable visualization frameworks for high-performance web-based visualization",
       "groups": [
+        {
+          "title": "Frameworks",
+          "category": "main",
+          "layout": "full",
+          "theme": "green",
+          "entries": [
+            {
+              "name": "deck.gl",
+              "url": "https://deck.gl",
+              "image": "/visgl/images/frameworks/deck.png",
+              "description": "High-performance, GPU powered visualization layers for large scale geospatial data."
+            },
+            {
+              "name": "@kepler.gl",
+              "url": "https://kepler.gl",
+              "image": "/visgl/images/frameworks/kepler.png",
+              "description": "The kepler.gl framework for building custom geospatial applications."
+            },
+            {
+              "name": "pydeck",
+              "url": "https://pydeck.gl",
+              "image": "/visgl/images/frameworks/pydeck.png",
+              "description": "Python bindings for deck.gl that enable custom geospatial visualizations."
+            }
+          ]
+        },
         {
           "title": "Applications",
           "category": "applications",
@@ -21,32 +47,6 @@
               "url": "https://deck.gl",
               "image": "/visgl/images/frameworks/deck.png",
               "description": "A viewer for I3S (Indexed 3D Scene Layer) data built with deck.gl."
-            }
-          ]
-        },
-        {
-          "title": "Main Frameworks",
-          "category": "main",
-          "layout": "full",
-          "theme": "green",
-          "entries": [
-            {
-              "name": "deck.gl",
-              "url": "https://deck.gl",
-              "image": "/visgl/images/frameworks/deck.png",
-              "description": "High-performance, GPU powered visualization layers for large scale geospatial data."
-            },
-            {
-              "name": "pydeck",
-              "url": "https://pydeck.gl",
-              "image": "/visgl/images/frameworks/pydeck.png",
-              "description": "Python bindings for deck.gl that enable custom geospatial visualizations."
-            },
-            {
-              "name": "@kepler.gl",
-              "url": "https://kepler.gl",
-              "image": "/visgl/images/frameworks/kepler.png",
-              "description": "The kepler.gl framework for building custom geospatial applications."
             }
           ]
         },
@@ -122,7 +122,7 @@
           ]
         },
         {
-          "title": "Core Capabilities",
+          "title": "Capabilities",
           "category": "core",
           "layout": "full",
           "theme": "rose",
