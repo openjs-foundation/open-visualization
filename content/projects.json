@@ -1,8 +1,8 @@
 {
   "projects": [
     {
-      "name": "The deck.gl Ecosystem",
-      "description": "A suite of composable visualization frameworks for high-performance web-based visualization",
+      "name": "The deck.gl ecosystem",
+      "description": "A suite of composable frameworks for high-performance web-based visualization",
       "groups": [
         {
           "title": "Frameworks",
@@ -46,7 +46,7 @@
               "name": "i3s-explorer",
               "url": "https://deck.gl",
               "image": "/visgl/images/frameworks/deck.png",
-              "description": "A viewer for I3S (Indexed 3D Scene Layer) data built with deck.gl."
+              "description": "An inspector for massive 3D data in I3S (Indexed 3D Scene Layer) and similar formats, built with deck.gl and loaders.gl."
             }
           ]
         },
@@ -86,18 +86,6 @@
               "url": "https://visgl.github.io/deck.gl-community",
               "image": "https://images.prismic.io/open-visualization/Z1s945bqstJ98bvz_arrow-logo-hex.png?auto=format,compress",
               "description": "Arrow visualization layers for deck.gl."
-            },
-            {
-              "name": "deck.gl-community/leaflet",
-              "url": "https://visgl.github.io/deck.gl-community",
-              "image": "https://images.prismic.io/open-visualization/Z1s95JbqstJ98bv0_leaflet-logo.png?auto=format,compress",
-              "description": "Unofficial basemap add-on module for deck.gl."
-            },
-            {
-              "name": "deck.gl-community/bing-maps",
-              "url": "https://visgl.github.io/deck.gl-community",
-              "image": "https://images.prismic.io/open-visualization/Z1s95ZbqstJ98bv1_bing-maps-logo.webp?auto=format,compress",
-              "description": "Unofficial basemap add-on module for deck.gl."
             }
           ]
         },
@@ -118,6 +106,18 @@
               "url": "https://visgl.github.io/react-google-maps/",
               "image": "/visgl/images/frameworks/react-google-maps.jpeg",
               "description": "React wrapper for Google Maps JavaScript API."
+            },
+            {
+              "name": "deck.gl-community/leaflet",
+              "url": "https://visgl.github.io/deck.gl-community",
+              "image": "https://images.prismic.io/open-visualization/Z1s95JbqstJ98bv0_leaflet-logo.png?auto=format,compress",
+              "description": "Unofficial basemap add-on module for deck.gl."
+            },
+            {
+              "name": "deck.gl-community/bing-maps",
+              "url": "https://visgl.github.io/deck.gl-community",
+              "image": "https://images.prismic.io/open-visualization/Z1s95ZbqstJ98bv1_bing-maps-logo.webp?auto=format,compress",
+              "description": "Unofficial basemap add-on module for deck.gl."
             }
           ]
         },
