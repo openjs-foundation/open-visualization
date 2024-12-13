@@ -70,33 +70,33 @@
               "description": "A powerful flow map drawing layer for deck.gl. For visualization of geographic movement."
             },
             {
+              "name": "graph-layers",
+              "url": "https://visgl.github.io/deck.gl-community",
+              "image": "https://images.prismic.io/open-visualization/Z1s94pbqstJ98bvy_graph-layers.jpg?auto=format,compress",
+              "description": "Graph visualization layers for deck.gl."
+            },
+            {
               "name": "editable-layers",
               "url": "https://visgl.github.io/deck.gl-community",
-              "image": "/visgl/images/frameworks/deck.gl-community.png",
+              "image": "https://images.prismic.io/open-visualization/Z1s94ZbqstJ98bvx_editable-layers.png?auto=format,compress",
               "description": "High-performance feature editing layers for deck.gl."
             },
             {
               "name": "arrow-layers",
               "url": "https://visgl.github.io/deck.gl-community",
-              "image": "/visgl/images/frameworks/deck.gl-community.png",
+              "image": "https://images.prismic.io/open-visualization/Z1s945bqstJ98bvz_arrow-logo-hex.png?auto=format,compress",
               "description": "Arrow visualization layers for deck.gl."
-            },
-            {
-              "name": "graph-layers",
-              "url": "https://visgl.github.io/deck.gl-community",
-              "image": "/visgl/images/frameworks/deck.gl-community.png",
-              "description": "Graph visualization layers for deck.gl."
             },
             {
               "name": "deck.gl-community/leaflet",
               "url": "https://visgl.github.io/deck.gl-community",
-              "image": "/visgl/images/frameworks/deck.gl-community.png",
+              "image": "https://images.prismic.io/open-visualization/Z1s95JbqstJ98bv0_leaflet-logo.png?auto=format,compress",
               "description": "Unofficial basemap add-on module for deck.gl."
             },
             {
               "name": "deck.gl-community/bing-maps",
               "url": "https://visgl.github.io/deck.gl-community",
-              "image": "/visgl/images/frameworks/deck.gl-community.png",
+              "image": "https://images.prismic.io/open-visualization/Z1s95ZbqstJ98bv1_bing-maps-logo.webp?auto=format,compress",
               "description": "Unofficial basemap add-on module for deck.gl."
             }
           ]
