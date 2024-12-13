@@ -30,17 +30,20 @@ export const ProjectGroup = ({
 }: ProjectGroupProps) => {
   const [localCollapsed, setLocalCollapsed] = useState(isCollapsed);
 
-  // Sync with parent's collapse state
   useEffect(() => {
     setLocalCollapsed(isCollapsed);
   }, [isCollapsed]);
 
   return (
-    <div>
+    <div className="-m-4">
       {group.title && (
         <button
           onClick={() => setLocalCollapsed(!localCollapsed)}
-          className="w-full flex items-center justify-between text-left text-base font-bold text-gray-900 dark:text-gray-100 mb-1.5 group"
+          className={clsx(
+            'w-full flex items-center justify-between text-left p-4',
+            'text-base font-bold text-gray-900 dark:text-gray-100 group',
+            localCollapsed && 'h-full'
+          )}
         >
           <span>{group.title}</span>
           <ChevronRight
@@ -53,8 +56,10 @@ export const ProjectGroup = ({
       )}
       <div
         className={clsx(
-          'transition-all duration-200 overflow-hidden',
-          localCollapsed ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'
+          'transition-all duration-200 overflow-hidden px-4',
+          localCollapsed
+            ? 'max-h-0 opacity-0'
+            : 'max-h-[2000px] opacity-100 pb-4'
         )}
       >
         {group.description && (
