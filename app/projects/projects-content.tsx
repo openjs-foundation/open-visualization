@@ -29,15 +29,15 @@ const LAYOUT_STYLES = {
 
 const THEME_COLORS = {
   default:
-    'bg-gray-50/50 hover:bg-gray-100/50 dark:bg-gray-800/25 dark:hover:bg-gray-700/25',
+    'bg-slate-100/30 hover:bg-slate-200/30 dark:bg-slate-800/20 dark:hover:bg-slate-700/20',
   green:
-    'bg-green-50/50 hover:bg-green-100/50 dark:bg-green-950/25 dark:hover:bg-green-900/25',
-  blue: 'bg-blue-50/50 hover:bg-blue-100/50 dark:bg-blue-950/25 dark:hover:bg-blue-900/25',
+    'bg-emerald-100/30 hover:bg-emerald-200/30 dark:bg-emerald-950/20 dark:hover:bg-emerald-900/20',
+  blue: 'bg-sky-100/30 hover:bg-sky-200/30 dark:bg-sky-950/20 dark:hover:bg-sky-900/20',
   purple:
-    'bg-purple-50/50 hover:bg-purple-100/50 dark:bg-purple-950/25 dark:hover:bg-purple-900/25',
+    'bg-violet-100/30 hover:bg-violet-200/30 dark:bg-violet-950/20 dark:hover:bg-violet-900/20',
   amber:
-    'bg-amber-50/50 hover:bg-amber-100/50 dark:bg-amber-950/25 dark:hover:bg-amber-900/25',
-  rose: 'bg-rose-50/50 hover:bg-rose-100/50 dark:bg-rose-950/25 dark:hover:bg-rose-900/25',
+    'bg-orange-100/30 hover:bg-orange-200/30 dark:bg-orange-950/20 dark:hover:bg-orange-900/20',
+  rose: 'bg-pink-100/30 hover:bg-pink-200/30 dark:bg-pink-950/20 dark:hover:bg-pink-900/20',
 } as const;
 
 export const ProjectsContent = ({
