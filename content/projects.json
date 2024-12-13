@@ -7,6 +7,8 @@
         {
           "title": "Applications",
           "category": "applications",
+          "layout": "full",
+          "theme": "blue",
           "entries": [
             {
               "name": "kepler.gl",
@@ -25,6 +27,8 @@
         {
           "title": "Main Frameworks",
           "category": "main",
+          "layout": "full",
+          "theme": "green",
           "entries": [
             {
               "name": "deck.gl",
@@ -49,6 +53,8 @@
         {
           "title": "Extensions",
           "category": "extensions",
+          "layout": "half",
+          "theme": "purple",
           "description": "Community-maintained extensions",
           "entries": [
             {
@@ -96,26 +102,10 @@
           ]
         },
         {
-          "title": "Core Capabilities",
-          "category": "core",
-          "entries": [
-            {
-              "name": "luma.gl",
-              "url": "https://luma.gl",
-              "image": "/visgl/images/frameworks/luma.png",
-              "description": "WebGPU and WebGL2 library for high-performance visualization."
-            },
-            {
-              "name": "loaders.gl",
-              "url": "https://loaders.gl",
-              "image": "/visgl/images/frameworks/loaders.png",
-              "description": "Framework-independent loaders for geospatial and 3D formats."
-            }
-          ]
-        },
-        {
           "title": "Integrations",
           "category": "integrations",
+          "layout": "half",
+          "theme": "amber",
           "entries": [
             {
               "name": "react-map-gl",
@@ -132,8 +122,30 @@
           ]
         },
         {
+          "title": "Core Capabilities",
+          "category": "core",
+          "layout": "full",
+          "theme": "rose",
+          "entries": [
+            {
+              "name": "luma.gl",
+              "url": "https://luma.gl",
+              "image": "/visgl/images/frameworks/luma.png",
+              "description": "WebGPU and WebGL2 library for high-performance visualization."
+            },
+            {
+              "name": "loaders.gl",
+              "url": "https://loaders.gl",
+              "image": "/visgl/images/frameworks/loaders.png",
+              "description": "Framework-independent loaders for geospatial and 3D formats."
+            }
+          ]
+        },
+        {
           "title": "Utilities",
           "category": "utilities",
+          "layout": "full",
+          "theme": "default",
           "entries": [
             {
               "name": "math.gl",

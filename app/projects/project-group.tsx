@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import clsx from 'clsx';
 import { ProjectCard } from './project-card';
@@ -19,21 +19,34 @@ type ProjectGroup = {
   entries: ProjectEntry[];
 };
 
-export const ProjectGroup = ({ group }: { group: ProjectGroup }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+type ProjectGroupProps = {
+  group: ProjectGroup;
+  isCollapsed?: boolean;
+};
+
+export const ProjectGroup = ({
+  group,
+  isCollapsed = false,
+}: ProjectGroupProps) => {
+  const [localCollapsed, setLocalCollapsed] = useState(isCollapsed);
+
+  // Sync with parent's collapse state
+  useEffect(() => {
+    setLocalCollapsed(isCollapsed);
+  }, [isCollapsed]);
 
   return (
-    <div className="flex flex-col space-y-3">
+    <div>
       {group.title && (
         <button
-          onClick={() => setIsCollapsed(!isCollapsed)}
+          onClick={() => setLocalCollapsed(!localCollapsed)}
           className="w-full flex items-center justify-between text-left text-base font-bold text-gray-900 dark:text-gray-100 mb-1.5 group"
         >
           <span>{group.title}</span>
           <ChevronRight
             className={clsx(
               'w-4 h-4 transition-transform duration-200',
-              !isCollapsed && 'rotate-90'
+              !localCollapsed && 'rotate-90'
             )}
           />
         </button>
@@ -41,7 +54,7 @@ export const ProjectGroup = ({ group }: { group: ProjectGroup }) => {
       <div
         className={clsx(
           'transition-all duration-200 overflow-hidden',
-          isCollapsed ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'
+          localCollapsed ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'
         )}
       >
         {group.description && (
@@ -52,7 +65,7 @@ export const ProjectGroup = ({ group }: { group: ProjectGroup }) => {
             }}
           />
         )}
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col space-y-1.5">
           {group.entries.map((framework) => (
             <ProjectCard key={framework.name} {...framework} />
           ))}
