@@ -17,44 +17,28 @@ export const ProjectCard = ({
 }: ProjectEntry) => (
   <a
     href={url}
-    className="group flex flex-row bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+    className="group flex flex-row h-16 rounded-md overflow-hidden transition-all duration-300 hover:bg-white/40 dark:hover:bg-gray-800/40"
     target="_blank"
     rel="noopener noreferrer"
   >
-    <div className="relative w-48 h-32 flex-shrink-0">
+    <div className="relative w-24 flex-shrink-0">
       <Image
         src={image}
         alt={name}
         fill
-        sizes="(max-width: 768px) 192px, 192px"
-        className="object-contain p-4 bg-white dark:bg-gray-800"
+        sizes="96px"
+        className="object-cover"
         priority={false}
       />
     </div>
 
-    <div className="p-3 flex flex-col justify-center flex-grow">
-      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+    <div className="px-4 py-2 flex flex-col justify-center flex-grow min-w-0">
+      <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100 truncate">
         {name}
       </h3>
-      <p className="text-base text-gray-600 dark:text-gray-300 mb-2">
+      <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-1">
         {description}
       </p>
-      <span className="inline-flex items-center text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300">
-        Learn More
-        <svg
-          className="ml-2 w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-          />
-        </svg>
-      </span>
     </div>
   </a>
 );

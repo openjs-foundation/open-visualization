@@ -23,16 +23,16 @@ export const ProjectGroup = ({ group }: { group: ProjectGroup }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className="mb-16">
+    <div className="flex flex-col space-y-3">
       {group.title && (
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="w-full flex items-center justify-between text-left text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 group"
+          className="w-full flex items-center justify-between text-left text-base font-bold text-gray-900 dark:text-gray-100 mb-1.5 group"
         >
           <span>{group.title}</span>
           <ChevronRight
             className={clsx(
-              'w-6 h-6 transition-transform duration-200',
+              'w-4 h-4 transition-transform duration-200',
               !isCollapsed && 'rotate-90'
             )}
           />
@@ -41,18 +41,18 @@ export const ProjectGroup = ({ group }: { group: ProjectGroup }) => {
       <div
         className={clsx(
           'transition-all duration-200 overflow-hidden',
-          isCollapsed ? 'max-h-0 opacity-0' : 'max-h-[5000px] opacity-100'
+          isCollapsed ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'
         )}
       >
         {group.description && (
           <div
-            className="prose dark:prose-invert max-w-none mb-8"
+            className="prose dark:prose-invert prose-xs max-w-none mb-2 text-gray-600 dark:text-gray-400"
             dangerouslySetInnerHTML={{
               __html: markdownToHtml(group.description),
             }}
           />
         )}
-        <div className="flex flex-col space-y-6">
+        <div className="flex flex-col space-y-3">
           {group.entries.map((framework) => (
             <ProjectCard key={framework.name} {...framework} />
           ))}

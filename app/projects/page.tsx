@@ -38,13 +38,24 @@ const CATEGORY_ORDER = [
   'utilities',
 ];
 
+const CATEGORY_LAYOUT = {
+  applications: 'col-span-12 md:col-span-10 md:col-start-2 row-start-1',
+  main: 'col-span-12 md:col-span-10 md:col-start-2 row-start-2',
+  extensions: 'col-span-12 md:col-span-5 md:col-start-2 row-start-3',
+  integrations:
+    'col-span-12 md:col-span-5 md:col-start-7 md:row-start-3 row-start-4',
+  core: 'col-span-12 md:col-span-10 md:col-start-2 row-start-5 md:row-start-4',
+  utilities:
+    'col-span-12 md:col-span-10 md:col-start-2 row-start-6 md:row-start-5',
+};
+
 const CATEGORY_COLORS = {
-  applications: 'bg-gray-100 dark:bg-gray-800',
-  main: 'bg-green-50 dark:bg-green-950',
-  extensions: 'bg-gray-50 dark:bg-gray-900',
-  integrations: 'bg-gray-50 dark:bg-gray-900',
-  core: 'bg-gray-100 dark:bg-gray-800',
-  utilities: 'bg-gray-100 dark:bg-gray-800',
+  applications: 'bg-gray-50 dark:bg-gray-800/50',
+  main: 'bg-green-50 dark:bg-green-950/50',
+  extensions: 'bg-gray-50 dark:bg-gray-800/50',
+  integrations: 'bg-gray-50 dark:bg-gray-800/50',
+  core: 'bg-gray-50 dark:bg-gray-800/50',
+  utilities: 'bg-gray-50 dark:bg-gray-800/50',
 };
 
 const ProjectContainer = ({ project }: { project: Project }) => (
@@ -82,7 +93,7 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1200px] mx-auto">
         <div className="mb-12">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mb-3 sm:text-4xl">
             {projectsJson.projects[0].name}
@@ -92,13 +103,15 @@ const ProjectsPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="grid grid-cols-12 gap-4 relative">
           {sortedGroups.map((group) => (
             <div
               key={group.title}
               className={clsx(
-                'rounded-lg p-6',
-                CATEGORY_COLORS[group.category]
+                'rounded-2xl p-4 border-2 border-gray-200/50 dark:border-gray-700/50',
+                'transition-all duration-300',
+                CATEGORY_COLORS[group.category],
+                CATEGORY_LAYOUT[group.category]
               )}
             >
               <ProjectGroup group={group} />
