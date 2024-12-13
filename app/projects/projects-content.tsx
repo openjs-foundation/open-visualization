@@ -28,16 +28,30 @@ const LAYOUT_STYLES = {
 } as const;
 
 const THEME_COLORS = {
-  default:
-    'bg-slate-100/30 hover:bg-slate-200/30 dark:bg-slate-800/20 dark:hover:bg-slate-700/20',
-  green:
-    'bg-emerald-100/30 hover:bg-emerald-200/30 dark:bg-emerald-950/20 dark:hover:bg-emerald-900/20',
-  blue: 'bg-sky-100/30 hover:bg-sky-200/30 dark:bg-sky-950/20 dark:hover:bg-sky-900/20',
-  purple:
-    'bg-violet-100/30 hover:bg-violet-200/30 dark:bg-violet-950/20 dark:hover:bg-violet-900/20',
-  amber:
-    'bg-orange-100/30 hover:bg-orange-200/30 dark:bg-orange-950/20 dark:hover:bg-orange-900/20',
-  rose: 'bg-pink-100/30 hover:bg-pink-200/30 dark:bg-pink-950/20 dark:hover:bg-pink-900/20',
+  default: {
+    base: 'bg-slate-100/30 dark:bg-slate-800/20',
+    hover: 'hover:bg-slate-200/30 dark:hover:bg-slate-700/20',
+  },
+  green: {
+    base: 'bg-emerald-100/30 dark:bg-emerald-950/20',
+    hover: 'hover:bg-emerald-200/30 dark:hover:bg-emerald-900/20',
+  },
+  blue: {
+    base: 'bg-sky-100/30 dark:bg-sky-950/20',
+    hover: 'hover:bg-sky-200/30 dark:hover:bg-sky-900/20',
+  },
+  purple: {
+    base: 'bg-violet-100/30 dark:bg-violet-950/20',
+    hover: 'hover:bg-violet-200/30 dark:hover:bg-violet-900/20',
+  },
+  amber: {
+    base: 'bg-orange-100/30 dark:bg-orange-950/20',
+    hover: 'hover:bg-orange-200/30 dark:hover:bg-orange-900/20',
+  },
+  rose: {
+    base: 'bg-pink-100/30 dark:bg-pink-950/20',
+    hover: 'hover:bg-pink-200/30 dark:hover:bg-pink-900/20',
+  },
 } as const;
 
 export const ProjectsContent = ({
@@ -50,6 +64,7 @@ export const ProjectsContent = ({
   groups: ProjectGroup[];
 }) => {
   const [allCollapsed, setAllCollapsed] = useState(false);
+  const [groupStates, setGroupStates] = useState<Record<string, boolean>>({});
 
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8">
@@ -93,18 +108,34 @@ export const ProjectsContent = ({
                   : 'md:col-start-7'
                 : '';
 
+              const themeColor =
+                THEME_COLORS[group.theme as keyof typeof THEME_COLORS];
+
+              const groupKey = group.title || index.toString();
+              const isGroupCollapsed = groupStates[groupKey] ?? allCollapsed;
+
               return (
                 <div
-                  key={group.title}
+                  key={groupKey}
                   className={clsx(
                     'rounded-2xl p-4 border-2 border-gray-200/50 dark:border-gray-700/50',
                     'transition-all duration-300',
-                    THEME_COLORS[group.theme as keyof typeof THEME_COLORS],
+                    themeColor.base,
+                    isGroupCollapsed && themeColor.hover,
                     LAYOUT_STYLES[group.layout as keyof typeof LAYOUT_STYLES],
                     colStart
                   )}
                 >
-                  <ProjectGroup group={group} isCollapsed={allCollapsed} />
+                  <ProjectGroup
+                    group={group}
+                    isCollapsed={allCollapsed}
+                    onCollapsedChange={(collapsed) => {
+                      setGroupStates((prev) => ({
+                        ...prev,
+                        [groupKey]: collapsed,
+                      }));
+                    }}
+                  />
                 </div>
               );
             })}

@@ -22,11 +22,13 @@ type ProjectGroup = {
 type ProjectGroupProps = {
   group: ProjectGroup;
   isCollapsed?: boolean;
+  onCollapsedChange?: (isCollapsed: boolean) => void;
 };
 
 export const ProjectGroup = ({
   group,
   isCollapsed = false,
+  onCollapsedChange,
 }: ProjectGroupProps) => {
   const [localCollapsed, setLocalCollapsed] = useState(isCollapsed);
 
@@ -34,11 +36,17 @@ export const ProjectGroup = ({
     setLocalCollapsed(isCollapsed);
   }, [isCollapsed]);
 
+  const handleCollapse = () => {
+    const newState = !localCollapsed;
+    setLocalCollapsed(newState);
+    onCollapsedChange?.(newState);
+  };
+
   return (
     <div className="-m-4">
       {group.title && (
         <button
-          onClick={() => setLocalCollapsed(!localCollapsed)}
+          onClick={handleCollapse}
           className={clsx(
             'w-full flex items-center justify-between text-left p-4',
             'text-base font-bold text-gray-900 dark:text-gray-100 group',
