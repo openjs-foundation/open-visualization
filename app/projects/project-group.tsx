@@ -72,7 +72,7 @@ export const ProjectGroup = ({
       >
         {group.description && (
           <div
-            className="prose dark:prose-invert prose-xs max-w-none mb-2 text-gray-600 dark:text-gray-400"
+            className="prose dark:prose-invert prose-sm max-w-none mb-4 text-gray-600 dark:text-gray-400"
             dangerouslySetInnerHTML={{
               __html: markdownToHtml(group.description),
             }}
