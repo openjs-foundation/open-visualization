@@ -96,15 +96,6 @@ const NavigationBar: FC<NavbarProps> = ({
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={NAV_MENU_TRIGGER_STYLE}>
-                    News
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <NewsMenuContent news={news} />
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={NAV_MENU_TRIGGER_STYLE}>
                     Projects
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -114,19 +105,28 @@ const NavigationBar: FC<NavbarProps> = ({
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={NAV_MENU_TRIGGER_STYLE}>
-                    Summits
+                    Blog
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <SummitsMenuContent summits={summits} />
+                    <BlogMenuContent posts={blogPosts} />
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={NAV_MENU_TRIGGER_STYLE}>
-                    Blog
+                    News
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <BlogMenuContent posts={blogPosts} />
+                    <NewsMenuContent news={news} />
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={NAV_MENU_TRIGGER_STYLE}>
+                    Summits
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <SummitsMenuContent summits={summits} />
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
