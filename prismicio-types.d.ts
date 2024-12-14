@@ -5,6 +5,99 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Item in *Blog → entries*
+ */
+export interface BlogDocumentDataEntriesItem {
+  /**
+   * title field in *Blog → entries*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.entries[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * blurb field in *Blog → entries*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.entries[].blurb
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  blurb: prismic.KeyTextField;
+
+  /**
+   * url field in *Blog → entries*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.entries[].url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  url: prismic.LinkField;
+
+  /**
+   * imageUrl field in *Blog → entries*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.entries[].imageurl
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  imageurl: prismic.LinkField;
+
+  /**
+   * date field in *Blog → entries*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.entries[].date
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date: prismic.DateField;
+
+  /**
+   * publication field in *Blog → entries*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.entries[].publication
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  publication: prismic.KeyTextField;
+}
+
+/**
+ * Content for Blog documents
+ */
+interface BlogDocumentData {
+  /**
+   * entries field in *Blog*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.entries[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  entries: prismic.GroupField<Simplify<BlogDocumentDataEntriesItem>>;
+}
+
+/**
+ * Blog document from Prismic
+ *
+ * - **API ID**: `blog`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<BlogDocumentData>, 'blog', Lang>;
+
+/**
  * Item in *Home → Hero Actions*
  */
 export interface HomeDocumentDataHeroActionsItem {
@@ -234,8 +327,6 @@ export interface HomeDocumentDataSummitsItem {
   additional_participants_number: prismic.KeyTextField;
 }
 
-type HomeDocumentDataSlices7Slice = never;
-
 /**
  * Content for Home documents
  */
@@ -260,8 +351,7 @@ interface HomeDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  description: prismic.KeyTextField
-  /**
+  description: prismic.KeyTextField /**
    * Hero Title field in *Home*
    *
    * - **Field Type**: Text
@@ -303,8 +393,7 @@ interface HomeDocumentData {
    * - **Tab**: Hero
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  focus_areas: prismic.GroupField<Simplify<HomeDocumentDataFocusAreasItem>>
-  /**
+  focus_areas: prismic.GroupField<Simplify<HomeDocumentDataFocusAreasItem>> /**
    * Collaborators field in *Home*
    *
    * - **Field Type**: Group
@@ -315,8 +404,7 @@ interface HomeDocumentData {
    */;
   collaborators: prismic.GroupField<
     Simplify<HomeDocumentDataCollaboratorsItem>
-  >
-  /**
+  > /**
    * About Title field in *Home*
    *
    * - **Field Type**: Text
@@ -380,8 +468,7 @@ interface HomeDocumentData {
    * - **Tab**: About
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  about_image: prismic.ImageField<never>
-  /**
+  about_image: prismic.ImageField<never> /**
    * Projects Title field in *Home*
    *
    * - **Field Type**: Text
@@ -434,8 +521,7 @@ interface HomeDocumentData {
    * - **Tab**: Projects
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  projects: prismic.GroupField<Simplify<HomeDocumentDataProjectsItem>>
-  /**
+  projects: prismic.GroupField<Simplify<HomeDocumentDataProjectsItem>> /**
    * Community Title field in *Home*
    *
    * - **Field Type**: Text
@@ -479,8 +565,7 @@ interface HomeDocumentData {
    */
   community_outlinks: prismic.GroupField<
     Simplify<HomeDocumentDataCommunityOutlinksItem>
-  >
-  /**
+  > /**
    * Callout Title field in *Home*
    *
    * - **Field Type**: Text
@@ -556,8 +641,7 @@ interface HomeDocumentData {
    * - **Tab**: Callout
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
-  callout_active: prismic.BooleanField
-  /**
+  callout_active: prismic.BooleanField /**
    * Section Title field in *Home*
    *
    * - **Field Type**: Text
@@ -589,17 +673,6 @@ interface HomeDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   summits: prismic.GroupField<Simplify<HomeDocumentDataSummitsItem>>;
-
-  /**
-   * Slice Zone field in *Home*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.slices7[]
-   * - **Tab**: Summits
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices7: prismic.SliceZone<HomeDocumentDataSlices7Slice>;
 }
 
 /**
@@ -671,7 +744,7 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomeDocument | SettingsDocument;
+export type AllDocumentTypes = BlogDocument | HomeDocument | SettingsDocument;
 
 declare module '@prismicio/client' {
   interface CreateClient {
@@ -681,8 +754,22 @@ declare module '@prismicio/client' {
     ): prismic.Client<AllDocumentTypes>;
   }
 
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig
+    ): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
+  }
+
   namespace Content {
     export type {
+      BlogDocument,
+      BlogDocumentData,
+      BlogDocumentDataEntriesItem,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataHeroActionsItem,
@@ -691,7 +778,6 @@ declare module '@prismicio/client' {
       HomeDocumentDataProjectsItem,
       HomeDocumentDataCommunityOutlinksItem,
       HomeDocumentDataSummitsItem,
-      HomeDocumentDataSlices7Slice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,

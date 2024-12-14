@@ -38,7 +38,7 @@ const Home = async (): Promise<ReactElement> => {
         description={
           //data.hero_description
           // Temporary change until we can change it in Prismic
-          `The Open Visualization Collaboration Space “OpenVis” is a forum within the OpenJS Foundation to neutrally govern a comprehensive and growing suite of widely adopted visualization libraries targeting TypeScript, JavaScript, WebGPU and WebGL.
+          `The Open Visualization Collaboration Space “OpenVis” is a forum within the OpenJS Foundation to neutrally govern a growing suite of widely adopted visualization libraries targeting TypeScript, JavaScript, WebGPU, WebGL and WebAssembly.
           `
         }
         actions={data.hero_actions}

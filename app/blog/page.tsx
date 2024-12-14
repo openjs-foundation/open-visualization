@@ -1,4 +1,5 @@
 import React from 'react';
+import { createClient } from '@/lib/prismic';
 import blogYaml from '@/content/blog.json';
 import type { BlogPost } from '@/content/blog.json';
 import Image from 'next/image';
@@ -7,7 +8,13 @@ import ArrowIcon from '@/components/icons/arrow-icon';
 export const fetchCache = 'force-no-store';
 export const revalidate = 0;
 
-const BlogPage = () => {
+const BlogPage = async () => {
+  try {
+    const client = createClient();
+    const { data } = await client.getSingle('blog');
+    console.log(data);
+  } catch {}
+
   return (
     <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
       <div className="mb-12">
