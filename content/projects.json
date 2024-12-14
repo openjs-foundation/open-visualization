@@ -51,7 +51,7 @@
             {
               "name": "AVS/streetscape.gl",
               "url": "https://avs.auto/demo/index.html",
-              "image": "/visgl/images/frameworks/atg.png",
+              "image": "/visgl/images/atg.png",
               "description": "Autonomous vehicle visualization built on deck.gl (independent project)."
             }
           ]
