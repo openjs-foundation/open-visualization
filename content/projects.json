@@ -73,7 +73,7 @@
               "name": "flowmap.gl",
               "url": "https://flowmap.gl/",
               "image": "/visgl/images/frameworks/FlowmapBlue.jpg",
-              "description": "A powerful flow map drawing layer for deck.gl. For visualization of geographic movement."
+              "description": "A powerful flow map drawing layer for visualization of geographic movement."
             },
             {
               "name": "graph-layers",
