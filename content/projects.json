@@ -51,7 +51,7 @@
             {
               "name": "AVS/streetscape.gl",
               "url": "https://avs.auto/demo/index.html",
-              "image": "/visgl/images/frameworks/atg.png",
+              "image": "/visgl/images/atg.png",
               "description": "Autonomous vehicle visualization built on deck.gl (independent project)."
             }
           ]
@@ -73,7 +73,7 @@
               "name": "flowmap.gl",
               "url": "https://flowmap.gl/",
               "image": "/visgl/images/frameworks/FlowmapBlue.jpg",
-              "description": "A powerful flow map drawing layer for deck.gl. For visualization of geographic movement."
+              "description": "A powerful flow map drawing layer for visualization of geographic movement."
             },
             {
               "name": "graph-layers",
