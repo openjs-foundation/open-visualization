@@ -13,7 +13,7 @@ const NewsPage = () => {
           News & Events
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          Learn about how vis.gl is creating impact
+        Articles in the press, meetups, and blog posts from our corporate sponsors and users that show how Open Visualization projects are creating impact. 
         </p>
       </div>
 

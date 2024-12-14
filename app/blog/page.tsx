@@ -15,7 +15,7 @@ const BlogPage = () => {
           Open Visualization Collaboration Space Blog
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-          Deep dives into the vis.gl frameworks
+          Deep dives into the Open Visualization frameworks and applications
         </p>
         <div className="mx-auto text-base text-gray-600 dark:text-gray-400 space-y-4">
           <p>
@@ -24,7 +24,7 @@ const BlogPage = () => {
             Guest posts are welcome!
           </p>
           <p>
-            Note that vis.gl blog posts can also be browser directly on{' '}
+            Note that many older vis.gl blog posts can also be browsed directly on{' '}
             <a
               href="https://medium.com/@vis.gl"
               className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline"
