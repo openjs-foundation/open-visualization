@@ -1,12 +1,54 @@
 [
   {
+    "publication": "OpenJS Blog",
+    "date": "Mar 27, 2024",
+    "title": "Open Source Data Visualization Project deck.gl v9 Released",
+    "blurb": "A major milestone in terms of modernizing the deck.gl ecosystem.",
+    "url": "https://openjsf.org/blog/deckgl-v9",
+    "image": "https://images.prismic.io/openjsf/ZgMlr8cYqOFdyGUl_BlogPostImagesOpenJS-3-.jpg?auto=format,compress"
+  },
+  {
+    "publication": "OpenJS Blog",
+    "date": "Dec 21, 2023",
+    "title": "Introducing kepler.gl 3.0",
+    "blurb": "An major and long awaited update to the leading open geospatial applicaton for the web.",
+    "url": "https://openjsf.org/blog/whats-new-in-the-keplergl-30-application",
+    "image": "https://images.prismic.io/openjsf/658345b4531ac2845a26d4f3_BlogPostImagesOpenJS.png?auto=format,compress"
+  },
+  {
+    "publication": "OpenJS Blog",
+    "date": "Jul 10, 2023",
+    "title": "Visualizing Success: Year One of the OpenVis Collaboration Space",
+    "blurb": "An overview of the extensive progress in the deck.gl ecosystem since joining the OpenJS foundation.",
+    "url": "https://openjsf.org/blog/visualizing-success-year-one-openvis",
+    "image": "https://images.prismic.io/openjsf/6568d42d531ac2845a2596af_3.png?auto=format,compress"
+  },
+  {
+    "publication": "OpenJS Blog",
+    "date": "Sep 1, 2022",
+    "title": "OpenJS Open Visualization Collaborator Summit - Madrid",
+    "blurb": "The first Open Visualization summit brought visualization experts from all over the world to Madrid.",
+    "url": "https://openjsf.org/blog/2022/09/01/openjs-open-visualization-collaborator-summit-join-us-in-madrid-virtual-september-22-23/",
+    "image": "/visgl/images/news/madrid-summit-2022.png"
+  },
+  {
+    "publication": "OpenJS Blog",
+    "date": "Jun 7, 2022",
+    "title": "OpenJS World 2022: OpenJS Foundation Welcomes Urban Computing Foundation, vis.gl and kepler.gl",
+    "blurb": "deck.gl and the vis.gl frameworks suite has been accepted into the OpenJS foundation.",
+    "url": "https://openjsf.org/blog/2022/06/07/openjs-world-2022-openjs-foundation-welcomes-urban-computing-foundation-vis-gl-and-kepler-gl/",
+    "image": "/visgl/images/news/opevis-openjs-keynote.jpeg"
+  },
+  {
+    "publication": "Medium",
     "date": "Apr 7, 2020",
     "title": "deck.gl 8.2 moves to Open Governance",
-    "blurb": "The vis.gl frameworks suite is now under open governance through the Linux Foundation and the Urban Cumputing Foundation.",
+    "blurb": "deck.gl and the vis.gl frameworks suite is now under open governance through the Linux Foundation and the Urban Cumputing Foundation.",
     "url": "https://medium.com/vis-gl/deck-gl-8-2-moves-to-open-governance-379f147c15bb",
     "image": "/visgl/images/blog/blog-2020-04-deck-open-governance.png"
   },
   {
+    "publication": "Medium",
     "date": "Oct 15, 2019",
     "title": "pydeck: Unlocking deck.gl for use in Python",
     "blurb": "The power of deck.gl is now available to Python and Jupyter notebooks.",
@@ -14,6 +56,7 @@
     "image": "/visgl/images/blog/blog-2019-10-introducing-pydeck.png"
   },
   {
+    "publication": "Medium",
     "date": "Aug 26, 2019",
     "title": "Exploring Geospatial Data with kepler.gl",
     "blurb": "A showcase of how kepler.gl helps leverage the power of the vis.gl frameworks for geospatial analytics.",
@@ -21,6 +64,7 @@
     "image": "/visgl/images/blog/blog-2019-08-exploring-with-kepler.png"
   },
   {
+    "publication": "Medium",
     "date": "Jul 23, 2019",
     "title": "Vis Hackathon 2019",
     "blurb": "A range of visualization projects using the vis.gl frameworks and beyond.",
@@ -28,6 +72,7 @@
     "image": "/visgl/images/blog/blog-2019-07-vis-hackathon.png"
   },
   {
+    "publication": "Medium",
     "date": "Jul 22, 2019",
     "title": "Kepler.gl: Export Map",
     "blurb": "kepler.gl now supports exporting maps for use on the web.",
@@ -35,6 +80,7 @@
     "image": "/visgl/images/blog/blog-2019-07-kepler-export-map.png"
   },
   {
+    "publication": "Medium",
     "date": "Jun 25, 2019",
     "title": "Introducing kepler.gl for Jupyter",
     "blurb": "kepler.gl can now be controlled from Jupyter notebooks.",
@@ -42,6 +88,7 @@
     "image": "/visgl/images/blog/blog-2019-06-kepler-jupyter.png"
   },
   {
+    "publication": "Medium",
     "date": "Jun 18, 2019",
     "title": "Uber’s vis.gl brings glTF to geospatial data visualization",
     "blurb": "The Khronos glTF format brings high-quality models and pysically-based rendering to the vis.gl frameworks.",
@@ -49,6 +96,7 @@
     "image": "/visgl/images/blog/blog-2019-06-gltf-in-geospatial-visualization.png"
   },
   {
+    "publication": "Medium",
     "date": "May 7, 2019",
     "title": "Using deck.gl with Google Maps",
     "blurb": "deck.gl now provides a new module enabling deck.gl to be used with Google basemaps.",
@@ -56,6 +104,7 @@
     "image": "/visgl/images/blog/blog-2019-05-deck-with-google-maps.png"
   },
   {
+    "publication": "Medium",
     "date": "Apr 26, 2019",
     "title": "Introducing deck.gl v7.0",
     "blurb": "deck.gl v7 brings a slew of new layers, lighting support, binary data support and more.",
@@ -63,6 +112,7 @@
     "image": "/visgl/images/blog/blog-2019-04-introducing-deck-v7.png"
   },
   {
+    "publication": "Medium",
     "date": "Apr 22, 2019",
     "title": "Kepler.gl + Dropbox = Map Save & Share",
     "blurb": "kepler.gl now provides integration with cloud storage enabling maps to be saved.",
@@ -70,6 +120,7 @@
     "image": "/visgl/images/blog/blog-2019-04-kepler-dropbox-save.png"
   },
   {
+    "publication": "Medium",
     "date": "Oct 29, 2018",
     "title": "How (sometimes) assuming the Earth is “flat” helps speed up rendering in deck.gl",
     "blurb": "An deep-dive into the new optimized geospatial projection engine in deck.gl v6.2",
@@ -77,6 +128,7 @@
     "image": "/visgl/images/blog/blog-2018-10-earth-is-flat.png"
   },
   {
+    "publication": "Medium",
     "date": "Oct 16, 2018",
     "title": "GPU Accelerated Aggregation in deck.gl",
     "blurb": "deck.gl v6.2 moves aggregation related computation to the GPU.",
@@ -84,6 +136,7 @@
     "image": "/visgl/images/blog/blog-2018-10-gpu-accelerated-aggregation.png"
   },
   {
+    "publication": "Medium",
     "blog": null,
     "date": "Oct 15, 2018",
     "title": "deck.gl and Mapbox GL JS: Better Together",
@@ -92,6 +145,7 @@
     "image": "/visgl/images/blog/blog-2018-10-deckgl-and-mapbox.png"
   },
   {
+    "publication": "Medium",
     "date": "May 29, 2018",
     "title": "Mapping the Parisian trees",
     "blurb": "Showcase of how to work with a dataset in kepler.gl.",
@@ -99,6 +153,7 @@
     "image": "/visgl/images/blog/blog-2018-05-parisian-trees.png"
   },
   {
+    "publication": "Medium",
     "date": "May 29, 2018",
     "title": "Visualizing Unemployment for U.S. Counties with kepler.gl",
     "blurb": "Showcase of how to work with a specific dataset in kepler.gl.",
@@ -106,6 +161,7 @@
     "image": "/visgl/images/blog/blog-2018-05-visualizing-unemployment-with-kepler.png"
   },
   {
+    "publication": "Medium",
     "blog": null,
     "date": "May 29, 2018",
     "title": "Using Kepler.gl and Movement to Visualize Traffic Effects of a Rainstorm",
@@ -114,6 +170,7 @@
     "image": "/visgl/images/blog/blog-2018-05-movement-in-kepler.png"
   },
   {
+    "publication": "Medium",
     "date": "May 19, 2018",
     "title": "Animating 40 years of California Earthquakes",
     "blurb": "Showcase of how to work with a specific dataset in kepler.gl.",
@@ -121,6 +178,7 @@
     "image": "/visgl/images/blog/blog-2018-05-california-earthquakes.png"
   },
   {
+    "publication": "Medium",
     "date": "Apr 24, 2018",
     "title": "Start Scripting with deck.gl",
     "blurb": "deck.gl can now be used directly from HTML scripts without the use of npm packages.",
@@ -128,6 +186,7 @@
     "image": "/visgl/images/blog/blog-2018-04-scripting-with-deck.png"
   },
   {
+    "publication": "Medium",
     "date": "Mar 26, 2018",
     "title": "Automatic, GPU-based object highlighting in deck.gl Layers",
     "blurb": "Highligting the selected object in a layer is now handled by deck.gl directly on the GPU.",
@@ -135,6 +194,7 @@
     "image": "/visgl/images/blog/blog-2018-03-gpu-based-object-highlighting.png"
   },
   {
+    "publication": "Medium",
     "date": "Feb 27, 2018",
     "title": "Unfolding the Earth: Myriahedral Projections In WebGL",
     "blurb": "A visual exploration of alternaive mathematical approaches to flatten the Earth sphere.",
@@ -142,6 +202,7 @@
     "image": "/visgl/images/blog/blog-2018-02-unfolding-the-earth.png"
   },
   {
+    "publication": "Medium",
     "date": "Jul 24, 2017",
     "title": "Introducing luma.gl v4.0",
     "blurb": "A summary of luma.gl improvements and early roadmaps.",
@@ -149,6 +210,7 @@
     "image": "/visgl/images/blog/blog-2017-07-introducing-luma-v4.png"
   },
   {
+    "publication": "Medium",
     "date": "Apr 16, 2017",
     "title": "Wind Map",
     "blurb": "A showcase of using deck.gl for particle animations and vector field visualizations.",
@@ -156,6 +218,7 @@
     "image": "/visgl/images/blog/blog-2017-06-wind-map.png"
   },
   {
+    "publication": "Medium",
     "date": "Apr 11, 2017",
     "title": "Rendering A Minecraft World With deck.gl",
     "blurb": "An alternate use case for deck.gl.",
@@ -163,6 +226,7 @@
     "image": "/visgl/images/blog/blog-2017-04-minecraft-with-deck.png"
   },
   {
+    "publication": "Medium",
     "date": "Jul 24, 2017",
     "title": "The Birth of a Visualization Framework Suite",
     "blurb": "vis.gl is a new suite of frameworks centered around deck.gl focused on big geospatial data visualization.",
@@ -170,6 +234,7 @@
     "image": "/visgl/images/blog/blog-2017-07-birth-of-a-vis-framework-suite.png"
   },
   {
+    "publication": "Medium",
     "date": "Apr 2, 2017",
     "title": "Introducing deck.gl v4.0",
     "blurb": "The second major public release of deck.gl brings a wide range of improvements.",

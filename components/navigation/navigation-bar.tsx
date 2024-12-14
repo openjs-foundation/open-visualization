@@ -178,13 +178,6 @@ const NavigationBar: FC<NavbarProps> = ({
                       Home
                     </Link>
                     <Link
-                      href="/news"
-                      className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      News
-                    </Link>
-                    <Link
                       href="/projects"
                       className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
                       onClick={() => setIsOpen(false)}
@@ -192,18 +185,25 @@ const NavigationBar: FC<NavbarProps> = ({
                       Projects
                     </Link>
                     <Link
-                      href="/summits"
-                      className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Summits
-                    </Link>
-                    <Link
                       href="/blog"
                       className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
                       onClick={() => setIsOpen(false)}
                     >
                       Blog
+                    </Link>
+                    <Link
+                      href="/news"
+                      className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      News
+                    </Link>
+                    <Link
+                      href="/summits"
+                      className="block py-2 text-base font-medium text-gray-700 dark:text-gray-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Summits
                     </Link>
                     <Link
                       href="/about"
