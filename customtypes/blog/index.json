@@ -1,0 +1,70 @@
+{
+  "format": "custom",
+  "id": "blog",
+  "label": "Blog",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "entries": {
+        "type": "Group",
+        "config": {
+          "label": "entries",
+          "repeat": true,
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "title",
+                "placeholder": ""
+              }
+            },
+            "blurb": {
+              "type": "Text",
+              "config": {
+                "label": "blurb",
+                "placeholder": ""
+              }
+            },
+            "url": {
+              "type": "Link",
+              "config": {
+                "label": "url",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "imageurl": {
+              "type": "Link",
+              "config": {
+                "label": "imageUrl",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "date": {
+              "type": "Date",
+              "config": {
+                "label": "date",
+                "placeholder": ""
+              }
+            },
+            "publication": {
+              "type": "Text",
+              "config": {
+                "label": "publication",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
