@@ -73,7 +73,7 @@ const ProjectsPreview: FC<ProjectsProps> = ({ title, description, items }) => (
           'text-gray-900 ring-gray-900/10 hover:ring-gray-900/20 dark:text-white dark:ring-white/10 hover:bg-gray-50 dark:hover:bg-gray-800'
         )}
       >
-        Full list of projects
+        Detailed list of projects
         <ArrowUpRight className="h-4 w-4" />
       </Link>
     </div>

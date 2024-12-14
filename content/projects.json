@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "The deck.gl ecosystem",
-      "description": "A suite of composable frameworks for high-performance web-based visualization",
+      "description": "A suite of composable open source frameworks for high-performance web-based visualization",
       "groups": [
         {
           "title": "Frameworks",
@@ -14,19 +14,19 @@
               "name": "deck.gl",
               "url": "https://deck.gl",
               "image": "/visgl/images/frameworks/deck.png",
-              "description": "High-performance, GPU powered visualization layers for large scale geospatial data."
+              "description": "GPU powered, geospatially optimized visualization layers for large scale data."
             },
             {
               "name": "@kepler.gl",
               "url": "https://kepler.gl",
               "image": "/visgl/images/frameworks/kepler.png",
-              "description": "The kepler.gl framework for building custom geospatial applications."
+              "description": "A framework for building state-of-the-art geospatial applications."
             },
             {
               "name": "pydeck",
               "url": "https://pydeck.gl",
               "image": "/visgl/images/frameworks/pydeck.png",
-              "description": "Python bindings for deck.gl that enable custom geospatial visualizations."
+              "description": "Python notebook bindings for deck.gl."
             }
           ]
         },
@@ -40,13 +40,19 @@
               "name": "kepler.gl",
               "url": "https://kepler.gl",
               "image": "/visgl/images/frameworks/kepler.png",
-              "description": "kepler.gl is a widely used geospatial tool for interactive exploration of geospatial data using deck.gl."
+              "description": "The famous geospatial app for interactive exploration of geospatial data using deck.gl."
             },
             {
-              "name": "i3s-explorer",
-              "url": "https://deck.gl",
-              "image": "/visgl/images/frameworks/deck.png",
-              "description": "An inspector for massive 3D data in I3S (Indexed 3D Scene Layer) and similar formats, built with deck.gl and loaders.gl."
+              "name": "I3S Explorer",
+              "url": "https://i3s.loaders.gl/dashboard",
+              "image": "https://images.prismic.io/open-visualization/Z11uIJbqstJ98gBP_i3s.webp?auto=format,compress",
+              "description": "Inspect massive 3D data in I3S, 3D Tiles and similar formats. Built with deck.gl and loaders.gl."
+            },
+            {
+              "name": "AVS/streetscape.gl",
+              "url": "https://avs.auto/demo/index.html",
+              "image": "/visgl/images/frameworks/atg.png",
+              "description": "Autonomous vehicle visualization built on deck.gl (independent project)."
             }
           ]
         },
@@ -55,13 +61,13 @@
           "category": "extensions",
           "layout": "half",
           "theme": "purple",
-          "description": "Community-maintained extensions",
+          "description": "Examples of community-maintained extensions",
           "entries": [
             {
               "name": "hubble.gl",
               "url": "https://hubble.gl",
               "image": "/visgl/images/frameworks/hubble.png",
-              "description": "Animation and video capture for deck.gl and kepler.gl visualizations."
+              "description": "Animation and video capture module for deck.gl and kepler.gl."
             },
             {
               "name": "flowmap.gl",
@@ -94,6 +100,7 @@
           "category": "integrations",
           "layout": "half",
           "theme": "amber",
+          "description": "Deep integrations with other major visualization projects",
           "entries": [
             {
               "name": "react-map-gl",
@@ -105,19 +112,19 @@
               "name": "react-google-maps",
               "url": "https://visgl.github.io/react-google-maps/",
               "image": "/visgl/images/frameworks/react-google-maps.jpeg",
-              "description": "React wrapper for Google Maps JavaScript API."
+              "description": "React wrapper for Google Maps."
             },
             {
-              "name": "deck.gl-community/leaflet",
+              "name": "@deck.gl-community/leaflet",
               "url": "https://visgl.github.io/deck.gl-community",
               "image": "https://images.prismic.io/open-visualization/Z1s95JbqstJ98bv0_leaflet-logo.png?auto=format,compress",
-              "description": "Unofficial basemap add-on module for deck.gl."
+              "description": "Unofficial deck.gl basemap integration for Leaflet."
             },
             {
-              "name": "deck.gl-community/bing-maps",
+              "name": "@deck.gl-community/bing-maps",
               "url": "https://visgl.github.io/deck.gl-community",
               "image": "https://images.prismic.io/open-visualization/Z1s95ZbqstJ98bv1_bing-maps-logo.webp?auto=format,compress",
-              "description": "Unofficial basemap add-on module for deck.gl."
+              "description": "Unofficial deck.gl basemap integration for Bing Maps."
             }
           ]
         },
@@ -131,13 +138,19 @@
               "name": "luma.gl",
               "url": "https://luma.gl",
               "image": "/visgl/images/frameworks/luma.png",
-              "description": "WebGPU and WebGL2 library for high-performance visualization."
+              "description": "WebGPU and WebGL2 powered rendering and compute library."
             },
             {
               "name": "loaders.gl",
               "url": "https://loaders.gl",
               "image": "/visgl/images/frameworks/loaders.png",
-              "description": "Framework-independent loaders for geospatial and 3D formats."
+              "description": "Loaders for big data, geospatial and 3D file formats."
+            },
+            {
+              "name": "math.gl",
+              "url": "https://visgl.github.io/math.gl",
+              "image": "/visgl/images/frameworks/math.png",
+              "description": "Math library for 3D and geospatial calculations."
             }
           ]
         },
@@ -148,27 +161,21 @@
           "theme": "default",
           "entries": [
             {
-              "name": "math.gl",
-              "url": "https://visgl.github.io/math.gl",
-              "image": "/visgl/images/frameworks/math.png",
-              "description": "Math library for 3D and geospatial calculations."
+              "name": "mjolnir.js",
+              "url": "https://github.com/visgl/mjolnir.js",
+              "image": "https://open-visualization.cdn.prismic.io/open-visualization/Z11pDpbqstJ98gAq_thor-hammer.svg",
+              "description": "Event handling library for interactive visualizations."
             },
             {
               "name": "probe.gl",
               "url": "https://probe.gl",
               "image": "/visgl/images/frameworks/probe.png",
-              "description": "JavaScript instrumentation and testing utilities."
-            },
-            {
-              "name": "mjolnir",
-              "url": "https://github.com/visgl/mjolnir.js",
-              "image": "/visgl/images/frameworks/deck.gl-community.png",
-              "description": "Event handling library for interactive visualizations."
+              "description": "Logging and code instrumentation utilities."
             },
             {
               "name": "dev-tools",
               "url": "https://github.com/visgl/dev-tools",
-              "image": "/visgl/images/frameworks/deck.gl-community.png",
+              "image": "https://open-visualization.cdn.prismic.io/open-visualization/Z11pWZbqstJ98gAs_gear.svg",
               "description": "Development tools for vis.gl frameworks."
             }
           ]

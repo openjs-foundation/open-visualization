@@ -51,7 +51,7 @@ const ProjectsMenuContent: React.FC<ProjectsMenuContentProps> = ({
   return (
     <div>
       <div className="p-4 border-b">
-        <NavigationMenuItem title="Full list of projects →" href="/projects">
+        <NavigationMenuItem title="Detailed list of projects →" href="/projects">
           View the full list of projects maintained by OpenVis.
         </NavigationMenuItem>
       </div>

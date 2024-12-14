@@ -33,13 +33,12 @@ const Home = async (): Promise<ReactElement> => {
         title={
           //data.hero_title
           // Temporary change until we can change it in Prismic
-          'Open Source tools for powerful  visualization on the web'
+          'Open Source tools for big data visualization on the web'
         }
         description={
           //data.hero_description
           // Temporary change until we can change it in Prismic
-          `A suite of open source tools for high performance data visualization and computation for the web.
-          The Open Visualization Collaboration Space “OpenVis” is a forum within the OpenJS Foundation to neutrally govern the most comprehensive and widely adopted visualization libraries based on JavaScript and WebGL.
+          `The Open Visualization Collaboration Space “OpenVis” is a forum within the OpenJS Foundation to neutrally govern a comprehensive and growing suite of widely adopted visualization libraries targeting TypeScript, JavaScript, WebGPU and WebGL.
           `
         }
         actions={data.hero_actions}
