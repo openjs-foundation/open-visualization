@@ -9,9 +9,11 @@ export const fetchCache = 'force-no-store';
 export const revalidate = 0;
 
 const BlogPage = async () => {
-  const client = createClient();
-  const { data } = await client.getSingle('blog');
-  console.log(data);
+  try {
+    const client = createClient();
+    const { data } = await client.getSingle('blog');
+    console.log(data);
+  } catch {}
 
   return (
     <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
