@@ -30,7 +30,7 @@
             },
             {
               "name": "cosmos.gl",
-              "url": "https://github.com/cosmosgl/graph",
+              "url": "https://cosmos.gl",
               "image": "/visgl/images/frameworks/cosmos.png",
               "description": "High-performance WebGL-based graph visualization engine for massive datasets."
             },
