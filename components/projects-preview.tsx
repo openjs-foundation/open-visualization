@@ -21,27 +21,27 @@ const ProjectCard = ({
     href={`/projects#${project_title?.toLowerCase().replace(/\s+/g, '-')}`}
     className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-102 hover:shadow-lg"
   >
-    <div className="relative aspect-[16/10] w-full">
+    <div className="relative aspect-[16/12] w-full">
       <Image
         src={project_image.url ?? ''}
         alt={project_title ?? ''}
         fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className="object-cover p-4 bg-white dark:bg-gray-800"
+        sizes="(max-width: 768px) 100vw, 33vw"
+        className="object-cover p-3 bg-white dark:bg-gray-800"
         priority={false}
       />
     </div>
 
-    <div className="p-6 flex flex-col flex-grow">
-      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+    <div className="p-4 flex flex-col flex-grow">
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
         {project_title}
       </h3>
-      <p className="text-base text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+      <p className="text-sm text-gray-600 dark:text-gray-300 mb-3 flex-grow line-clamp-3">
         {project_description}
       </p>
-      <span className="inline-flex items-center text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300">
+      <span className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300">
         Learn more about {project_title}
-        <ArrowUpRight className="ml-2 h-4 w-4" />
+        <ArrowUpRight className="ml-1 h-3.5 w-3.5" />
       </span>
     </div>
   </Link>
@@ -58,7 +58,7 @@ const ProjectsPreview: FC<ProjectsProps> = ({ title, description, items }) => (
           {description}
         </p>
       </div> */}
-      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(0,400px))] justify-center">
+      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
         {items.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}

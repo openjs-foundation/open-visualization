@@ -35,13 +35,13 @@
               "description": "High-performance WebGL-based graph visualization engine for massive datasets."
             },
             {
-              "name": "Perspective",
+              "name": "perspective",
               "url": "https://perspective-dev.github.io/",
               "image": "/visgl/images/frameworks/perspective.png",
               "description": "Interactive analytics and data visualization component for large and streaming datasets."
             },
             {
-              "name": "GeoDa.AI",
+              "name": "geoda.ai",
               "url": "https://geodaai.github.io/",
               "image": "/visgl/images/frameworks/geoda.png",
               "description": "Spatial data analysis for GenAI with powerful libraries and AI assistant tools."
