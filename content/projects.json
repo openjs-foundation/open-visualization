@@ -45,6 +45,12 @@
               "url": "https://geodaai.github.io/",
               "image": "/visgl/images/frameworks/geoda.png",
               "description": "Spatial data analysis for GenAI with powerful libraries and AI assistant tools."
+            },
+            {
+              "name": "SQLRooms",
+              "url": "https://sqlrooms.org",
+              "image": "https://sqlrooms.org/media/overview/collage.webp",
+              "description": "React toolkit for human and agent collaborative analytics apps powered by DuckDB."
             }
           ]
         },

@@ -15,6 +15,33 @@ export const revalidate = 0;
 
 import type { Metadata } from 'next';
 import type { ReactElement } from 'react';
+import type { HomeDocumentData } from '@/prismicio-types';
+
+const sqlRoomsProject = {
+  project_title: 'SQLRooms',
+  project_description:
+    'An open source React toolkit for human and agent collaborative analytics apps powered by DuckDB.',
+  project_link: {
+    link_type: 'Web',
+    url: 'https://sqlrooms.org',
+  },
+  project_image: {
+    url: 'https://sqlrooms.org/media/overview/collage.webp',
+    alt: 'SQLRooms overview collage',
+  },
+} as HomeDocumentData['projects'][number];
+
+const appendProjectIfMissing = (
+  projects: HomeDocumentData['projects'],
+  project: HomeDocumentData['projects'][number]
+): HomeDocumentData['projects'] => {
+  const exists = projects.some(
+    ({ project_title }) =>
+      project_title?.toLowerCase() === project.project_title?.toLowerCase()
+  );
+
+  return exists ? projects : [...projects, project];
+};
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { data } = await createClient().getSingle('home');
@@ -25,6 +52,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 const Home = async (): Promise<ReactElement> => {
   const client = createClient();
   const { data } = await client.getSingle('home');
+  const projects = appendProjectIfMissing(data.projects, sqlRoomsProject);
   // const { data: settings } = await client.getSingle('settings');
 
   return (
@@ -51,7 +79,7 @@ const Home = async (): Promise<ReactElement> => {
       <ProjectsPreview
         title="Projects"
         description="A suite of open source tools for high performance data visualization and computation for the web."
-        items={data.projects}
+        items={projects}
       />
       {data.callout_active ? (
         <Callout
