@@ -49,7 +49,7 @@
             {
               "name": "SQLRooms",
               "url": "https://sqlrooms.org",
-              "image": "https://sqlrooms.org/media/overview/collage.webp",
+              "image": "/visgl/images/frameworks/collage.webp",
               "description": "React toolkit for human and agent collaborative analytics apps powered by DuckDB."
             }
           ]
