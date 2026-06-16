@@ -87,11 +87,11 @@ const NavigationBar: FC<NavbarProps> = ({
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link href="/" legacyBehavior passHref>
-                    <NavigationMenuLink className={NAV_MENU_TRIGGER_STYLE}>
+                  <NavigationMenuLink asChild>
+                    <Link href="/" className={NAV_MENU_TRIGGER_STYLE}>
                       Home
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
@@ -131,19 +131,22 @@ const NavigationBar: FC<NavbarProps> = ({
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/about" legacyBehavior passHref>
-                    <NavigationMenuLink className={NAV_MENU_TRIGGER_STYLE}>
+                  <NavigationMenuLink asChild>
+                    <Link href="/about" className={NAV_MENU_TRIGGER_STYLE}>
                       About
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/#get-involved" legacyBehavior passHref>
-                    <NavigationMenuLink className={NAV_MENU_TRIGGER_STYLE}>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/#get-involved"
+                      className={NAV_MENU_TRIGGER_STYLE}
+                    >
                       Get Involved
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
