@@ -5,10 +5,19 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: [
-      'images.unsplash.com',
-      'open-visualization.cdn.prismic.io',
-      'images.prismic.io'
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'open-visualization.cdn.prismic.io',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.prismic.io',
+      },
     ],
   },
   headers() {

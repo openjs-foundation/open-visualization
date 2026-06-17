@@ -2,8 +2,8 @@ import { createClient } from '@/lib/prismic';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { asLink } from '@prismicio/client';
 import type { HomeDocumentData } from '@/prismicio-types';
-import type { FilledLinkToWebField } from '@prismicio/types';
 
 export const fetchCache = 'force-no-store';
 export const revalidate = 0;
@@ -23,82 +23,93 @@ const SummitCard = ({
   summit_image,
   participants_image,
   additional_participants_number,
-}: HomeDocumentData['summits'][number]) => (
-  <div className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-102 hover:shadow-lg">
-    {summit_image.url ? (
-      <div className="relative aspect-video w-full">
-        <Image
-          src={summit_image.url}
-          alt={summit_name ?? ''}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover"
-          priority={false}
-        />
-      </div>
-    ) : null}
+}: HomeDocumentData['summits'][number]) => {
+  const playlistHref = asLink(playlist_link);
+  const agendaHref = asLink(agenda_link);
 
-    <div className="p-6 flex flex-col flex-grow">
-      <div className="mb-4">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
-          {summit_name}
-        </h3>
-        <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-          <span className="flex items-center">
-            <CalendarIcon className="w-4 h-4 mr-1" />
-            {summit_dates
-              ?.split(',')
-              .map((part, index) =>
-                index === 0 ? part : index === 1 ? ` → ${part}` : `, ${part}`
-              )}
-          </span>
+  return (
+    <div className="group flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-102 hover:shadow-lg">
+      {summit_image.url ? (
+        <div className="relative aspect-video w-full">
+          <Image
+            src={summit_image.url}
+            alt={summit_name ?? ''}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover"
+            priority={false}
+          />
         </div>
-      </div>
+      ) : null}
 
-      <p className="text-base text-gray-600 dark:text-gray-300 mb-6 flex-grow">
-        {summit_description}
-      </p>
-
-      <div className="flex items-center mb-6">
-        <div className="flex items-center">
-          {participants_image?.url ? (
-            <Image
-              src={participants_image.url}
-              alt=""
-              width={participants_image.dimensions?.width}
-              height={44}
-              className="object-cover"
-            />
-          ) : null}
-          <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
-            {additional_participants_number}
-          </span>
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="mb-4">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+            {summit_name}
+          </h3>
+          <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+            <span className="flex items-center">
+              <CalendarIcon className="w-4 h-4 mr-1" />
+              {summit_dates
+                ?.split(',')
+                .map((part, index) =>
+                  index === 0 ? part : index === 1 ? ` → ${part}` : `, ${part}`
+                )}
+            </span>
+          </div>
         </div>
-      </div>
 
-      <div className="flex gap-4">
-        <Link
-          href={(playlist_link as FilledLinkToWebField).url}
-          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-lg transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Playlist Of Talks
-          <ArrowIcon />
-        </Link>
-        <Link
-          href={(agenda_link as FilledLinkToWebField).url}
-          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Full Agenda
-          <ArrowIcon />
-        </Link>
+        <p className="text-base text-gray-600 dark:text-gray-300 mb-6 flex-grow">
+          {summit_description}
+        </p>
+
+        <div className="flex items-center mb-6">
+          <div className="flex items-center">
+            {participants_image?.url ? (
+              <Image
+                src={participants_image.url}
+                alt=""
+                width={participants_image.dimensions?.width}
+                height={44}
+                className="object-cover"
+              />
+            ) : null}
+            <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
+              {additional_participants_number}
+            </span>
+          </div>
+        </div>
+
+        {playlistHref || agendaHref ? (
+          <div className="flex gap-4">
+            {playlistHref ? (
+              <Link
+                href={playlistHref}
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-lg transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Playlist Of Talks
+                <ArrowIcon />
+              </Link>
+            ) : null}
+            {agendaHref ? (
+              <Link
+                href={agendaHref}
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Full Agenda
+                <ArrowIcon />
+              </Link>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const CalendarIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">

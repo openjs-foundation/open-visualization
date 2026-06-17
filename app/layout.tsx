@@ -8,9 +8,17 @@ import '../styles/globals.css';
 import Footer from '@/components/footer';
 import news from '@/content/news.json';
 import blogPosts from '@/content/blog.json';
+import type { Viewport } from 'next';
 
 type LayoutProps = {
   readonly children: ReactNode;
+};
+
+export const viewport: Viewport = {
+  minimumScale: 1,
+  initialScale: 1,
+  width: 'device-width',
+  viewportFit: 'cover',
 };
 
 const Layout: FC<LayoutProps> = async ({ children }): Promise<ReactElement> => {
@@ -19,7 +27,7 @@ const Layout: FC<LayoutProps> = async ({ children }): Promise<ReactElement> => {
   const { data } = await client.getSingle('home');
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="bg-white pt-16 dark:bg-gray-900">
         <Providers>
           <PrismicPreview repositoryName={repositoryName}>

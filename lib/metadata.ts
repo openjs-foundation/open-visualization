@@ -68,15 +68,9 @@ export const createMetadata: MetadataGenerator = (
       url: new URL(path ?? '/', process.env.NEXT_PUBLIC_SITE_URL).toString(),
     },
     publisher,
-    x: {
-      handle: xHandle,
+    twitter: {
+      site: xHandle,
       creator: xHandle,
-    },
-    viewport: {
-      minimumScale: 1,
-      initialScale: 1,
-      width: 'device-width',
-      viewportFit: 'cover',
     },
   };
 
