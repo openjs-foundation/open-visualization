@@ -50,7 +50,11 @@ export default function SummitsPage() {
                     alt={summit.imageAlt}
                     fill
                     sizes="(max-width: 1280px) 100vw, 1280px"
-                    className="object-contain"
+                    className={
+                      summit.title === 'Chicago 2027'
+                        ? 'object-cover'
+                        : 'object-contain'
+                    }
                     priority={index === 0}
                   />
                 </div>
