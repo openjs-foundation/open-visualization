@@ -66,6 +66,14 @@ export default function SummitsPage() {
                   <p className="text-sm text-muted-foreground mb-2">
                     {summit.date}
                   </p>
+                  {summit.sponsor && (
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Sponsored by{' '}
+                      <span className="font-medium text-foreground">
+                        {summit.sponsor}
+                      </span>
+                    </p>
+                  )}
                   <p className="text-muted-foreground mb-5">
                     {summit.description}
                   </p>

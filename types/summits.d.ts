@@ -2,6 +2,7 @@ declare module '@/content/summits.json' {
   export type SummitItem = {
     title: string;
     status?: string;
+    sponsor?: string;
     date: string;
     location: string;
     description: string;

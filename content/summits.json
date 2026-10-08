@@ -21,7 +21,8 @@
       "image": "/images/summits/zurich-summit-2026/participants-optimized.jpg",
       "url": "/summits/zurich-summit-2026",
       "imageAlt": "Participants at the Zürich 2026 Open Visualization Collaborator Summit",
-      "imageCaption": "Zürich 2026 summit participants"
+      "imageCaption": "Zürich 2026 summit participants",
+      "sponsor": "ETH Zürich"
     },
     {
       "slug": "seattle-summit-2025",
@@ -32,7 +33,8 @@
       "image": "/images/summits/seattle-summit-2025/participants-optimized.jpg",
       "url": "/summits/seattle-summit-2025",
       "imageAlt": "Participants at the Seattle 2025 Open Visualization Collaborator Summit",
-      "imageCaption": "Seattle 2025 summit participants"
+      "imageCaption": "Seattle 2025 summit participants",
+      "sponsor": "Google"
     },
     {
       "slug": "london-summit-2024",
@@ -43,7 +45,8 @@
       "image": "/images/summits/london-summit-2024/participants-optimized.jpg",
       "url": "/summits/london-summit-2024",
       "imageAlt": "Participants at the London 2024 Open Visualization Collaborator Summit",
-      "imageCaption": "London 2024 summit participants"
+      "imageCaption": "London 2024 summit participants",
+      "sponsor": "Microsoft"
     },
     {
       "slug": "new-york-summit-2023",
@@ -54,7 +57,8 @@
       "image": "/images/summits/new-york-summit-2023/participants-optimized.jpg",
       "url": "/summits/new-york-summit-2023",
       "imageAlt": "Participants at the New York 2023 Open Visualization Collaborator Summit",
-      "imageCaption": "New York 2023 summit participants"
+      "imageCaption": "New York 2023 summit participants",
+      "sponsor": "Foursquare"
     },
     {
       "slug": "madrid-summit-2022",
@@ -66,7 +70,8 @@
       "url": "/summits/madrid-summit-2022",
       "imageAlt": "Participants at the Madrid 2022 Open Visualization Collaborator Summit",
       "imageCaption": "Madrid 2022 summit participants · Photo from the OpenJS Foundation recap",
-      "imageSource": "https://openjsf.org/blog/visualizing-success-year-one-of-the-openvis-collaboration-space"
+      "imageSource": "https://openjsf.org/blog/visualizing-success-year-one-of-the-openvis-collaboration-space",
+      "sponsor": "CARTO"
     }
   ]
 }
