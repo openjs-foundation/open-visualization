@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { createClient } from '@/lib/prismic';
 import summitContent from '@/content/summits.json';
 
 export const metadata: Metadata = {
@@ -12,12 +11,7 @@ export const metadata: Metadata = {
 
 export const revalidate = 3600;
 
-export default async function SummitsPage() {
-  // Keep every archived summit available even when CMS content is unavailable.
-  const home = await createClient()
-    .getSingle('home')
-    .catch(() => null);
-
+export default function SummitsPage() {
   return (
     <main className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mb-12">
@@ -33,9 +27,6 @@ export default async function SummitsPage() {
       </div>
       <div className="space-y-12">
         {summitContent.summits.map((summit, index) => {
-          const cmsSummit = home?.data.summits.find((item) =>
-            item.summit_name?.includes(summit.title.slice(-4))
-          );
           const image = summit.image;
           return (
             <article
@@ -67,10 +58,10 @@ export default async function SummitsPage() {
                     </span>
                   )}
                   <p className="text-sm text-muted-foreground mb-2">
-                    {summit.date} · {summit.location}
+                    {summit.date}
                   </p>
                   <p className="text-muted-foreground mb-5">
-                    {cmsSummit?.summit_description || summit.description}
+                    {summit.description}
                   </p>
                   <span className="font-semibold text-blue-600 dark:text-blue-400 group-hover:underline">
                     Explore summit →
