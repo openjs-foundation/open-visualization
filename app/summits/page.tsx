@@ -47,7 +47,7 @@ export default async function SummitsPage() {
                 prefetch={false}
                 className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
               >
-                <div className="relative aspect-[2/1] sm:aspect-[5/2] w-full bg-muted">
+                <div className="relative aspect-[2/1] w-full bg-muted">
                   <Image
                     src={image}
                     alt={summit.imageAlt}
