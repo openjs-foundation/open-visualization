@@ -1,72 +1,61 @@
 import summitContent from '@/content/summits.json';
 import Image from 'next/image';
+import Link from 'next/link';
 import { NavigationMenuLink } from '@/components/ui/navigation-menu';
-import { cn } from '@/lib/utils';
-import React from 'react';
-import { HomeDocumentDataSummitsItem } from '@/prismicio-types';
 
-const NavigationMenuItem = React.forwardRef<
-  React.ElementRef<'a'>,
-  React.ComponentPropsWithoutRef<'a'> & { readonly image?: string }
->(({ className, title, children, image, ...props }, ref) => (
-  <NavigationMenuLink asChild>
-    <a
-      ref={ref}
-      className={cn(
-        'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-        className
-      )}
-      {...props}
-    >
-      <div className="flex gap-2">
-        {image && (
-          <Image
-            src={image}
-            alt=""
-            width={150}
-            height={100}
-            className="h-16 w-20 rounded object-cover"
-          />
-        )}
-        <div className="flex flex-col gap-2">
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </div>
-      </div>
-    </a>
-  </NavigationMenuLink>
-));
-NavigationMenuItem.displayName = 'NavigationMenuItem';
-
-type SummitsMenuContentProps = {
-  readonly summits?: HomeDocumentDataSummitsItem[];
-};
-
-const SummitsMenuContent: React.FC<SummitsMenuContentProps> = () => {
+export default function SummitsMenuContent() {
   return (
-    <div>
+    <div className="w-[640px] max-w-[calc(100vw-2rem)]">
       <div className="p-4 border-b">
-        <NavigationMenuItem title="View all summits →" href="/summits">
-          View the full history of OpenVis summits.
-        </NavigationMenuItem>
+        <NavigationMenuLink asChild>
+          <Link
+            href="/summits"
+            className="block rounded-md p-2 hover:bg-accent focus-visible:bg-accent"
+          >
+            <span className="font-semibold">Explore all summits →</span>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Meet the community at our gatherings around the world.
+            </p>
+          </Link>
+        </NavigationMenuLink>
       </div>
-      <ul className="grid w-[400px] gap-3 p-4">
-        {summitContent.summits.slice(0, 3).map((item) => (
-          <li key={item.url}>
-            <NavigationMenuItem
-              title={item.title}
-              href={item.url}
-              image={item.image}
-            >
-              {item.description} • {item.date}
-            </NavigationMenuItem>
+      <ul className="grid grid-cols-2 gap-2 p-4">
+        {summitContent.summits.map((summit) => (
+          <li key={summit.url}>
+            <NavigationMenuLink asChild>
+              <Link
+                href={summit.url}
+                prefetch={false}
+                className="block h-full rounded-lg p-2 hover:bg-accent focus-visible:bg-accent"
+              >
+                <div className="relative aspect-[2/1] overflow-hidden rounded-md bg-muted mb-3">
+                  <Image
+                    src={summit.image}
+                    alt={summit.imageAlt}
+                    fill
+                    sizes="280px"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <span className="text-base font-semibold">
+                    {summit.title}
+                  </span>
+                  {summit.status && (
+                    <span className="rounded-full bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-200 px-2 py-1 text-xs">
+                      {summit.status}
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  {summit.date}
+                  {summit.sponsor && <> · Sponsored by {summit.sponsor}</>}
+                </p>
+              </Link>
+            </NavigationMenuLink>
           </li>
         ))}
       </ul>
     </div>
   );
-};
-
-export default SummitsMenuContent;
+}
