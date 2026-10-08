@@ -57,10 +57,10 @@ export default async function SummitsPage() {
                     priority={index === 0}
                   />
                 </div>
-                <p className="px-6 pt-3 text-sm text-muted-foreground">
-                  {summit.imageCaption}
-                </p>
                 <div className="p-6 sm:p-8">
+                  <h2 className="text-2xl sm:text-3xl font-semibold mb-3">
+                    {summit.title}
+                  </h2>
                   {summit.status && (
                     <span className="inline-block rounded-full bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-200 px-3 py-1 text-sm font-medium mb-3">
                       {summit.status}
@@ -69,9 +69,6 @@ export default async function SummitsPage() {
                   <p className="text-sm text-muted-foreground mb-2">
                     {summit.date} · {summit.location}
                   </p>
-                  <h2 className="text-2xl sm:text-3xl font-semibold mb-3">
-                    {summit.title}
-                  </h2>
                   <p className="text-muted-foreground mb-5">
                     {cmsSummit?.summit_description || summit.description}
                   </p>
