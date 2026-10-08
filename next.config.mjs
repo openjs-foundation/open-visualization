@@ -20,6 +20,30 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/summits/zurich-summit-2026',
+        destination: '/summit-archives/zurich-summit-2026/index.html',
+      },
+      {
+        source: '/summits/seattle-summit-2025',
+        destination: '/summit-archives/seattle-summit-2025/index.html',
+      },
+      {
+        source: '/summits/london-summit-2024',
+        destination: '/summit-archives/london-summit-2024/index.html',
+      },
+      {
+        source: '/summits/new-york-summit-2023',
+        destination: '/summit-archives/new-york-summit-2023/index.html',
+      },
+      {
+        source: '/summits/madrid-summit-2022',
+        destination: '/summit-archives/madrid-summit-2022/index.html',
+      },
+    ];
+  },
   headers() {
     return [
       {
