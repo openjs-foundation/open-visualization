@@ -1,0 +1,77 @@
+{
+  "summits": [
+    {
+      "slug": "chicago-summit-2027",
+      "title": "Chicago 2027",
+      "date": "September 2027 · Dates to be confirmed",
+      "location": "Chicago",
+      "description": "We invite you to join us for the sixth Open Visualization Collaborator Summit, planned for Chicago in September 2027. Venue and program details are coming soon.",
+      "image": "/images/summits/chicago-summit-2027/header.jpg",
+      "imageAlt": "Chicago visualization artwork for the planned 2027 summit",
+      "imageCaption": "2027 summit preview · Visualization artwork",
+      "url": "/summits/chicago-summit-2027",
+      "status": "In planning"
+    },
+    {
+      "slug": "zurich-summit-2026",
+      "title": "Zürich 2026",
+      "date": "September 9–10, 2026",
+      "location": "Zürich",
+      "description": "The fifth Open Visualization Collaborator Summit was held at ETH Zürich’s Hönggerberg campus.",
+      "image": "/images/summits/zurich-summit-2026/participants-optimized.jpg",
+      "url": "/summits/zurich-summit-2026",
+      "imageAlt": "Participants at the Zürich 2026 Open Visualization Collaborator Summit",
+      "imageCaption": "Zürich 2026 summit participants",
+      "sponsor": "ETH Zürich"
+    },
+    {
+      "slug": "seattle-summit-2025",
+      "title": "Seattle 2025",
+      "date": "October 8–9, 2025",
+      "location": "Seattle",
+      "description": "The fourth Open Visualization Collaborator Summit was hosted at Google’s South Lake Union office in Seattle.",
+      "image": "/images/summits/seattle-summit-2025/participants-optimized.jpg",
+      "url": "/summits/seattle-summit-2025",
+      "imageAlt": "Participants at the Seattle 2025 Open Visualization Collaborator Summit",
+      "imageCaption": "Seattle 2025 summit participants",
+      "sponsor": "Google"
+    },
+    {
+      "slug": "london-summit-2024",
+      "title": "London 2024",
+      "date": "September 10–11, 2024",
+      "location": "London",
+      "description": "The third Open Visualization Collaborator Summit was hosted at Microsoft’s Reactor Space in central London.",
+      "image": "/images/summits/london-summit-2024/participants-optimized.jpg",
+      "url": "/summits/london-summit-2024",
+      "imageAlt": "Participants at the London 2024 Open Visualization Collaborator Summit",
+      "imageCaption": "London 2024 summit participants",
+      "sponsor": "Microsoft"
+    },
+    {
+      "slug": "new-york-summit-2023",
+      "title": "New York 2023",
+      "date": "September 6–7, 2023",
+      "location": "New York",
+      "description": "The second Open Visualization Collaborator Summit brought the community together at Foursquare’s Flatiron offices.",
+      "image": "/images/summits/new-york-summit-2023/participants-optimized.jpg",
+      "url": "/summits/new-york-summit-2023",
+      "imageAlt": "Participants at the New York 2023 Open Visualization Collaborator Summit",
+      "imageCaption": "New York 2023 summit participants",
+      "sponsor": "Foursquare"
+    },
+    {
+      "slug": "madrid-summit-2022",
+      "title": "Madrid 2022",
+      "date": "September 22–23, 2022",
+      "location": "Madrid",
+      "description": "The first Open Visualization Collaborator Summit was hosted by CARTO in Madrid, bringing together contributors in person and online.",
+      "image": "/images/summits/madrid-summit-2022/participants-borderless.jpg",
+      "url": "/summits/madrid-summit-2022",
+      "imageAlt": "Participants at the Madrid 2022 Open Visualization Collaborator Summit",
+      "imageCaption": "Madrid 2022 summit participants · Photo from the OpenJS Foundation recap",
+      "imageSource": "https://openjsf.org/blog/visualizing-success-year-one-of-the-openvis-collaboration-space",
+      "sponsor": "CARTO"
+    }
+  ]
+}

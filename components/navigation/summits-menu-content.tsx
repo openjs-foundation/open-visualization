@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import summitContent from '@/content/summits.json';
 import Image from 'next/image';
 import { NavigationMenuLink } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
@@ -44,7 +44,7 @@ type SummitsMenuContentProps = {
   readonly summits?: HomeDocumentDataSummitsItem[];
 };
 
-const SummitsMenuContent: React.FC<SummitsMenuContentProps> = ({ summits }) => {
+const SummitsMenuContent: React.FC<SummitsMenuContentProps> = () => {
   return (
     <div>
       <div className="p-4 border-b">
@@ -53,14 +53,14 @@ const SummitsMenuContent: React.FC<SummitsMenuContentProps> = ({ summits }) => {
         </NavigationMenuItem>
       </div>
       <ul className="grid w-[400px] gap-3 p-4">
-        {summits?.slice(0, 3).map((item) => (
-          <li key={item.summit_name}>
+        {summitContent.summits.slice(0, 3).map((item) => (
+          <li key={item.url}>
             <NavigationMenuItem
-              title={item.summit_name ?? ''}
-              href={'/summits'}
-              image={item.summit_image.url}
+              title={item.title}
+              href={item.url}
+              image={item.image}
             >
-              {item.summit_description} • {item.summit_dates}
+              {item.description} • {item.date}
             </NavigationMenuItem>
           </li>
         ))}
