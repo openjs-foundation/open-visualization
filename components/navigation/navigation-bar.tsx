@@ -126,7 +126,7 @@ const NavigationBar: FC<NavbarProps> = ({
                     Summits
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <SummitsMenuContent summits={summits} />
+                    <SummitsMenuContent />
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
