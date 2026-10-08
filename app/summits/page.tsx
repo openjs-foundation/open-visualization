@@ -38,7 +38,13 @@ export default function SummitsPage() {
                 prefetch={false}
                 className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
               >
-                <div className="relative aspect-[2/1] w-full bg-muted">
+                <div
+                  className="relative w-full bg-muted"
+                  style={{
+                    aspectRatio:
+                      summit.title === 'Madrid 2022' ? '1330 / 600' : '2 / 1',
+                  }}
+                >
                   <Image
                     src={image}
                     alt={summit.imageAlt}
