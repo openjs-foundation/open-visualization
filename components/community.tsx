@@ -74,7 +74,7 @@ const Community: FC<CommunityProps> = ({ title, description, items }) => (
                     )}
                   >
                     {community_outlink_cta_label}
-                    <ArrowUpRight className="h-4 w-4" />
+                    <ArrowUpRight className="h-4 w-4 flex-shrink-0" />
                   </Link>
                 </dd>
               </div>
