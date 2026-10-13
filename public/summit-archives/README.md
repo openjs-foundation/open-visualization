@@ -26,3 +26,18 @@ https://oliverwipfli.ch/open-visualization-collaborator-summit-london-2024-09-12
 Only verified resources are linked; the absence of a link does not imply a talk
 was not recorded. Add more slide and video links beside the corresponding agenda
 title as they become available.
+
+Additional recordings were matched against the complete YouTube playlist entries:
+Madrid (15), New York (14), London (17), and Seattle (15). Every available playlist
+recording has an individual agenda link. Talks without a matching video remain
+unlinked rather than pointing to an unrelated session.
+
+Additional slides were matched from the shared Drive summit folders:
+- London: https://drive.google.com/drive/folders/13MCdwemxe0HtqGJrMI1aOSc0Tdcgwmpu
+- Seattle: https://drive.google.com/drive/folders/10oNn9_i3kuQIPBFgq53pS7dE1spXmeR8
+- Zürich: https://drive.google.com/drive/folders/1Ax16tLpF8609x4ciujAZ-URN2-yhqlrf
+
+Seattle's State of the Union deck was also found through Drive search. The generic
+Seattle presentation was inspected and identified as Martin Schuhfuss's
+@vis.gl/react-google-maps talk. Ambiguous files and demonstration clips were not
+assigned to agenda entries.
