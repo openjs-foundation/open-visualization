@@ -72,9 +72,67 @@ export default function ChicagoSummitPage() {
         </dl>
         <h2 className="text-2xl font-semibold mb-4">Program & registration</h2>
         <p className="text-lg text-muted-foreground">
-          The agenda, speakers, and registration information will be announced
-          as plans are finalized. Check back here for updates.
+          The draft agenda below will develop as plans are finalized. Session
+          times, presenters, and registration details will be confirmed closer
+          to the summit.
         </p>
+      </section>
+      <section id="agenda" aria-labelledby="agenda-title" className="pb-12">
+        <h2 id="agenda-title" className="text-3xl font-semibold mb-4">
+          Draft agenda
+        </h2>
+        <p className="text-lg text-muted-foreground max-w-3xl mb-8">
+          A starting point for the summit program. Times and participation are
+          tentative; the remaining sessions are to be announced.
+        </p>
+        <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <li className="sm:col-span-2 lg:col-span-3 rounded-xl border bg-card p-6 sm:p-8">
+            <p className="text-sm text-muted-foreground mb-2">
+              Opening session · Time TBD
+            </p>
+            <h3 className="text-2xl font-semibold mb-3">State of the Union</h3>
+            <p className="text-muted-foreground mb-4">
+              Updates from across the vis.gl ecosystem and priorities for the
+              year ahead.
+            </p>
+            <p className="font-medium">
+              Presenters: vis.gl Technical Steering Committee
+            </p>
+            <p className="text-sm text-muted-foreground mt-2">
+              Chris Gervang · Ib Green · Felix Palmer · Xiaoji Chen
+            </p>
+          </li>
+          {Array.from({ length: 6 }, (_, index) => (
+            <li
+              key={index}
+              className="rounded-xl border border-dashed bg-muted/30 p-6 min-h-48"
+            >
+              <p className="text-sm text-muted-foreground mb-2">
+                Session {index + 2} · Time TBD
+              </p>
+              <h3 className="text-xl font-semibold mb-3">TBD</h3>
+              <p className="text-muted-foreground">
+                Topic and presenters to be announced.
+              </p>
+            </li>
+          ))}
+          <li className="sm:col-span-2 lg:col-span-3 rounded-xl border bg-card p-6 sm:p-8">
+            <p className="text-sm text-muted-foreground mb-2">
+              Closing session · Time TBD
+            </p>
+            <h3 className="text-2xl font-semibold mb-3">Community panel</h3>
+            <p className="text-muted-foreground mb-4">
+              An open discussion about the future of the ecosystem, community
+              priorities, and opportunities to collaborate.
+            </p>
+            <p className="font-medium">
+              Discussion leaders: vis.gl Technical Steering Committee
+            </p>
+            <p className="text-sm text-muted-foreground mt-2">
+              Chris Gervang · Ib Green · Felix Palmer · Xiaoji Chen
+            </p>
+          </li>
+        </ol>
       </section>
     </main>
   );
