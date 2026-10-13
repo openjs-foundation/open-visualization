@@ -34,7 +34,9 @@
       "url": "/summits/seattle-summit-2025",
       "imageAlt": "Participants at the Seattle 2025 Open Visualization Collaborator Summit",
       "imageCaption": "Seattle 2025 summit participants",
-      "sponsor": "Google"
+      "sponsor": "Google",
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLyspMSh4XhLNLAoQfxKWSiKb4OWMNN8er",
+      "recapUrl": "https://openjsf.org/blog/open-vis-collab-summit-2025"
     },
     {
       "slug": "london-summit-2024",
@@ -46,7 +48,8 @@
       "url": "/summits/london-summit-2024",
       "imageAlt": "Participants at the London 2024 Open Visualization Collaborator Summit",
       "imageCaption": "London 2024 summit participants",
-      "sponsor": "Microsoft"
+      "sponsor": "Microsoft",
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLyspMSh4XhLN1_EQY-_eyg_gs8z3psSJ2"
     },
     {
       "slug": "new-york-summit-2023",
@@ -58,7 +61,8 @@
       "url": "/summits/new-york-summit-2023",
       "imageAlt": "Participants at the New York 2023 Open Visualization Collaborator Summit",
       "imageCaption": "New York 2023 summit participants",
-      "sponsor": "Foursquare"
+      "sponsor": "Foursquare",
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLyspMSh4XhLOgJgtNz1bpbaW7mpNbqCQy"
     },
     {
       "slug": "madrid-summit-2022",
@@ -71,7 +75,9 @@
       "imageAlt": "Participants at the Madrid 2022 Open Visualization Collaborator Summit",
       "imageCaption": "Madrid 2022 summit participants · Photo from the OpenJS Foundation recap",
       "imageSource": "https://openjsf.org/blog/visualizing-success-year-one-of-the-openvis-collaboration-space",
-      "sponsor": "CARTO"
+      "sponsor": "CARTO",
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLyspMSh4XhLMOlAOLMNdT2wjtTMlqFAwo",
+      "recapUrl": "https://openjsf.org/blog/visualizing-success-year-one-of-the-openvis-collaboration-space"
     }
   ]
 }
