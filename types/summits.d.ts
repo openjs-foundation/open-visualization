@@ -3,6 +3,8 @@ declare module '@/content/summits.json' {
     title: string;
     status?: string;
     sponsor?: string;
+    playlistUrl?: string;
+    recapUrl?: string;
     date: string;
     location: string;
     description: string;

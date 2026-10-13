@@ -87,6 +87,30 @@ export default function SummitsPage() {
                   </span>
                 </div>
               </Link>
+              {(summit.playlistUrl || summit.recapUrl) && (
+                <div className="flex flex-wrap gap-6 px-6 pb-6 sm:px-8 sm:pb-8">
+                  {summit.playlistUrl && (
+                    <a
+                      href={summit.playlistUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      Watch talks →
+                    </a>
+                  )}
+                  {summit.recapUrl && (
+                    <a
+                      href={summit.recapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      Read recap →
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           );
         })}
