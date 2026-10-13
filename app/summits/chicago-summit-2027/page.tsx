@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import summitContent from '@/content/summits.json';
+import DraftAgenda from './draft-agenda';
 
 export const metadata: Metadata = {
   title: 'Chicago 2027 Summit | Open Visualization',
@@ -72,10 +73,12 @@ export default function ChicagoSummitPage() {
         </dl>
         <h2 className="text-2xl font-semibold mb-4">Program & registration</h2>
         <p className="text-lg text-muted-foreground">
-          The agenda, speakers, and registration information will be announced
-          as plans are finalized. Check back here for updates.
+          The draft agenda below will develop as plans are finalized. Session
+          times, presenters, and registration details will be confirmed closer
+          to the summit.
         </p>
       </section>
+      <DraftAgenda />
     </main>
   );
 }
