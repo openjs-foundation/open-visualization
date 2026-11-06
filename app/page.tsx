@@ -5,6 +5,7 @@ import Callout from '@/components/callout';
 import Community from '@/components/community';
 import Hero from '@/components/hero';
 import Logos from '@/components/logos';
+import summitContent from '@/content/summits.json';
 import ProjectsPreview from '@/components/projects-preview';
 
 export const fetchCache = 'force-no-store';
@@ -25,7 +26,9 @@ export const generateMetadata = async (): Promise<Metadata> => {
 const Home = async (): Promise<ReactElement> => {
   const client = createClient();
   const { data } = await client.getSingle('home');
-  // const { data: settings } = await client.getSingle('settings');
+  const chicago = summitContent.summits.find(
+    (summit) => summit.title === 'Chicago 2027'
+  )!;
 
   return (
     <>
@@ -53,16 +56,25 @@ const Home = async (): Promise<ReactElement> => {
         description="A suite of open source tools for high performance data visualization and computation for the web."
         items={data.projects}
       />
-      {data.callout_active ? (
-        <Callout
-          caption={data.callout_caption}
-          title={data.callout_title}
-          description={data.callout_description}
-          ctaLabel={data.callout_cta_label}
-          ctaLink={data.callout_cta_link}
-          image={data.callout_image}
-        />
-      ) : null}
+      <Callout
+        caption={chicago.date}
+        title="Open Visualization Collaborator Summit 2027 — Chicago"
+        description={[
+          { type: 'paragraph', text: chicago.description, spans: [] },
+          {
+            type: 'paragraph',
+            text: 'Exact dates and venue are to be confirmed. Explore the draft agenda and check back for updates.',
+            spans: [],
+          },
+        ]}
+        ctaLabel="Explore Chicago 2027"
+        ctaLink={{ link_type: 'Web', url: chicago.url }}
+        image={{
+          url: chicago.image,
+          alt: chicago.imageAlt,
+          dimensions: { width: 1200, height: 485 },
+        }}
+      />
 
       <Community
         title={data.community_title}
