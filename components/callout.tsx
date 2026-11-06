@@ -13,7 +13,10 @@ type CalloutProps = {
   readonly description: HomeDocumentData['callout_description'];
   readonly ctaLabel: HomeDocumentData['callout_cta_label'];
   readonly ctaLink: HomeDocumentData['callout_cta_link'];
-  readonly image: HomeDocumentData['callout_image'];
+  readonly image: Pick<
+    HomeDocumentData['callout_image'],
+    'url' | 'alt' | 'dimensions'
+  >;
 };
 
 const Callout: FC<CalloutProps> = ({
@@ -51,7 +54,7 @@ const Callout: FC<CalloutProps> = ({
           ) : null}
         </div>
         <div className="h-full w-full">
-          {image.url ? (
+          {image.url && image.dimensions ? (
             <Image
               src={image.url}
               alt={image.alt ?? ''}
